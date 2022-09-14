@@ -1,11 +1,10 @@
-# HARMONY HAVEN README
+#  All Souls Choir README
 
 ## Deployed Link
 Deployed on Heroku (Client) 
-https://harmonyhavenclient.herokuapp.com/
 
 ## Link to backend api
-GitHub API Repo https://github.com/bostonbachexchange/project_4_API
+GitHub API Repo 
 
 ## Pitch
 HARMONY HAVEN is an app that will take your choir to the next level. 
