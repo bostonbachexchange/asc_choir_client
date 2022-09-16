@@ -8,27 +8,33 @@ import messages from '../shared/AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const SignUp = (props) => {
-	// constructor(props) {
-	// 	super(props)
 
-	// 	this.state = {
-	// 		email: '',
-	// 		password: '',
-	// 		passwordConfirmation: '',
-	// 	}
-	// }    
+const SignUp = (props) => {   
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
+    const [accessCode, setAccessCode] = useState('')
+    const [access, setAccess] = useState('none')
 
     const navigate = useNavigate()
+
+    const onCheckAccess = (event) => {
+        event.preventDefault()
+
+        const checkAccess = (access) => {
+            console.log('checkAccess ran. access:', access)
+            if (access === 'BeethovenIsAwesome') {
+                setAccess('block')
+            }
+        }
+
+        checkAccess(accessCode, access, setAccess)
+    }
 
 	const onSignUp = (event) => {
 		event.preventDefault()
 
 		const { msgAlert, setUser } = props
-
         const credentials = {email, password, passwordConfirmation}
 
 		signUp(credentials)
@@ -56,7 +62,28 @@ const SignUp = (props) => {
 
 
     return (
-        <div className='row playFont'>
+        <>
+        <div className='m-2'>
+        <h1>Enter Code</h1>
+        <p>To create an account, enter the access code given to you by your music director.</p>
+            <Form onSubmit={onCheckAccess}>
+                <Form.Group controlId='accessCode' className='m-2'>
+                    <Form.Label>Access Code</Form.Label>
+                    <Form.Control
+                        required
+                        type='password'
+                        name='accessCode'
+                        value={accessCode}
+                        placeholder='Enter Access Code'
+                        onChange={e => setAccessCode(e.target.value)}
+                    />
+                </Form.Group>
+                <Button className="m-2" variant='primary' type='submit'>
+                        Submit
+                    </Button>
+            </Form>
+        </div>
+        <div className='row playFont' style={{display: access}}>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
                 <h3>Sign Up</h3>
                 <hr></hr>
@@ -100,6 +127,7 @@ const SignUp = (props) => {
                 </Form>
             </div>
         </div>
+        </>
     )
 
 }

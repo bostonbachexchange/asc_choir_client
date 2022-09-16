@@ -5,13 +5,10 @@ import { NavDropdown } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 const linkStyle = {
-    color: 'teal',
-    textDecoration: 'none'
-}
-const homeStyle = {
     color: 'white',
     textDecoration: 'none'
 }
+
 const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-2 playFont'>
@@ -27,21 +24,21 @@ const authenticatedOptions = (
 			menuVariant="dark" 
 			style={linkStyle}
 		>
-			<Nav.Item className='m-2 playFont'>
+			{/* <Nav.Item className='m-2 playFont'>
 				<Link to='mysongs' style={linkStyle}>
 				<span className='HoverClass1'>My Song List</span>
 				</Link>
-			</Nav.Item>
+			</Nav.Item> */}
 			<Nav.Item className='m-2 playFont'>
 				<Link to='songs' style={linkStyle}>
-				<span className='HoverClass1'>Song Index</span>
+				<span className='HoverClass1'>Hymns</span>
 				</Link>
 			</Nav.Item>
-			<Nav.Item className='m-2 playFont'>
+			{/* <Nav.Item className='m-2 playFont'>
 				<Link to='create-song' style={linkStyle}>
 					<span className='HoverClass1'>Add a Song</span>
 				</Link>
-			</Nav.Item>
+			</Nav.Item> */}
 		</NavDropdown>
 		
 		<NavDropdown   
@@ -92,7 +89,7 @@ const Header = ({ user }) => (
 	<Navbar bg='dark' variant='dark' expand='md'>
 		<Navbar.Brand className='m-2 playFont'>
             <Link to='/' style={linkStyle}>
-				<span className='HoverClass1'>Harmony Haven</span>
+				<span className='HoverClass1'>All Souls</span>
             </Link>
         </Navbar.Brand>
 

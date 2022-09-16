@@ -9,21 +9,25 @@ import YoutubeEmbed from '../shared/YoutubeEmbed'
 import EditSongModal from './EditSongModal'
 
 import { Document, Page } from 'react-pdf'
-// pdfjs.GlobalWorkerOptions.workerSrc = "cdnjs.cloudflare.com/ajax/libs/pdf.js/^5.7.2/pdf.worker.js";
-// pdfjs.GlobalWorkerOptions.workerSrc = cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js;
 
-import scoreExample from '../../scores/pexels.jpg'
 import ReactAudioPlayer from 'react-audio-player'
-// import songs from '../../audio/jobim.mp3'
+// audio
 import jobim from '../../audio/jobim.mp3'
 import chopin from '../../audio/chopinwaltz.mp3'
+// scores
+import STLT188 from '../../scores/come_come_whoever_you_are_188.pdf'
+import STLT318 from '../../scores/we_would_be_one_318.pdf'
+import STLT354 from '../../scores/we_laugh_we_cry_354.pdf'
+import STLT389 from '../../scores/gathered_here_389.pdf'
+import STJ1058 from '../../scores/be_ours_a_religion_1058.pdf'
 
-const tuneMap = {jobim, chopin}
+const tuneMap = {jobim, chopin, }
+const scoreMap = {STLT188, STLT318, STLT354, STLT389, STJ1058}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
     const [editModalShow, setEditModalShow] = useState(false)
-    const [audio, setAudio] = useState(null)
+    // const [audio, setAudio] = useState(null)
     const [updated, setUpdated] = useState(false)
 
     const { id } = useParams()
@@ -32,20 +36,13 @@ const ShowSong = (props) => {
     console.log('song in showSong', song)
     const navigate = useNavigate()
 
-    // useEffect(function() {
-    //     async function getSong(){
-    //        const oneSong = await getOneSong(id)
-    //             setSong(oneSong)
-    //             console.log("song", song)
-    //         }
-// }, [updated])
 
     useEffect(() => {
         getOneSong(id)
             .then(res => {
                 console.log('res data', res.data.song)
                 setSong(res.data.song)
-                setAudio()
+                // setAudio()
                 console.log('song', song)
             })
             .catch(err => {
@@ -105,16 +102,13 @@ const ShowSong = (props) => {
         <>
         <Container className='m-2 fluid playFont'>
             <Card>
-                <Card.Header className='text-center'><h2>{ song.title}</h2></Card.Header>
+                <Card.Header className='text-center'><h2>#{song.hymnNumber} { song.title}</h2></Card.Header>
                 <Card.Body>
                     <Card.Text>
                         {song.composer ?(<div><strong>composer:</strong> {song.composer}</div>) : (null)}
                         {song.lyricist ?(<div><strong>lyricist:</strong> {song.lyricist}</div>) : (null)}
-                        {song.scorePDF ?(<div><strong>scorePDF:</strong> {song.scorePDF}</div>) : (null)}
-
-                        {song.type ?(<div><strong>type:</strong> {song.type}</div>) : (null)}
-                        {/* {song.recordings ?(<div><strong>recordings:</strong> {song.recordings}</div>) : (null)} */}
-                    <Card className='m-2'>
+                        {song.recordings ?(<div><strong>recordings:</strong> 
+                        <Card className='m-2'>
                         <Card.Header><strong>Recording</strong></Card.Header>
                       <Card.Body className='text-center'>
                             <ReactAudioPlayer 
@@ -124,7 +118,8 @@ const ShowSong = (props) => {
                                 controls
                         />
                     </Card.Body>
-                    </Card>
+                    </Card></div>) : (null)}
+
                     <hr></hr>
                         {song.lyrics ?(<div><strong>Lyrics:</strong> {
                             song.lyrics.split("|").map(line => (
@@ -138,8 +133,20 @@ const ShowSong = (props) => {
                         </div>) : (null)}
                     </Card.Text>
                 </Card.Body>
+                {song.scorePDF ?(
+                <>
+                    <embed
+                        src={
+                            scoreMap[song.scorePDF]
+                        }
+                        type="application/pdf"
+                        frameBorder="0"
+                        scrolling="auto"
+                        height="600px"
+                        width="100%"
+                     ></embed>
+                </>): (null) }
 
-                <img href='../../scores/pexels.jpg' />
 
                 <Card.Footer className='text-center'>
                     {
@@ -156,9 +163,9 @@ const ShowSong = (props) => {
                     :
                     <p>Only an Admin can edit this song</p>
                     }
-                    <Button onClick={() => addTheSong()} className="m-2" variant="info">
+                    {/* <Button onClick={() => addTheSong()} className="m-2" variant="info">
                     Add to my repertoire list
-                    </Button>
+                    </Button> */}
                 </Card.Footer>
             </Card>
         </Container>

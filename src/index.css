@@ -32,7 +32,7 @@ code {
 }
 
 :visited {
-  color: rgb(100, 0, 128);
+  color: rgb(164, 10, 207);
 }
 
 /* :hover {
@@ -43,13 +43,13 @@ code {
 }
 
 .navTitle {
-  color: teal;
+  color: white;
 }
 
-.HoverClass1:hover {color: white !important;}
+.HoverClass1:hover {color: rgb(254, 162, 254) !important;}
 
 #homeIndex {
-  background: lightblue;
+  background: rgb(229, 248, 255);
 }
 
 /* #homeIndex {

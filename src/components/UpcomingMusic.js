@@ -1,7 +1,8 @@
 import { Form, Button, Spinner } from 'react-bootstrap'
 import { useState } from 'react'
 import axios from 'axios'
-import apiUrl from './../apiConfig'
+import apiUrl from '../apiConfig'
+import { Link } from 'react-router-dom'
 
 const HomeTwo = ({ msgAlert }) => {
 	const [ selected, setSelected ] = useState(null)
@@ -35,17 +36,20 @@ const HomeTwo = ({ msgAlert }) => {
 	}
 	return (
 		<>
-			<h2>Sunday Service</h2>
-			{/* {upload.url ? ( <img className={'display-image'} alt={upload.url} src={upload.url}/> ) : '' }
-			{loading ? (<Spinner animation="border" />) : ''}
-			{/* form for file input */}
-			{/* <Form onSubmit={handleSubmit}>
-			<Form.Group className="mb-3">
-				<Form.Label>Default file input example</Form.Label>
-				<Form.Control type="file" onChange={handleChange} />
-			</Form.Group>
-			<Button type="submit" variant="outline-secondary">Submit</Button>
-			</Form>  */}
+			<h2>Upcoming Service Music</h2>
+			<ul style={{ listStyleType: "none"}}>
+				<li><strong>Chalice Song </strong>
+				<Link to="songs/6324cedc896a0ce487570763">389 Gathered Here</Link></li>
+				<li><strong>Opening Hymn </strong> 
+				<Link to="songs/6324cedc896a0ce487570760">188 Come, Come, Whoever You Are</Link></li>
+				<li><strong>Centering Music </strong> 
+				<Link to="songs/6324cedc896a0ce487570765">1058 Be Ours a Religion</Link></li>
+				<li><strong>Offertory </strong> 
+				<Link to="songs/6324cedc896a0ce487570761">318 We Would Be One</Link></li>
+				<li><strong>Closing Hymn </strong> 
+				<Link to="songs/6324cedc896a0ce487570764">354 We Laugh We Cry</Link></li>
+			</ul>
+			<hr></hr>
 		</>
 	)
 }
