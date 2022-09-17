@@ -39,15 +39,15 @@ const HomeTwo = ({ msgAlert }) => {
 			<h2>Upcoming Service Music</h2>
 			<ul style={{ listStyleType: "none"}}>
 				<li><strong>Chalice Song </strong>
-				<Link to="songs/6324cedc896a0ce487570763">389 Gathered Here</Link></li>
+				<Link to="songs/632531e38dd4f58927546c35">389 Gathered Here</Link></li>
 				<li><strong>Opening Hymn </strong> 
-				<Link to="songs/6324cedc896a0ce487570760">188 Come, Come, Whoever You Are</Link></li>
+				<Link to="songs/632531e38dd4f58927546c32">188 Come, Come, Whoever You Are</Link></li>
 				<li><strong>Centering Music </strong> 
-				<Link to="songs/6324cedc896a0ce487570765">1058 Be Ours a Religion</Link></li>
+				<Link to="songs/632531e38dd4f58927546c37">1058 Be Ours a Religion</Link></li>
 				<li><strong>Offertory </strong> 
-				<Link to="songs/6324cedc896a0ce487570761">318 We Would Be One</Link></li>
+				<Link to="songs/632531e38dd4f58927546c33">318 We Would Be One</Link></li>
 				<li><strong>Closing Hymn </strong> 
-				<Link to="songs/6324cedc896a0ce487570764">354 We Laugh We Cry</Link></li>
+				<Link to="songs/632531e38dd4f58927546c36">354 We Laugh We Cry</Link></li>
 			</ul>
 			<hr></hr>
 		</>
