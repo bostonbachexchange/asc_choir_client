@@ -21,7 +21,9 @@ const Home = (props) => {
 				<h3 ><Link to="messageboard">Message Board</Link></h3>
 				<p>Share a post with our community. Tell us what songs you are working on or what inspires you. Leave a comment on other posts to encourge and support your fellow choir members.</p>
 				<h3><Link to="/songs">Songs</Link></h3>
-				<p>Browse through a large array of diverse repertoire located in our <Link to="/songs">song index</Link>. Choose a song from the index to see the composer, authors, lyrics, recordings, or see a video from youtoube. If you are learning a song add it to <Link to="/mysongs">My Song List</Link> so you can keep track of what songs you are learning. 
+				<p>Browse through a large array of diverse repertoire located in our <Link to="/songs">song index</Link>. Choose a song from the index to see the composer, authors, lyrics, recordings, or see a video from youtoube. 
+				
+				{/* If you are learning a song add it to <Link to="/mysongs">My Song List</Link> so you can keep track of what songs you are learning.  */}
 				
 				{/* <Link to="/create-song">Add a song</Link> to help us grow our resources and share the music that inspires you the most.  */}
 				</p>
