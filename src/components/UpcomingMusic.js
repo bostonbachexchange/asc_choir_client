@@ -36,21 +36,26 @@ const HomeTwo = ({ msgAlert }) => {
 	}
 	return (
 		<>
-			<h2>Upcoming Service Music</h2>
-			<ul style={{ listStyleType: "none"}}>
-				<li><strong>Chalice Song </strong>
-				<br></br>
-				<Link to="songs/632531e38dd4f58927546c35">389 Gathered Here</Link></li>
-				<li><strong>Opening Hymn </strong> 
-				<Link to="songs/">TBD</Link></li>
-				<li><strong>Centering Music </strong> 
-				<Link to="songs/">TBD</Link></li>
-				<li><strong>Offertory </strong> 
-				<Link to="songs/">TBD</Link></li>
-				<li><strong>Closing Hymn </strong> 
-				<Link to="songs/">TBD</Link></li>
-			</ul>
+		<div className='text-center'>
+			<h2>Upcoming Music</h2>
+			<h5>September 25, 2022</h5>
+			<div><strong>Chalice Song </strong>
+			<br></br>
+			<Link to="songs/">389 Gathered Here</Link></div>
+			<div><strong>Opening Hymn </strong> 
+			<br></br>
+			<Link to="songs/">TBD</Link></div>
+			<div><strong>Centering Music </strong> 
+			<br></br>
+			<Link to="songs/">TBD</Link></div>
+			<div><strong>Offertory </strong> 
+			<br></br>
+			<Link to="songs/">TBD</Link></div>
+			<div><strong>Closing Hymn </strong> 
+			<br></br>
+			<Link to="songs/">TBD</Link></div>
 			<hr></hr>
+		</div>
 		</>
 	)
 }

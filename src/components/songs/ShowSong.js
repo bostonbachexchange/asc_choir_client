@@ -107,18 +107,20 @@ const ShowSong = (props) => {
                     <Card.Text>
                         {song.composer ?(<div><strong>composer:</strong> {song.composer}</div>) : (null)}
                         {song.lyricist ?(<div><strong>lyricist:</strong> {song.lyricist}</div>) : (null)}
+
                         {song.recordings ?(<div><strong>recordings:</strong> 
-                        <Card className='m-2'>
-                        <Card.Header><strong>Recording</strong></Card.Header>
-                      <Card.Body className='text-center'>
-                            <ReactAudioPlayer 
-                                src={
-                                    tuneMap[song.recordings]
-                                }
-                                controls
-                        />
-                    </Card.Body>
-                    </Card></div>) : (null)}
+                            <Card className='m-2'>
+                            <Card.Header><strong>Recording</strong></Card.Header>
+                            <Card.Body className='text-center'>
+                                    <ReactAudioPlayer 
+                                        src={
+                                            tuneMap[song.recordings]
+                                        }
+                                        controls
+                                />
+                            </Card.Body>
+                            </Card></div>) 
+                        : (null)}
 
                     <hr></hr>
                         {song.lyrics ?(<div><strong>Lyrics:</strong> {
@@ -128,9 +130,21 @@ const ShowSong = (props) => {
                         }
                         </div>) : (null)}
                         <hr></hr>
-                        {song.embedId ?(<div className='m-2'>
-                            <YoutubeEmbed embedId={song.embedId} />
-                        </div>) : (null)}
+                        {song.embedId ? 
+                            ( 
+                                <> 
+                                <h2 className='text-center'>Videos From Youtube</h2>
+                                {
+                                    song.embedId.map(recordingId => (<>
+                                        <div className='m-2'>
+                                            <YoutubeEmbed embedId= {recordingId} />
+                                        </div>
+                                    </>)
+                                    ) 
+                                }
+                                </>
+                            )
+                        : (null)}
                     </Card.Text>
                 </Card.Body>
                 {song.scorePDF ?(

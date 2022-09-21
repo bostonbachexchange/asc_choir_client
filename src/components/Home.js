@@ -22,6 +22,7 @@ const Home = (props) => {
 				: <UpcomingMusic/> }
 				<h3 ><Link to="messageboard">Message Board</Link></h3>
 				<p>Share a post with our community. Tell us what songs you are working on or what inspires you. Leave a comment on other posts to encourge and support your fellow choir members.</p>
+				<hr></hr>
 				<h3><Link to="/songs">Songs</Link></h3>
 				<p>Browse through a large array of diverse repertoire located in our <Link to="/songs">song index</Link>. Choose a song from the index to see the composer, authors, lyrics, recordings, or see a video from youtoube. 
 				
