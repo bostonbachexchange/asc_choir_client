@@ -2,19 +2,21 @@
 import UpcomingMusic from './UpcomingMusic'
 import { Card, Container } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import ChaliceImage from '../images/ChaliceImage'
+
 const Home = (props) => {
 	console.log('props in home', props)
 	const { msgAlert, user, background} = props
 	return (
 		<>
 			<Container  className="playFont text-center">
-				{/* <img src="https://images.app.goo.gl/88xePH5PCEGWkfhh7"/> */}
+				<ChaliceImage></ChaliceImage>
 				<h1 style={{marginTop: 15}}>All Souls Choir</h1>
 				<h3>Braintree</h3>
 				<hr></hr>
 				{!user?
 					<>
-						<p>Sign up for a free account to enjoy all our free resources</p>
+						<p>Sign up for a free account to enjoy all our resources</p>
 						<hr></hr>
 					</>
 				: <UpcomingMusic/> }

@@ -41,13 +41,13 @@ const HomeTwo = ({ msgAlert }) => {
 				<li><strong>Chalice Song </strong>
 				<Link to="songs/632531e38dd4f58927546c35">389 Gathered Here</Link></li>
 				<li><strong>Opening Hymn </strong> 
-				<Link to="songs/632531e38dd4f58927546c32">188 Come, Come, Whoever You Are</Link></li>
+				<Link to="songs/">TBD</Link></li>
 				<li><strong>Centering Music </strong> 
-				<Link to="songs/632531e38dd4f58927546c37">1058 Be Ours a Religion</Link></li>
+				<Link to="songs/">TBD</Link></li>
 				<li><strong>Offertory </strong> 
-				<Link to="songs/632531e38dd4f58927546c33">318 We Would Be One</Link></li>
+				<Link to="songs/">TBD</Link></li>
 				<li><strong>Closing Hymn </strong> 
-				<Link to="songs/632531e38dd4f58927546c36">354 We Laugh We Cry</Link></li>
+				<Link to="songs/">TBD</Link></li>
 			</ul>
 			<hr></hr>
 		</>
