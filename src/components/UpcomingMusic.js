@@ -41,19 +41,19 @@ const HomeTwo = ({ msgAlert }) => {
 			<h5>September 25, 2022</h5>
 			<div><strong>Chalice Song </strong>
 			<br></br>
-			<Link to="songs/">389 Gathered Here</Link></div>
+			<Link to="songs/632b94ee23f2807599009157">389 Gathered Here</Link></div>
 			<div><strong>Opening Hymn </strong> 
 			<br></br>
-			<Link to="songs/">216 Hashiveinu</Link></div>
+			<Link to="songs/632b94ee23f2807599009153">216 Hashiveinu</Link></div>
 			<div><strong>Centering Music </strong> 
 			<br></br>
-			<Link to="songs/">1037 We Begin Again in Love</Link></div>
+			<Link to="songs/632b94ee23f2807599009159">1037 We Begin Again in Love</Link></div>
 			<div><strong>Offertory </strong> 
 			<br></br>
 			<Link to="songs/">TBD</Link></div>
 			<div><strong>Closing Hymn </strong> 
 			<br></br>
-			<Link to="songs/">1011 Return Again</Link></div>
+			<Link to="songs/632b94ee23f2807599009158">1011 Return Again</Link></div>
 			<hr></hr>
 		</div>
 		</>
