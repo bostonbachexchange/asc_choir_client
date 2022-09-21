@@ -14,12 +14,13 @@ const Home = (props) => {
 				<h1 style={{marginTop: 15}}>All Souls Choir</h1>
 				<h3>Braintree</h3>
 				<hr></hr>
+				<UpcomingMusic/> 
 				{!user?
 					<>
 						<p>Sign in or Sign up for a free account to enjoy all our resources</p>
 						<hr></hr>
 					</>
-				: <UpcomingMusic/> }
+				: <>
 				<h3 ><Link to="messageboard">Message Board</Link></h3>
 				<p>Share a post with our community. Tell us what songs you are working on or what inspires you. Leave a comment on other posts to encourge and support your fellow choir members.</p>
 				<hr></hr>
@@ -29,7 +30,8 @@ const Home = (props) => {
 				{/* If you are learning a song add it to <Link to="/mysongs">My Song List</Link> so you can keep track of what songs you are learning.  */}
 				
 				{/* <Link to="/create-song">Add a song</Link> to help us grow our resources and share the music that inspires you the most.  */}
-				</p>
+				</p></>
+				}
 			</Container>
 			{user?
 			<>
