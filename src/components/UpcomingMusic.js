@@ -39,6 +39,7 @@ const HomeTwo = ({ msgAlert }) => {
 			<h2>Upcoming Service Music</h2>
 			<ul style={{ listStyleType: "none"}}>
 				<li><strong>Chalice Song </strong>
+				<br></br>
 				<Link to="songs/632531e38dd4f58927546c35">389 Gathered Here</Link></li>
 				<li><strong>Opening Hymn </strong> 
 				<Link to="songs/">TBD</Link></li>

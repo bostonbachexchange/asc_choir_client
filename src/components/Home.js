@@ -16,7 +16,7 @@ const Home = (props) => {
 				<hr></hr>
 				{!user?
 					<>
-						<p>Sign up for a free account to enjoy all our resources</p>
+						<p>Sign in or Sign up for a free account to enjoy all our resources</p>
 						<hr></hr>
 					</>
 				: <UpcomingMusic/> }

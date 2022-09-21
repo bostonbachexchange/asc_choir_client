@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import { NavDropdown } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
+import ChaliceLogo from '../../images/ChaliceLogo'
 const linkStyle = {
     color: 'white',
     textDecoration: 'none'
@@ -89,7 +90,7 @@ const Header = ({ user }) => (
 	<Navbar bg='dark' variant='dark' expand='md'>
 		<Navbar.Brand className='m-2 playFont'>
             <Link to='/' style={linkStyle}>
-				<span className='HoverClass1'>All Souls</span>
+			<span><ChaliceLogo className='repsonsive-image'></ChaliceLogo></span><span className='HoverClass1'> All Souls </span>
             </Link>
         </Navbar.Brand>
 
