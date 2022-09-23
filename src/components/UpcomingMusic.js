@@ -39,6 +39,7 @@ const HomeTwo = ({ msgAlert }) => {
 		<div className='text-center'>
 			<h2>Upcoming Music</h2>
 			<h5>September 25, 2022</h5>
+
 			<div><strong>Chalice Song </strong>
 			<br></br>
 			<Link to="songs/632b94ee23f2807599009157">389 Gathered Here</Link></div>
@@ -47,10 +48,11 @@ const HomeTwo = ({ msgAlert }) => {
 			<Link to="songs/632b94ee23f2807599009153">216 Hashiveinu</Link></div>
 			<div><strong>Centering Music </strong> 
 			<br></br>
-			<Link to="songs/632b94ee23f2807599009159">1037 We Begin Again in Love</Link></div>
+			<Link to="songs/">20 Be Thou My Vision</Link></div>
+			<small>(Not uploaded yet, check back soon)</small>
 			<div><strong>Offertory </strong> 
 			<br></br>
-			<Link to="songs/">TBD</Link></div>
+			<Link to="">Piano Solo</Link></div>
 			<div><strong>Closing Hymn </strong> 
 			<br></br>
 			<Link to="songs/632b94ee23f2807599009158">1011 Return Again</Link></div>
