@@ -17,7 +17,7 @@ const Home = (props) => {
 				<UpcomingMusic/> 
 				{!user?
 					<>
-						<p>Sign in or Sign up for a free account to enjoy all our resources</p>
+						<p><Link to="/sign-up">Create an account</Link> and <Link to="/sign-in">Login</Link> to enjoy all our resources</p>
 						<hr></hr>
 					</>
 				: <>

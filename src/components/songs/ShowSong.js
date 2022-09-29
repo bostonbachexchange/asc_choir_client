@@ -137,16 +137,15 @@ const ShowSong = (props) => {
                                 <> 
                                 <h2 className='text-center'>Videos From Youtube</h2>
                                 {
-                                    song.embedId.map(recordingId => (<>
+                                    song.embedId.map(Id => (<>
                                         <div className='m-2'>
-                                            <YoutubeEmbed embedId= {recordingId} />
+                                            <YoutubeEmbed embedId={Id} />
                                         </div>
                                     </>)
                                     ) 
                                 }
                                 </>
-                            )
-                        : (null)}
+                            ) : (null)}
                     </Card.Text>
                 </Card.Body>
                 {song.scorePDF ?(
@@ -163,6 +162,16 @@ const ShowSong = (props) => {
                      ></embed>
                 </>): (null) }
 
+                {song.webScore ?(
+                <>
+                    {song.webScore.map(score => (
+                        <>
+                            <div className='m-2 text-center'>
+                                <div><img title="Christian Science Hymnal: Hymns 430-603 page 140" src={score} alt="Christian Science Hymnal: Hymns 430-603 page 140"/></div>
+                            </div>
+                        </>)) 
+                    }
+                </>): (null) }
 
                 <Card.Footer className='text-center'>
                     {
