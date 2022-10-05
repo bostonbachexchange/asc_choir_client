@@ -21,16 +21,16 @@ const UpcomingMusic = () => {
 			<Link to="songs/63379bfad6d1a05912c1355f">#11 Chalice Song</Link></div>
 			<div style={musicBorder}><strong>Opening Hymn </strong> 
 			<br></br>
-			<Link to="songs/">TBD</Link></div>
+			<Link to="songs/"> #347 Gather the Spirit</Link></div>
 			<div style={musicBorder}><strong>Centering Music </strong> 
 			<br></br>
-			<Link to="songs/"> TBD</Link></div>
+			<Link to="songs/"> #1069  Ancient Mother</Link></div>
 			<div style={musicBorder}><strong>Offertory </strong> 
 			<br></br>
-			<Link to='songs/'>TBD</Link></div>
+			<Link to='songs/'>Music Video https://www.youtube.com/watch?v=YhcgX1VHsgk</Link></div>
 			<div style={musicBorder}><strong>Closing Hymn </strong> 
 			<br></br>
-			<Link to="songs/">TBD</Link></div>
+			<Link to="songs/">#121  We’ll Build a Land</Link></div>
 			<div style={musicBorder}><strong>Postlude </strong>
 			<br></br>
 			<>piano</></div>			<hr></hr>
