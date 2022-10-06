@@ -34,7 +34,7 @@ const MessageBoardIndex = (props) => {
         return  <>  
                     {/* <img style={{width: 130}} className="m-auto" src={messageboardphoto}></img> */}
                     <Card className='text-center m-4 w-2'>
-                        <p className='m-0'><em>No Meesage Board Posts Yet</em></p>
+                        <p className='m-0'><em>No Message Board Posts Yet</em></p>
                         <p className='m-0'>Say Hello!</p>
                     </Card>
                 </>
