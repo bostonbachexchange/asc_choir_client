@@ -23,18 +23,18 @@ const Home = (props) => {
 						<hr></hr>
 					</>
 				: 	<>
-						<img style={{width: 130}} src={messageboard}></img>
-						<h3 ><Link to="messageboard"><strong>Message Board</strong></Link></h3>
-						<p>Share a post with our community. Tell us what songs you are working on or what inspires you. Leave a comment on other posts to encourge and support your fellow choir members.</p>
-						<hr></hr>
-						<img style={{height: 100}} src={headphones}></img>
-						<h3><Link to="/songs"><strong>Songs</strong></Link></h3>
-						<p>Browse through a large array of diverse repertoire located in our <Link to="/songs">song index</Link>. Choose a song from the index to see the composer, authors, lyrics, recordings, or see a video from youtoube. 
-						
-						{/* If you are learning a song add it to <Link to="/mysongs">My Song List</Link> so you can keep track of what songs you are learning.  */}
-						
-						{/* <Link to="/create-song">Add a song</Link> to help us grow our resources and share the music that inspires you the most.  */}
-						</p>
+						<h2 ><Link to="messageboard"><strong>Message Board</strong></Link></h2>
+						<div className='pb-3' style={{display: 'flex'}}>		
+							<p className='m-4' style={{display: "inline-block", textAlign: 'left', fontSize: 23}}>Share a post with our community. Tell us what songs you are working on or what inspires you. Leave a comment on other posts to encourge and support your fellow choir members.</p>
+							<img style={{height: 130, display: "inline-block"}} src={messageboard}></img>
+							<hr></hr>
+						</div>
+						<h2><Link to="/songs"><strong>Songs</strong></Link></h2>
+						<div className='pb-3' style={{display: 'flex'}}>
+							<img style={{height: 100, display: "inline-block"}} src={headphones}></img>
+							<p className='ms-4' style={{display: "inline-block", textAlign: 'left', fontSize: 23}}>Browse through a large array of diverse repertoire located in our <Link to="/songs">song index</Link>. Choose a song from the index to see the composer, authors, lyrics, recordings, or see a video from youtoube. 
+							</p>
+						</div>
 					</>
 				}
 			</Container>

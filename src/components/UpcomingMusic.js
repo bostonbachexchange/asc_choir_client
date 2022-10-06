@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 const UpcomingMusic = () => {
 	const musicBorder = {
 		border: '1px solid rgba(180, 180, 180)',
-		backgroundColor: 'white', 
+		backgroundColor: 'white',
+		fontSize: 23, 
 	};
 	return (
 		<>
