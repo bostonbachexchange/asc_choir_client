@@ -55,13 +55,13 @@ const SignIn = (props) => {
 	}
 
     return (
-        <div className='row m-2'>
-            <div className='col-sm-10 col-md-8 mx-auto mt-5 playFont'>
-                <h3>Sign In</h3>
+        <div className='row pt-0 pb-2' style={{backgroundColor: 'rgba(255, 255, 255, 0.95)'}} >
+            <div className='col-sm-10 col-md-8 mx-auto mt-4 playFont'>
+                <h3 className='text-center' style={{fontSize: 40}}>Sign In</h3>
                 <hr></hr>
                 <Form onSubmit={onSignIn}>
                     <Form.Group controlId='email' className="m-2">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label><strong>Email address</strong></Form.Label>
                         <Form.Control
                             required
                             type='email'
@@ -72,7 +72,7 @@ const SignIn = (props) => {
                         />
                     </Form.Group>
                     <Form.Group controlId='password' className="m-2">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label><strong>Password</strong></Form.Label>
                         <Form.Control
                             required
                             name='password'

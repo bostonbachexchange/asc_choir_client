@@ -32,7 +32,7 @@ code {
 }
 
 :visited {
-  color: rgb(164, 10, 207);
+  color: rgb(0, 161, 158);
 }
 
 /* :hover {
@@ -48,8 +48,13 @@ code {
 
 .HoverClass1:hover {color: rgb(254, 162, 254) !important;}
 
-#homeIndex {
-  background: rgb(229, 248, 255);
+/* #homeIndex {
+  background: rgb(252, 163, 61);
+} */
+
+.fallbackground {
+  background-image: url("/src/images/fallphoto.jpg");
+  background-size: cover;
 }
 
 /* #homeIndex {

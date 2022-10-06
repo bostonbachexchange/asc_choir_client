@@ -14,6 +14,7 @@ const SignUp = (props) => {
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [accessCode, setAccessCode] = useState('')
+    const [codeDisplay, setCodeDisplay] = useState('block')
     const [access, setAccess] = useState('none')
 
     const navigate = useNavigate()
@@ -25,10 +26,11 @@ const SignUp = (props) => {
             console.log('checkAccess ran. access:', access)
             if (access === 'BeethovenIsAwesome') {
                 setAccess('block')
+                setCodeDisplay('none')
             }
         }
 
-        checkAccess(accessCode, access, setAccess)
+        checkAccess(accessCode, access, setAccess, setAccessCode)
     }
 
 	const onSignUp = (event) => {
@@ -63,29 +65,31 @@ const SignUp = (props) => {
 
     return (
         <>
-        <div className='m-2'>
-        <h1>Enter Code</h1>
-        <p>To create an account, enter the access code given to you by your music director.</p>
-            <Form onSubmit={onCheckAccess}>
-                <Form.Group controlId='accessCode' className='m-2'>
-                    <Form.Label>Access Code</Form.Label>
-                    <Form.Control
-                        required
-                        type='password'
-                        name='accessCode'
-                        value={accessCode}
-                        placeholder='Enter Access Code'
-                        onChange={e => setAccessCode(e.target.value)}
-                    />
-                </Form.Group>
-                <Button className="m-2" variant='primary' type='submit'>
-                        Submit
-                    </Button>
-            </Form>
+        <div className='row pt-4 pb-4 playFont' style={{display: codeDisplay, backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+            <div className='col-sm-10 col-md-8 mx-auto'>
+            <h1 className='t-5 text-center'>Enter Code</h1>
+            <p className='text-center'>To create an account, enter the access code given to you by your music director.</p>
+                <Form onSubmit={onCheckAccess}>
+                    <Form.Group controlId='accessCode' className='m-2' >
+                        <Form.Label>Access Code</Form.Label>
+                        <Form.Control
+                            required
+                            type='password'
+                            name='accessCode'
+                            value={accessCode}
+                            placeholder='Enter Access Code'
+                            onChange={e => setAccessCode(e.target.value)}
+                        />
+                    </Form.Group>
+                    <Button className="m-2" variant='primary' type='submit'>
+                            Submit
+                        </Button>
+                </Form>
+            </div>
         </div>
-        <div className='row playFont' style={{display: access}}>
-            <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                <h3>Sign Up</h3>
+        <div className='row playFont' style={{display: access, backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+            <div className='col-sm-10 col-md-8 mx-auto mt-0'>
+                <h1 className='pt-3 text-center'>Sign Up</h1>
                 <hr></hr>
                 <Form onSubmit={onSignUp}>
                     <Form.Group controlId='email' className="m-2">
@@ -121,9 +125,11 @@ const SignUp = (props) => {
                             onChange={e => setPasswordConfirmation(e.target.value)}
                         />
                     </Form.Group>
-                    <Button className="m-2" variant='primary' type='submit'>
-                        Submit
-                    </Button>
+                    <div className='text-center pb-3'>
+                        <Button className="m-2" variant='primary' type='submit'>
+                            Submit
+                        </Button>
+                    </div>
                 </Form>
             </div>
         </div>

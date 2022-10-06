@@ -16,8 +16,8 @@ const MessageBoardForm = (props) => {
     const { message, handleChange, handleSubmit } = props
 console.log('message in form', message)
     return <>
-            <Container className='m-2 playFont'>
-                <Card>
+            <Container className='text-center playFont'>
+                <Card className='text-center'>
                     <Card.Header><h3 className='text-center'>Add a new Messageboard Post</h3></Card.Header>
                 <Form  onSubmit={handleSubmit} className="m-3">
                         <Form.Group as={Row} className="mb-3">

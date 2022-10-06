@@ -11,8 +11,8 @@ const UpcomingMusic = () => {
 	return (
 		<>
 		<div className='text-center'>
-			<h2>Upcoming Music</h2>
-			<h5><strong>October 9, 2022</strong></h5>
+			<h2 style={{fontSize: 40}}>Upcoming Music</h2>
+			<h5 className='pt-2'><strong>October 9, 2022</strong></h5>
 			<div style={musicBorder}><strong>Prelude </strong>
 			<br></br>
 			<>piano</></div>

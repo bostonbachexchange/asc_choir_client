@@ -5,7 +5,7 @@ import LoadingScreen from '../shared/LoadingScreen'
 import { getMessageBoard } from '../../api/messageboard'
 import messages from '../shared/AutoDismissAlert/messages'
 import CommentForm from '../shared/CommentForm'
-
+import messageboardphoto from '../../images/messageboard.jpg'
 
 const MessageBoardIndex = (props) => {
     const [messageboard, setMessageBoard] = useState(null)
@@ -31,22 +31,27 @@ const MessageBoardIndex = (props) => {
     if (!messageboard) {
         return <LoadingScreen />
     } else if (messageboard.length === 0) {
-        return <p>No Posts yet. Say Hello!.</p>
+        return  <>  
+                    {/* <img style={{width: 130}} className="m-auto" src={messageboardphoto}></img> */}
+                    <Card className='text-center m-4 w-2'>
+                        <p className='m-0'><em>No Meesage Board Posts Yet</em></p>
+                        <p className='m-0'>Say Hello!</p>
+                    </Card>
+                </>
     }
 
     const messageboardCards = messageboard.map(messagepost =>
         <>
-        <Card key={messagepost._id} className='m-2 playFont'>
-        {/* <Card key={message._id} className='m-2'> */}
-            <Card.Header><strong>{messagepost.title}</strong> by <em>{messagepost.owner.email}</em></Card.Header>
-            <Card.Body className='p-1'>
-                <Card.Text>
-                    <div className='text-center'><Link to={`/messageboard/${messagepost._id}`}><span> {messagepost.content}</span></Link></div>
-                    <hr></hr>
-                    <small className='m-1'>{messagepost.comments.length} <em>comments</em></small>
-                </Card.Text>
-            </Card.Body>
-        </Card>
+            <Card key={messagepost._id} className='text-center m-2 playFont'>
+                <Card.Header><strong>{messagepost.title}</strong> by <em>{messagepost.owner.email}</em></Card.Header>
+                <Card.Body className='p-1'>
+                    <Card.Text>
+                        <div className='text-center'><Link to={`/messageboard/${messagepost._id}`}><span> {messagepost.content}</span></Link></div>
+                        <hr></hr>
+                        <small className='m-1'>{messagepost.comments.length} <em>comments</em></small>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
         </>
     )
     
