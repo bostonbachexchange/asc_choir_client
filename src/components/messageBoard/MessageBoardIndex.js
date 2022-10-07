@@ -6,7 +6,8 @@ import { getMessageBoard } from '../../api/messageboard'
 import messages from '../shared/AutoDismissAlert/messages'
 import CommentForm from '../shared/CommentForm'
 import messageboardphoto from '../../images/messageboard.jpg'
-
+import dateFormat, { masks } from "dateformat";
+// console.log(format(new Date(), 'yyyy/MM/dd kk:mm:ss'))
 const MessageBoardIndex = (props) => {
     const [messageboard, setMessageBoard] = useState(null)
     const [error, setError] = useState(false)
@@ -42,13 +43,20 @@ const MessageBoardIndex = (props) => {
 
     const messageboardCards = messageboard.map(messagepost =>
         <>
-            <Card key={messagepost._id} className='text-center m-2 playFont'>
-                <Card.Header><strong>{messagepost.title}</strong> by <em>{messagepost.owner.email}</em></Card.Header>
+
+            <Card key={messagepost._id} className='text-center m-auto playFont' style={{width: "50%", backgroundColor: "rgba(255, 255, 255, 0.95)"}}>
+                <Card.Header style={{fontSize: '1.5em'}}><strong>{messagepost.title}</strong></Card.Header>
+                <Card.Footer> 
+                    from <em>{messagepost.owner.email}</em>
+                </Card.Footer>
+
                 <Card.Body className='p-1'>
                     <Card.Text>
-                        <div className='text-center'><Link to={`/messageboard/${messagepost._id}`}><span> {messagepost.content}</span></Link></div>
-                        <hr></hr>
-                        <small className='m-1'>{messagepost.comments.length} <em>comments</em></small>
+                        <div className='text-center'><span> {messagepost.content}</span></div>
+                        <hr className='mb-0'></hr>
+                        <small className='mt-5'>{dateFormat(messagepost.date, "dddd, mmmm dS, yyyy, h:MM TT")}</small>
+                        <br></br>
+                        <small className='m-1'>{messagepost.comments.length} <em>comments</em></small><Link to={`/messageboard/${messagepost._id}`}>View/Post Comments</Link>
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -57,8 +65,9 @@ const MessageBoardIndex = (props) => {
     
     return (
         <>
-            <h1 className='m-2 playFont text-center'>Community Message Board</h1>
-            <hr></hr>
+            <Card>
+                <h1 className='m-2 playFont text-center' style={{padding: 15}}>Community Message Board</h1>
+            </Card>
             <div className='m-2 playFont'>{messageboardCards}</div>
         </>
     )
