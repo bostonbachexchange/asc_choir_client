@@ -47,6 +47,7 @@ code {
 }
 
 .HoverClass1:hover {color: rgb(254, 162, 254) !important;}
+.HoverClass2:hover {color: rgb(255, 0, 0) !important;}
 
 /* #homeIndex {
   background: rgb(252, 163, 61);

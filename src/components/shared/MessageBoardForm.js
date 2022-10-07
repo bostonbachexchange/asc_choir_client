@@ -5,18 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const MessageBoardForm = (props) => {
-    // title: String
-    // composer:  String
-    // lyricist:String,
-    // type: String,
-    // lyrics:String,
-    // scorePDF:String,
-    // recordings:String,
-    // embedId: String,
+
     const { message, handleChange, handleSubmit } = props
-console.log('message in form', message)
+    console.log('message in form', message)
     return <>
-            <Container className='text-center playFont'>
+            <Container className='text-center playFont' style={{width: '60%'}}>
                 <Card className='text-center'>
                     <Card.Header><h3 className='text-center'>Add a new Messageboard Post</h3></Card.Header>
                 <Form  onSubmit={handleSubmit} className="m-3">
