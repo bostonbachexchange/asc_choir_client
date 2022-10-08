@@ -105,7 +105,7 @@ const ShowSong = (props) => {
     console.log('song', song.recordings)
     return (
         <>
-        <Container className='m-2 fluid playFont'>
+        <Container className='m-auto fluid playFont'>
             <Card>
                 <Card.Header className='text-center'><h2>#{song.hymnNumber} { song.title}</h2></Card.Header>
                 <Card.Body>
@@ -135,7 +135,7 @@ const ShowSong = (props) => {
                         }
                         </div>) : (null)}
                         <hr></hr>
-                        {song.embedId ? 
+                        {(song.embedId !== 0 && song.embedId) ? 
                             ( 
                                 <> 
                                 <h2 className='text-center'>Videos From Youtube</h2>
@@ -147,8 +147,7 @@ const ShowSong = (props) => {
                                     </>)
                                     ) 
                                 }
-                                </>
-                            ) : (null)}
+                                </>) : (null)}
                     </Card.Text>
                 </Card.Body>
                 {song.scorePDF ?(
