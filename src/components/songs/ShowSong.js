@@ -17,18 +17,21 @@ import chopin from '../../audio/chopinwaltz.mp3'
 // scores
 import CR11 from '../../scores/chalice_song_11.pdf'
 import STLT188 from '../../scores/come_come_whoever_you_are_188.pdf'
+import STLT121 from '../../scores/well_build_a_land_121.pdf'
 import STLT318 from '../../scores/we_would_be_one_318.pdf'
 import STLT336 from '../../scores/all_my_memories_of_love_336.pdf'
+import STLT347 from '../../scores/gather_the_spirit_347.pdf'
 import STLT216 from '../../scores/hashiveinu_216.pdf'
 import STLT354 from '../../scores/we_laugh_we_cry_354.pdf'
 import STLT389 from '../../scores/gathered_here_389.pdf'
 import STJ1011 from '../../scores/return_again_1011.pdf'
 import STJ1037 from '../../scores/we_begin_again_in_love_1037.pdf'
 import STJ1058 from '../../scores/be_ours_a_religion_1058.pdf'
+import STJ1069 from '../../scores/ancient_mother_1069.pdf'
 import makeMeAChannel from '../../scores/make_me_a_channel.pdf'
 
 const tuneMap = {jobim, chopin}
-const scoreMap = {makeMeAChannel, CR11, STLT188, STLT216, STLT318, STLT336, STLT354, STLT389, STJ1011, STJ1037, STJ1058}
+const scoreMap = {makeMeAChannel, CR11, STLT188, STLT121, STLT216, STLT318, STLT336, STLT347, STLT354, STLT389, STJ1011, STJ1037, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
