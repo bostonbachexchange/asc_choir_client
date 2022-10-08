@@ -141,6 +141,7 @@ const ShowSong = (props) => {
                         {(song.embedId !== 0 && song.embedId) ? 
                             ( 
                                 <> 
+                                {console.log('Is song.embedId:...?', song.embedId)}
                                 <h2 className='text-center'>Videos From Youtube</h2>
                                 {
                                     song.embedId.map(Id => (<>
