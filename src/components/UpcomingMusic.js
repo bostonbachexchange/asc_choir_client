@@ -13,7 +13,7 @@ const UpcomingMusic = () => {
 		<>
 		<div className='text-center'>
 			<h2 style={{fontSize: 40}}>Upcoming Music</h2>
-			<h5 className='pt-2'><strong>October 9, 2022</strong></h5>
+			<h5 className='pt-2'><strong>October 12, 2022</strong></h5>
 			<div style={musicBorder}><strong>Prelude </strong>
 			<br></br>
 			<>piano</></div>
@@ -22,16 +22,16 @@ const UpcomingMusic = () => {
 			<Link to="songs/6341090a9a5e621cb286fd2e">#11 Chalice Song</Link></div>
 			<div style={musicBorder}><strong>Opening Hymn </strong> 
 			<br></br>
-			<Link to="songs/6341090a9a5e621cb286fd30"> #347 Gather the Spirit</Link></div>
+			<Link to="songs/"> #1023 Building Bridges</Link></div>
 			<div style={musicBorder}><strong>Centering Music </strong> 
 			<br></br>
-			<Link to="songs/6341090a9a5e621cb286fd32"> #1069  Ancient Mother</Link></div>
+			<Link to="songs/"> #1019  Everything Possible</Link></div>
 			<div style={musicBorder}><strong>Offertory </strong> 
 			<br></br>
-			<div>Music Video <a href="https://www.youtube.com/watch?v=YhcgX1VHsgk">https://www.youtube.com/watch?v=YhcgX1VHsgk</a></div></div>
+			<div>TBD<a href=""></a></div></div>
 			<div style={musicBorder}><strong>Closing Hymn </strong> 
 			<br></br>
-			<Link to="songs/6341090a9a5e621cb286fd31">#121  We’ll Build a Land</Link></div>
+			<Link to="songs/">#1014  Answering the Call to Love</Link></div>
 			<div style={musicBorder}><strong>Postlude </strong>
 			<br></br>
 			<>piano</></div>			
