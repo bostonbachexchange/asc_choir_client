@@ -19,10 +19,10 @@ const UpcomingMusic = () => {
 			<>piano</></div>
 			<div style={musicBorder}><strong>Chalice Song </strong>
 			<br></br>
-			<Link to="songs/6341090a9a5e621cb286fd2e">#11 Chalice Song</Link></div>
+			<Link to="songs/63478d8ab715dce8fa40954b">#11 Chalice Song</Link></div>
 			<div style={musicBorder}><strong>Opening Hymn </strong> 
 			<br></br>
-			<Link to="songs/"> #1023 Building Bridges</Link></div>
+			<Link to="songs/63478d8ab715dce8fa409550"> #1023 Building Bridges</Link></div>
 			<div style={musicBorder}><strong>Centering Music </strong> 
 			<br></br>
 			<Link to="songs/"> #1019  Everything Possible</Link></div>
