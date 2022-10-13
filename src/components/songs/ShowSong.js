@@ -14,6 +14,11 @@ import ReactAudioPlayer from 'react-audio-player'
 // audio
 import jobim from '../../audio/jobim.mp3'
 import chopin from '../../audio/chopinwaltz.mp3'
+import CR11_soprano from '../../audio/11_Chalice_Song_Soprano.mp3'
+import CR11_alto from '../../audio/11_Chalice_Song_Alto.mp3'
+import CR11_tenor from '../../audio/11_Chalice_Song_Tenor.mp3'
+import CR11_bass from '../../audio/11_Chalice_Song_Bass.mp3'
+import CR11_satb from '../../audio/11_Chalice_Song_SATB.mp3'
 // scores
 import CR11 from '../../scores/chalice_song_11.pdf'
 import STLT188 from '../../scores/come_come_whoever_you_are_188.pdf'
@@ -25,13 +30,16 @@ import STLT216 from '../../scores/hashiveinu_216.pdf'
 import STLT354 from '../../scores/we_laugh_we_cry_354.pdf'
 import STLT389 from '../../scores/gathered_here_389.pdf'
 import STJ1011 from '../../scores/return_again_1011.pdf'
+import STJ1014 from '../../scores/standing_on_the_side_of_love_1014.pdf'
+import STJ1019 from '../../scores/everything_possible_1019.pdf'
+import STJ1023 from '../../scores/building_bridges_1023.pdf'
 import STJ1037 from '../../scores/we_begin_again_in_love_1037.pdf'
 import STJ1058 from '../../scores/be_ours_a_religion_1058.pdf'
 import STJ1069 from '../../scores/ancient_mother_1069.pdf'
 import makeMeAChannel from '../../scores/make_me_a_channel.pdf'
 
-const tuneMap = {jobim, chopin}
-const scoreMap = {makeMeAChannel, CR11, STLT188, STLT121, STLT216, STLT318, STLT336, STLT347, STLT354, STLT389, STJ1011, STJ1037, STJ1058, STJ1069}
+const tuneMap = {jobim, chopin, CR11_soprano, CR11_alto, CR11_tenor, CR11_bass, CR11_satb}
+const scoreMap = {makeMeAChannel, CR11, STLT188, STLT121, STLT216, STLT318, STLT336, STLT347, STLT354, STLT389, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
@@ -118,16 +126,61 @@ const ShowSong = (props) => {
 
                         {song.recordings ?(<div><strong>recordings:</strong> 
                             <Card className='m-2'>
-                            <Card.Header><strong>Recording</strong></Card.Header>
+                            <Card.Header><strong>Soprano</strong></Card.Header>
                             <Card.Body className='text-center'>
                                     <ReactAudioPlayer 
                                         src={
-                                            tuneMap[song.recordings]
+                                            tuneMap[song.recordings.soprano]
                                         }
                                         controls
                                 />
                             </Card.Body>
-                            </Card></div>) 
+                            </Card>
+                            <Card className='m-2'>
+                            <Card.Header><strong>Alto</strong></Card.Header>
+                            <Card.Body className='text-center'>
+                                    <ReactAudioPlayer 
+                                        src={
+                                            tuneMap[song.recordings.alto]
+                                        }
+                                        controls
+                                />
+                            </Card.Body>
+                            </Card>
+                            <Card className='m-2'>
+                            <Card.Header><strong>Tenor</strong></Card.Header>
+                            <Card.Body className='text-center'>
+                                    <ReactAudioPlayer 
+                                        src={
+                                            tuneMap[song.recordings.tenor]
+                                        }
+                                        controls
+                                />
+                            </Card.Body>
+                            </Card>
+                            <Card className='m-2'>
+                            <Card.Header><strong>Bass</strong></Card.Header>
+                            <Card.Body className='text-center'>
+                                    <ReactAudioPlayer 
+                                        src={
+                                            tuneMap[song.recordings.bass]
+                                        }
+                                        controls
+                                />
+                            </Card.Body>
+                            </Card>
+                            <Card className='m-2'>
+                            <Card.Header><strong>All Parts</strong></Card.Header>
+                            <Card.Body className='text-center'>
+                                    <ReactAudioPlayer 
+                                        src={
+                                            tuneMap[song.recordings.satb]
+                                        }
+                                        controls
+                                />
+                            </Card.Body>
+                            </Card>
+                            </div>) 
                         : (null)}
 
                     <hr></hr>
