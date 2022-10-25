@@ -79,3 +79,12 @@ code {
     bottom: 0px;
     left: 0px;
     opacity: .1; */
+
+
+    @media only screen and (max-width: 845px) {
+      .messageForm {
+        width: 100%;
+        margin-left: 0;
+        padding: 0%;
+      }
+    }

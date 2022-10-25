@@ -53,7 +53,7 @@ const ChangePassword = (props) => {
 
 
     return (
-        <div className='row playFont'>
+        <div className='row playFont bg-light'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
                 <h3>Change Password</h3>
                 <hr></hr>

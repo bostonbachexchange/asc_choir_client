@@ -1,8 +1,11 @@
 // import logo from '../assets/load.gif'
 import UpcomingMusic from './UpcomingMusic'
+import Contacts from './admin/Contacts'
+
 import { Card, Container } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import ChaliceImage from '../images/ChaliceImage'
+
 import headphones from '../images/headphones.jpg'
 import messageboard from '../images/messageboard.jpg'
 
@@ -47,6 +50,7 @@ const Home = (props) => {
 		</Card.Footer>
 		</>
 		: null }
+		{/* <Contacts></Contacts> */}
 		</>
 	)
 }

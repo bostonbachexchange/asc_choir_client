@@ -49,16 +49,15 @@ const MessageBoardIndex = (props) => {
     const messageboardCards = messageboard.map(messagepost =>
         <>
 
-            <Card key={messagepost._id} className='text-center m-auto playFont' style={{width: "75%", backgroundColor: "rgba(255, 255, 255, 0.95)"}}>
+            <Card key={messagepost._id} className='text-center m-auto playFont mb-2' style={{width: "75%", backgroundColor: "rgba(255, 255, 255, 0.95)"}}>
                 <Card.Header style={{fontSize: '1.5em'}}><strong>{messagepost.title}</strong></Card.Header>
                 <Card.Footer> 
                     from <em>{messagepost.owner.email}</em>
                 </Card.Footer>
-
                 <Card.Body className='p-1'>
                     <Card.Text>
                         <div className='text-center'><span> {messagepost.content}</span></div>
-                        <hr className='mb-0'></hr>
+                        <hr className='mb-1'></hr>
                         <small className='mt-5'>{dateFormat(messagepost.date, "dddd, mmmm dS, yyyy, h:MM TT")}</small>
                         <br></br>
                         <small className='m-1'>{messagepost.comments.length} <em>comments</em></small><Link to={`/messageboard/${messagepost._id}`}>View/Post Comments</Link>
@@ -70,17 +69,9 @@ const MessageBoardIndex = (props) => {
     
     return (
         <>
-            <Card className='bg-dark'>
-                {/* <Link to='/' style={linkStyle} className='mt-1 mb-0 text-center playFont'>
-                <hr className='mt-1 mb-0' style={{color: 'white'}}></hr>             
-                    <span><ChaliceLogo className='repsonsive-image'></ChaliceLogo></span><span className='HoverClass2'> Home </span>
-                </Link>   
-                <hr className='mt-1 mb-0' style={{color: 'white'}}></hr>              */}
-                <h1 className='playFont text-center mb-0 pt-0' style={{padding: 15, color: 'white'}}>Community Message Board</h1>
-                <Link to='/' style={linkStyle} className='mt-0 mb-1 text-center playFont'>
-                    <span><ChaliceLogo className='repsonsive-image'></ChaliceLogo></span><span className='HoverClass2'> Home </span>
-                </Link>   
-            </Card>
+            <Card.Title className= 'bg-light p-2 playFont text-center' style={{fontSize: '1.5em'}}>
+                Community Message Board
+            </Card.Title>
             <div className='m-3 playFont'>{messageboardCards}</div>
             <br></br>
         </>

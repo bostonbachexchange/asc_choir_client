@@ -8,7 +8,7 @@ const SongForm = (props) => {
     const { song, handleChange, handleSubmit } = props
 
     return <>
-            <Form className='m-5 playFont' onSubmit={handleSubmit} name="uploaded_file">
+            <Form className='m-5 playFont bg-light p-2' onSubmit={handleSubmit} name="uploaded_file">
                 <h3>Add a New Song to Our Collection</h3>
                 <hr></hr>
                 <Form.Group className="mb-3" >

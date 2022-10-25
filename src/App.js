@@ -21,6 +21,7 @@ import MessageBoardIndex from './components/messageBoard/MessageBoardIndex'
 import CreateMessage from './components/messageBoard/CreateMessage'
 import MessageBoardForm from './components/shared/MessageBoardForm'
 import MySongList from './components/user/MySongList'
+import Contacts from './components/admin/Contacts'
 
 const App = () => {
 
@@ -123,6 +124,14 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<CreateSong msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path='/user-contacts'
+					element={
+						<RequireAuth user={user}>
+							<Contacts msgAlert={msgAlert} user={user} />
 						</RequireAuth>
 					}
 				/>

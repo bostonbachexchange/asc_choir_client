@@ -9,7 +9,7 @@ const MessageBoardForm = (props) => {
     const { message, handleChange, handleSubmit } = props
     console.log('message in form', message)
     return <>
-            <Container className='text-center playFont' style={{width: '60%'}}>
+            <Container className='text-center playFont messageForm'  >
                 <Card className='text-center'>
                     <Card.Header><h3 className='text-center'>Add a new Messageboard Post</h3></Card.Header>
                 <Form  onSubmit={handleSubmit} className="m-3">
