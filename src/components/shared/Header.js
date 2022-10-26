@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom'
 import ChaliceLogo from '../../images/ChaliceLogo'
 const linkStyle = {
     color: 'white',
-    textDecoration: 'none'
+    textDecoration: 'none',
+	fontSize: '2.2em',
+	marginRight: 30,
 }
 const welcomeStyle = {
     color: 'white',
-	fontSize: '0.8em',
+	fontSize: '1.2em',
     textDecoration: 'none'
 }
 

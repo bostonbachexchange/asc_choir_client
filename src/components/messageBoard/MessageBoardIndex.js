@@ -49,7 +49,7 @@ const MessageBoardIndex = (props) => {
     const messageboardCards = messageboard.map(messagepost =>
         <>
 
-            <Card key={messagepost._id} className='text-center m-auto playFont mb-2' style={{width: "75%", backgroundColor: "rgba(255, 255, 255, 0.95)"}}>
+            <Card key={messagepost._id} className='text-center m-auto playFont mb-2' style={{width: "75%", backgroundColor: "rgba(255, 255, 255, 0.97)", fontSize: '1.5em'}}>
                 <Card.Header style={{fontSize: '1.5em'}}><strong>{messagepost.title}</strong></Card.Header>
                 <Card.Footer> 
                     from <em>{messagepost.owner.email}</em>
@@ -69,7 +69,7 @@ const MessageBoardIndex = (props) => {
     
     return (
         <>
-            <Card.Title className= 'bg-light p-2 playFont text-center' style={{fontSize: '1.5em'}}>
+            <Card.Title className= 'bg-light p-3 playFont text-center' style={{fontSize: '2.5em'}}>
                 Community Message Board
             </Card.Title>
             <div className='m-3 playFont'>{messageboardCards}</div>

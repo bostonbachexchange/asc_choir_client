@@ -180,6 +180,17 @@ const ShowSong = (props) => {
                                 />
                             </Card.Body>
                             </Card>
+                            <Card className='m-2'>
+                            <Card.Header><strong>Piano</strong></Card.Header>
+                            <Card.Body className='text-center'>
+                                    <ReactAudioPlayer 
+                                        src={
+                                            tuneMap[song.recordings.piano]
+                                        }
+                                        controls
+                                />
+                            </Card.Body>
+                            </Card>
                             </div>) 
                         : (null)}
 

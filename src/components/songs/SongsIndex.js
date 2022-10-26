@@ -31,9 +31,15 @@ const SongsIndex = (props) => {
         return <p>No songs yet. Better add some.</p>
     }
 
+    const songCardInfo = {
+        width: 'auto',
+        padding: 15,
+        fontSize: '1.5em',
+    };
+
     const songCards = songs.map(song => 
-        <Card key={song.id} className='m-2 playFont'>
-            <Card.Header className='text-center'>
+        <Card key={song.id} className=' playFont' style={songCardInfo}>
+            <Card.Header className=''>
                 <h3><strong><Link to={`/songs/${song._id}`}>{song.hymnNumber} {song.title}</Link></strong></h3>
             </Card.Header>
             <Card.Body>
