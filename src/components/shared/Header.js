@@ -136,8 +136,7 @@ const Header = ({ user }) => (
 		<Navbar.Collapse id='basic-navbar-nav'>
 			<Nav className='m-auto'>
 				{/* {alwaysOptions} */}
-				{user && user.email === ('r@r.r' || 'clapperpianist@gmail.com') 
-				? adminOptions : null}
+				{user && user.email === 'clapperpianist@gmail.com' ? adminOptions : null}
 				{user ? authenticatedOptions : unauthenticatedOptions}
 			</Nav>
 		</Navbar.Collapse>
