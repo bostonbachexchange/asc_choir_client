@@ -22,7 +22,7 @@ const Home = (props) => {
 				<UpcomingMusic/> 
 				{!user?
 					<>
-						<p><Link to="/sign-up">Create an account</Link> and <Link to="/sign-in">Login</Link> to enjoy all our resources</p>
+						<p style={{fontSize: "1.5em"}}><Link to="/sign-up">Create an account</Link> and <Link to="/sign-in">Login</Link> to enjoy all our resources</p>
 						<hr></hr>
 					</>
 				: 	<>
@@ -43,14 +43,13 @@ const Home = (props) => {
 			</Container>
 			{user?
 			<>
-			<Card.Footer style={{backgroundColor: "white", marginTop: 70}}>
+			<Card.Footer style={{backgroundColor: "white", marginTop: 70,}}>
 			<small>
 				<p>Update your personal account information under the <strong>My Account</strong> tab. <Link to="change-password">Change your password</Link> and keep it in a secure place. Keep your account secure. Don't share your password with anyone.</p> 
 			</small>
 		</Card.Footer>
 		</>
 		: null }
-		{/* <Contacts></Contacts> */}
 		</>
 	)
 }

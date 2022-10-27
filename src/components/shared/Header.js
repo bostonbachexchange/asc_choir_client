@@ -11,6 +11,11 @@ const linkStyle = {
 	fontSize: '2.2em',
 	marginRight: 30,
 }
+const dropStyle = {
+    color: 'white',
+    textDecoration: 'none',
+	fontSize: '1.5em',
+}
 const welcomeStyle = {
     color: 'white',
 	fontSize: '1.2em',
@@ -57,13 +62,13 @@ const authenticatedOptions = (
 			menuVariant="dark" 
 			style={linkStyle}
 			>
-			<Nav.Item eventKey='1' className='m-2 playFont'>
-				<Link to='change-password' style={linkStyle}>
+			<Nav.Item eventKey='1' className='text-center playFont'>
+				<Link to='change-password' style={dropStyle}>
 				<span className='HoverClass1'>Change Password</span>
 				</Link>
 			</Nav.Item >
-			<Nav.Item eventKey='2' className='m-2 playFont'>
-				<Link to='sign-out' style={linkStyle}>
+			<Nav.Item eventKey='2' className='text-center playFont'>
+				<Link to='sign-out' style={dropStyle}>
 				<span className='HoverClass1'>Sign Out</span>
 				</Link>
 			</Nav.Item>
@@ -95,13 +100,13 @@ const adminOptions = (
 					menuVariant="dark" 
 					style={linkStyle}
 		>
-			<Nav.Item className='m-2 playFont'>
-				<Link to='user-contacts' style={linkStyle}>
+			<Nav.Item className='text-center playFont'>
+				<Link to='user-contacts' style={dropStyle}>
 					<span className='HoverClass1'>Users</span>
 				</Link>
 			</Nav.Item>
-			<Nav.Item className='m-2 playFont'>
-				<Link to='create-song' style={linkStyle}>
+			<Nav.Item className='text-center playFont'>
+				<Link to='create-song' style={dropStyle}>
 					<span className='HoverClass1'>Add a Song</span>
 				</Link>
 			</Nav.Item>

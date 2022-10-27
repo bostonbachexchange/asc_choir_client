@@ -21,11 +21,13 @@ import CR11_bass from '../../audio/11_Chalice_Song_Bass.mp3'
 import CR11_satb from '../../audio/11_Chalice_Song_SATB.mp3'
 // scores
 import CR11 from '../../scores/chalice_song_11.pdf'
+import STLT57 from '../../scores/all_beautiful_the_march_of_days_57.pdf'
 import STLT188 from '../../scores/come_come_whoever_you_are_188.pdf'
 import STLT121 from '../../scores/well_build_a_land_121.pdf'
 import STLT318 from '../../scores/we_would_be_one_318.pdf'
 import STLT336 from '../../scores/all_my_memories_of_love_336.pdf'
 import STLT347 from '../../scores/gather_the_spirit_347.pdf'
+import STLT387 from '../../scores/the_earth_water_fire_air_387.pdf'
 import STLT216 from '../../scores/hashiveinu_216.pdf'
 import STLT354 from '../../scores/we_laugh_we_cry_354.pdf'
 import STLT389 from '../../scores/gathered_here_389.pdf'
@@ -33,13 +35,15 @@ import STJ1011 from '../../scores/return_again_1011.pdf'
 import STJ1014 from '../../scores/standing_on_the_side_of_love_1014.pdf'
 import STJ1019 from '../../scores/everything_possible_1019.pdf'
 import STJ1023 from '../../scores/building_bridges_1023.pdf'
+import STJ1024 from '../../scores/when_the_spirit_says_do_1024.pdf'
 import STJ1037 from '../../scores/we_begin_again_in_love_1037.pdf'
+import STJ1051 from '../../scores/we_are_1051.pdf'
 import STJ1058 from '../../scores/be_ours_a_religion_1058.pdf'
 import STJ1069 from '../../scores/ancient_mother_1069.pdf'
 import makeMeAChannel from '../../scores/make_me_a_channel.pdf'
 
 const tuneMap = {jobim, chopin, CR11_soprano, CR11_alto, CR11_tenor, CR11_bass, CR11_satb}
-const scoreMap = {makeMeAChannel, CR11, STLT188, STLT121, STLT216, STLT318, STLT336, STLT347, STLT354, STLT389, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1058, STJ1069}
+const scoreMap = {makeMeAChannel, CR11, STLT57, STLT188, STLT121, STLT216, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
@@ -207,7 +211,7 @@ const ShowSong = (props) => {
                             ( 
                                 <> 
                                 {console.log('Is song.embedId:...?', song.embedId.length)}
-                                <h2 className='text-center'>Videos From Youtube</h2>
+                                <h2 className='text-center m-4'>Videos From Youtube</h2>
                                 {
                                     song.embedId.map(Id => (<>
                                         <div className='m-2'>
@@ -226,9 +230,9 @@ const ShowSong = (props) => {
                             scoreMap[song.scorePDF]
                         }
                         type="application/pdf"
-                        frameBorder="0"
+                        frameBorder="2"
                         scrolling="auto"
-                        height="600px"
+                        height="800"
                         width="100%"
                      ></embed>
                 </>): (null) }
