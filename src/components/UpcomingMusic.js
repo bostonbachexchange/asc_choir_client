@@ -21,25 +21,25 @@ const UpcomingMusic = () => {
 			<>piano</></div>
 			<div style={musicBorder}><strong>Chalice Song </strong>
 			<br></br>
-			<Link to="songs/6347903bf24279cee6b85853" className='pt-2'>#11 Chalice Song</Link></div>
+			<Link to="songs/635a03326de76c4c72db1622" className='pt-2'>#11 Chalice Song</Link></div>
 			<div style={musicBorder}><strong>Opening Hymn </strong> 
 			<br></br>
-			<Link to="songs/"> #57 How Beautiful the March of Days</Link></div>
+			<Link to="songs/635a03326de76c4c72db162a"> #57 How Beautiful the March of Days</Link></div>
 			<div style={musicBorder}><strong>Calling the Directions </strong> 
 			<br></br>
-			<Link to="songs/"> #389  Gathered Here</Link></div>
+			<Link to="songs/635a03326de76c4c72db161c"> #389  Gathered Here</Link></div>
 			<div style={musicBorder}><strong>Ritual </strong> 
 			<br></br>
-			<Link to="songs/"> # 387 The Earth, Water, Fire, Air</Link></div>
+			<Link to="songs/635a03326de76c4c72db162b"> # 387 The Earth, Water, Fire, Air</Link></div>
 			<div style={musicBorder}><strong>Centering Hymn </strong> 
 			<br></br>
-			<Link to="songs/"> #1051 We Are</Link></div>
+			<Link to="songs/635a03326de76c4c72db162c"> #1051 We Are</Link></div>
 			<div style={musicBorder}><strong>Offertory </strong> 
 			<br></br>
 			<div>TBD<a href=""></a></div></div>
 			<div style={musicBorder}><strong>Closing Hymn </strong> 
 			<br></br>
-			<Link to="songs/">#1024  Do When the Spirit Says Do</Link></div>
+			<Link to="songs/635a03326de76c4c72db162d">#1024  Do When the Spirit Says Do</Link></div>
 			<div style={musicBorder}><strong>Postlude </strong>
 			<br></br>
 			<>piano</></div>			
