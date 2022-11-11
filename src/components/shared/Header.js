@@ -114,15 +114,15 @@ const adminOptions = (
 	</>
 )
 
-// const alwaysOptions = (
-// 	<>
-// 		<Nav.Item className='m-2 playFont'>
-// 			<Link to='/' style={linkStyle}>
-// 				<span className='HoverClass1'>Home</span>
-// 			</Link>
-// 		</Nav.Item>
-// 	</>
-// )
+const alwaysOptions = (
+	<>
+		<Nav.Item className='m-2 playFont'>
+			<Link to='/about-us' style={linkStyle}>
+				<span className='HoverClass1'>About Us</span>
+			</Link>
+		</Nav.Item>
+	</>
+)
 
 const Header = ({ user }) => (
 	<Navbar bg='dark' variant='dark' expand='md'>
@@ -141,8 +141,8 @@ const Header = ({ user }) => (
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
 
 		<Navbar.Collapse id='basic-navbar-nav'>
-			<Nav className='m-auto'>
-				{/* {alwaysOptions} */}
+			<Nav className='m-2'>
+				{alwaysOptions}
 				{user && user.email === 'clapperpianist@gmail.com' ? adminOptions : null}
 				{user ? authenticatedOptions : unauthenticatedOptions}
 			</Nav>

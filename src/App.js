@@ -22,6 +22,7 @@ import CreateMessage from './components/messageBoard/CreateMessage'
 import MessageBoardForm from './components/shared/MessageBoardForm'
 import MySongList from './components/user/MySongList'
 import Contacts from './components/admin/Contacts'
+import AboutUs from './components/AboutUs'
 
 const App = () => {
 
@@ -62,6 +63,10 @@ const App = () => {
 				<Route
 					path='/sign-in'
 					element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
+				/>
+				<Route
+					path='/about-us'
+					element={<AboutUs user={user}/>}
 				/>
 				<Route
 					path='/sign-out'
