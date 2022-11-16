@@ -11,11 +11,15 @@ const UpcomingMusic = () => {
 		fontSize: 30, 
 		padding: 20,
 	};
+	const dateHeading = {
+		fontSize: "1.5em", 
+		padding: 20,
+	};
 	return (
 		<>
 		<div className='text-center'>
-			<h2 style={{fontSize: 40}}>Upcoming Music <br></br><em>Guest Minister Florence Caplow</em></h2>
-			<h5 className='pt-2'><strong>Novemember 20, 2022</strong></h5>
+			<h2 style={{fontSize: 40}}><em>Guest Minister Florence Caplow</em></h2>
+			<h5 className='pt-2' style={dateHeading}><strong>Novemember 20, 2022</strong></h5>
 			<div style={musicBorder} ><strong>Prelude </strong>
 			<br></br>
 			<>piano</></div>
@@ -40,7 +44,7 @@ const UpcomingMusic = () => {
 		</div>
 		<div className='text-center m-5'>
 			<h2 style={{fontSize: 40}}><em>First Week of Advent</em></h2>
-			<h5 className='pt-2'><strong>Novemember 27, 2022</strong></h5>
+			<h5 className='pt-2' style={dateHeading}><strong>Novemember 27, 2022</strong></h5>
 			<div style={musicBorder} ><strong>Prelude </strong>
 			<br></br>
 			<>piano</></div>
