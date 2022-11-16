@@ -49,7 +49,7 @@ const SongsIndex = (props) => {
                     <div>Includes: 
                         {song.lyrics ?(<small> lyrics</small>) : (null)}
                         {song.recordings ?(<small>, recordings</small>) : (null)}
-                        {song.embedId ?(<small>, video</small>) : (null)}
+                        {(song.embedId.length > 0) ?(<small>, video</small>) : (null)}
                         {song.scorePDF ?(<small>, score</small>) : (null)}
                     </div>
                 </Card.Text>

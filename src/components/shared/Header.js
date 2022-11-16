@@ -49,8 +49,8 @@ const authenticatedOptions = (
 				<span className='HoverClass1'>My Song List</span>
 				</Link>
 			</Nav.Item> */}
-			<Nav.Item className='m-2 playFont'>
-				<Link to='songs' style={linkStyle}>
+			<Nav.Item className=' playFont text-center'>
+				<Link to='songs' style={dropStyle}>
 				<span className='HoverClass1'>Hymns</span>
 				</Link>
 			</Nav.Item>

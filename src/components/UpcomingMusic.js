@@ -37,7 +37,7 @@ const UpcomingMusic = () => {
 			<div>piano<a href=""></a></div></div>
 			<div style={musicBorder}><strong>Closing Hymn </strong> 
 			<br></br>
-			<Link to="songs/">#325 Love Makes A Bridge</Link></div>
+			<Link to="songs/">#317 We Are Not Our Own</Link></div>
 			<div style={musicBorder}><strong>Postlude </strong>
 			<br></br>
 			<>piano</></div>			
