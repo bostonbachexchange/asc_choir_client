@@ -1,8 +1,5 @@
-// import { Form, Button, Spinner } from 'react-bootstrap'
-// import { useState } from 'react'
-// import axios from 'axios'
-// import apiUrl from '../apiConfig'
 import { Link } from 'react-router-dom'
+
 const UpcomingMusic = () => {
 	
 	const musicBorder = {
@@ -18,51 +15,50 @@ const UpcomingMusic = () => {
 	return (
 		<>
 		<div className='text-center'>
-			<h2 style={{fontSize: 40}}><em>Guest Minister Florence Caplow</em></h2>
-			<h5 className='pt-2' style={dateHeading}><strong>Novemember 20, 2022</strong></h5>
+			<h5 className='pt-2' style={dateHeading}><strong>December 11, 2022</strong></h5>
 			<div style={musicBorder} ><strong>Prelude </strong>
 			<br></br>
 			<>piano</></div>
 			<div style={musicBorder}><strong>Chalice Song </strong>
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5e0" className='pt-2'>#1013 Open My Heart</Link></div>
+			<Link to="songs/" className='pt-2'>Joy Introit</Link></div>
 			<div style={musicBorder}><strong>Opening Hymn </strong> 
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5cc"> #368 Gathered Here</Link></div>
+			<Link to="songs/"> #TBD</Link></div>
 			<div style={musicBorder}><strong>Centering Hymn </strong> 
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5de"> #1009 Meditation on Breathing</Link></div>
+			<Link to="songs/63786f9608d576294cc6d5de"> TBD</Link></div>
 			<div style={musicBorder}><strong>Offertory </strong> 
 			<br></br>
 			<div>piano<a href=""></a></div></div>
 			<div style={musicBorder}><strong>Closing Hymn </strong> 
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5e2">#317 We Are Not Our Own</Link></div>
+			<Link to="songs/63786f9608d576294cc6d5e2"></Link></div>
 			<div style={musicBorder}><strong>Postlude </strong>
 			<br></br>
 			<>piano</></div>			
 		</div>
 		<div className='text-center m-5'>
-			<h2 style={{fontSize: 40}}><em>First Week of Advent</em></h2>
-			<h5 className='pt-2' style={dateHeading}><strong>Novemember 27, 2022</strong></h5>
+			<h2 style={{fontSize: 40}}><em>Guest Minister</em></h2>
+			<h5 className='pt-2' style={dateHeading}><strong>December 18, 2022</strong></h5>
 			<div style={musicBorder} ><strong>Prelude </strong>
 			<br></br>
 			<>piano</></div>
 			<div style={musicBorder}><strong>Chalice Song </strong>
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5e0" className='pt-2'>#1013 Open My Heart</Link></div>
+			<Link to="songs/" className='pt-2'>Joy Introit</Link></div>
 			<div style={musicBorder}><strong>Opening Hymn </strong> 
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5e1"> #1020 Woyaya</Link></div>
+			<Link to="songs/">TBD</Link></div>
 			<div style={musicBorder}><strong>Centering Hymn </strong> 
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5dd"> #1008 When Our Heart Is in a Holy Place</Link></div>
+			<Link to="songs/63786f9608d576294cc6d5dd">TBD </Link></div>
 			<div style={musicBorder}><strong>Offertory </strong> 
 			<br></br>
 			<div>piano<a href=""></a></div></div>
 			<div style={musicBorder}><strong>Closing Hymn </strong> 
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5e3">#1028 The Fire of Commitment</Link></div>
+			<Link to="songs/63786f9608d576294cc6d5e3">TBD</Link></div>
 			<div style={musicBorder}><strong>Postlude </strong>
 			<br></br>
 			<>piano</></div>			

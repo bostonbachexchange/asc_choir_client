@@ -44,9 +44,11 @@ import STJ1051 from '../../scores/we_are_1051.pdf'
 import STJ1058 from '../../scores/be_ours_a_religion_1058.pdf'
 import STJ1069 from '../../scores/ancient_mother_1069.pdf'
 import makeMeAChannel from '../../scores/make_me_a_channel.pdf'
+import SingWithJoy from '../../scores/Sing_With_Joy,Sing_Noel.pdf'
+
 
 const tuneMap = {CR11_soprano, CR11_alto, CR11_tenor, CR11_bass, CR11_satb}
-const scoreMap = {makeMeAChannel, CR11, STLT57, STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
+const scoreMap = {makeMeAChannel, SingWithJoy, CR11, STLT57, STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
@@ -120,7 +122,7 @@ const ShowSong = (props) => {
                 })
             })
     }
-    console.log('song', song.recordings)
+    
     return (
         <>
         <Container className='m-auto fluid playFont' style={{fontSize: '1.4em'}}>

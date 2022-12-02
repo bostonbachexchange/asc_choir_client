@@ -5,7 +5,7 @@ import LoadingScreen from '../shared/LoadingScreen'
 import { getMessageBoard } from '../../api/messageboard'
 import messages from '../shared/AutoDismissAlert/messages'
 import CommentForm from '../shared/CommentForm'
-import messageboardphoto from '../../images/messageboard.jpg'
+import messageboardphoto from '../../images/pexels-pixabay-206447.jpg'
 import dateFormat, { masks } from "dateformat";
 import ChaliceLogo from '../../images/ChaliceLogo'
 
@@ -13,6 +13,7 @@ const linkStyle = {
     color: 'white',
     textDecoration: 'none',
 }
+
 const MessageBoardIndex = (props) => {
     const [messageboard, setMessageBoard] = useState(null)
     const [error, setError] = useState(false)
@@ -45,26 +46,28 @@ const MessageBoardIndex = (props) => {
                     </Card>
                 </>
     }
+    const docRoot = document.getElementById('root')
+    docRoot.style.backgroundImage = "url(" + messageboardphoto + ")";
+    docRoot.style.backgroundSize = "cover";
 
     const messageboardCards = messageboard.map(messagepost =>
-        <>
-
+        
             <Card key={messagepost._id} className='text-center m-auto playFont mb-2' style={{width: "75%", backgroundColor: "rgba(255, 255, 255, 0.97)", fontSize: '1.5em'}}>
                 <Card.Header style={{fontSize: '1.5em'}}><strong>{messagepost.title}</strong></Card.Header>
                 <Card.Footer> 
                     from <em>{messagepost.owner.email}</em>
                 </Card.Footer>
                 <Card.Body className='p-1'>
-                    <Card.Text>
-                        <div className='text-center'><span> {messagepost.content}</span></div>
+                    <div>
+                        <p className='text-center'><span> {messagepost.content}</span></p>
                         <hr className='mb-1'></hr>
                         <small className='mt-5'>{dateFormat(messagepost.date, "dddd, mmmm dS, yyyy, h:MM TT")}</small>
                         <br></br>
                         <small className='m-1'>{messagepost.comments.length} <em>comments</em></small><Link to={`/messageboard/${messagepost._id}`}>View/Post Comments</Link>
-                    </Card.Text>
+                    </div>
                 </Card.Body>
             </Card>
-        </>
+        
     )
     
     return (

@@ -23,6 +23,8 @@ import MessageBoardForm from './components/shared/MessageBoardForm'
 import MySongList from './components/user/MySongList'
 import Contacts from './components/admin/Contacts'
 import AboutUs from './components/AboutUs'
+import SingTheJourneyIndex from './components/songs/SingingTheJourney'
+import SingTheLivingTradition from './components/songs/SingingTheLivingTradition'
 
 const App = () => {
 
@@ -55,7 +57,14 @@ const App = () => {
 		<Fragment>
 			<Header user={user} />
 			<Routes>
-				<Route path='/' element={<><Home msgAlert={msgAlert} user={user} /></>} />
+				<Route 
+					path='/' 
+					element={
+						<Home 
+						msgAlert={msgAlert} 
+						user={user} />
+					} 
+				/>
 				<Route
 					path='/sign-up'
 					element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -66,7 +75,9 @@ const App = () => {
 				/>
 				<Route
 					path='/about-us'
-					element={<AboutUs user={user}/>}
+					element={
+					<AboutUs user={user}/>
+					}
 				/>
 				<Route
 					path='/sign-out'
@@ -80,42 +91,58 @@ const App = () => {
 					path='/change-password'
 					element={
 						<RequireAuth user={user}>
-						<ChangePassword msgAlert={msgAlert} user={user} />
+							<ChangePassword msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
-					<Route
-						path='/songs'
-						element={
-							<RequireAuth user={user}>
-								<SongsIndex msgAlert={msgAlert} user={user} />
-							</RequireAuth>
-						}
-					/>
-					<Route
-						path='/mysongs'
-						element={
-							<RequireAuth user={user}>
-								<MySongList msgAlert={msgAlert} user={user} />
-							</RequireAuth>
-						}
-					/>
-					<Route
-						path='/messageboard'
-						element={
-							<RequireAuth user={user}>
-								<MessageBoardIndex msgAlert={msgAlert} user={user} />
-								<CreateMessage msgAlert={msgAlert} user={user} />
-							</RequireAuth>
-						}
-					/> 
-					<Route
-						path='/messageboard/:id'
-						element={
-							<RequireAuth user={user}>
-								<ShowMessage msgAlert={msgAlert} user={user} />
-							 </RequireAuth>
-						}
-					/>
+				<Route
+					path='/songs'
+					element={
+						<RequireAuth user={user}>
+							<SongsIndex msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path='/singingthelivingtradition'
+					element={
+						<RequireAuth user={user}>
+							<SingTheLivingTradition msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path='/singingthejourney'
+					element={
+						<RequireAuth user={user}>
+							<SingTheJourneyIndex msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path='/mysongs'
+					element={
+						<RequireAuth user={user}>
+							<MySongList msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path='/messageboard'
+					element={
+						<RequireAuth user={user}>
+							<MessageBoardIndex msgAlert={msgAlert} user={user} />
+							<CreateMessage msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/> 
+				<Route
+					path='/messageboard/:id'
+					element={
+						<RequireAuth user={user}>
+							<ShowMessage msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/>
 				<Route
 					path='/songs/:id'
 					element={
@@ -140,7 +167,6 @@ const App = () => {
 						</RequireAuth>
 					}
 				/>
-
 			</Routes>
 			{msgAlerts.map((msgAlert) => (
 			<AutoDismissAlert

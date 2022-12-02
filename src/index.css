@@ -49,42 +49,12 @@ code {
 .HoverClass1:hover {color: rgb(252, 133, 90) !important;}
 .HoverClass2:hover {color: rgb(255, 0, 0) !important;}
 
-/* #homeIndex {
-  background: rgb(252, 163, 61);
-} */
+
 
 .fallbackground {
   background-image: url("/src/images/fallphoto.jpg");
   background-size: cover;
+  background-position: 'center';
+  background-repeat: 'no-repeat';
 }
 
-/* #homeIndex {
-  position: relative; 
-  height: 100vh;
-  width: 100%;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* position: absolute; */
-  /* opacity: 1;
-}
-
-#homeIndex::before {    
-    /* content: ""; */
-    /* background-image: url('https://placekitten.com/1200/800');
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: .1; */
-
-
-    /* @media only screen and (max-width: 845px) {
-      .messageForm {
-        width: 100%;
-        margin-left: 0;
-        padding: 0%;
-      }
-    } */

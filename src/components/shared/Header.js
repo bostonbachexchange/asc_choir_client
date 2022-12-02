@@ -14,7 +14,7 @@ const linkStyle = {
 const dropStyle = {
     color: 'white',
     textDecoration: 'none',
-	fontSize: '1.5em',
+	fontSize: '1.4em',
 }
 const welcomeStyle = {
     color: 'white',
@@ -51,7 +51,17 @@ const authenticatedOptions = (
 			</Nav.Item> */}
 			<Nav.Item className=' playFont text-center'>
 				<Link to='songs' style={dropStyle}>
-				<span className='HoverClass1'>Hymns</span>
+				<span className='HoverClass1'>Choral Music</span>
+				</Link>
+			</Nav.Item>
+			<Nav.Item className=' playFont text-center'>
+				<Link to='singingthelivingtradition' style={dropStyle}>
+				<span className='HoverClass1'>Singing The Living Tradition</span>
+				</Link>
+			</Nav.Item>
+			<Nav.Item className=' playFont text-center'>
+				<Link to='singingthejourney' style={dropStyle}>
+				<span className='HoverClass1'>Singing The Journey</span>
 				</Link>
 			</Nav.Item>
 		</NavDropdown>
