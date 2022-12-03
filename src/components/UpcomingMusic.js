@@ -12,9 +12,21 @@ const UpcomingMusic = () => {
 		fontSize: "1.5em", 
 		padding: 20,
 	};
+	const rehearsalItems = {
+		fontSize: '1.7em',
+	};
+
 	return (
 		<>
 		<div className='text-center'>
+			<h1>Music For Next rehearsal</h1>
+			<li style={rehearsalItems}>
+				<Link to='songs/638aa63f4b20cd06ee1fd04e'>Sing with Joy, Sing Noel!</Link>
+			</li>
+		</div>
+		<hr></hr>
+		<div className='text-center'>
+			<h2 style={{fontSize: 40}}><em>Sunday Service</em></h2>
 			<h5 className='pt-2' style={dateHeading}><strong>December 11, 2022</strong></h5>
 			<div style={musicBorder} ><strong>Prelude </strong>
 			<br></br>
