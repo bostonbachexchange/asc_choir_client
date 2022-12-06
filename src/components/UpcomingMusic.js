@@ -21,10 +21,10 @@ const UpcomingMusic = () => {
 		<div className='text-center'>
 			<h1>Music For Next rehearsal</h1>
 			<li style={rehearsalItems}>
-				<Link to='songs/638aa63f4b20cd06ee1fd04e'>Sing with Joy, Sing Noel!</Link>
+				<Link to='songs/638fb51b9a61ed3f095f2a00'>Sing with Joy, Sing Noel!</Link>
 			</li>
 			<li style={rehearsalItems}>
-				<Link to='songs/638aa63f4b20cd06ee1fd04e'>Joy Inroit</Link>
+				<Link to='songs/638fb51b9a61ed3f095f29fd'>Joy Inroit</Link>
 			</li>
 		</div>
 		<hr></hr>
