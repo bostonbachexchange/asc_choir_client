@@ -25,6 +25,7 @@ import Contacts from './components/admin/Contacts'
 import AboutUs from './components/AboutUs'
 import SingTheJourneyIndex from './components/songs/SingingTheJourney'
 import SingTheLivingTradition from './components/songs/SingingTheLivingTradition'
+import ChoralResponsesIndex from './components/songs/ChoralResponses'
 
 const App = () => {
 
@@ -99,6 +100,14 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<SongsIndex msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path='/choralresponses'
+					element={
+						<RequireAuth user={user}>
+							<ChoralResponsesIndex msgAlert={msgAlert} user={user} />
 						</RequireAuth>
 					}
 				/>

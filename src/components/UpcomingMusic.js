@@ -23,6 +23,9 @@ const UpcomingMusic = () => {
 			<li style={rehearsalItems}>
 				<Link to='songs/638aa63f4b20cd06ee1fd04e'>Sing with Joy, Sing Noel!</Link>
 			</li>
+			<li style={rehearsalItems}>
+				<Link to='songs/638aa63f4b20cd06ee1fd04e'>Joy Inroit</Link>
+			</li>
 		</div>
 		<hr></hr>
 		<div className='text-center'>

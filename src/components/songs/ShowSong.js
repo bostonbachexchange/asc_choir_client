@@ -17,7 +17,14 @@ import CR11_alto from '../../audio/11_Chalice_Song_Alto.mp3'
 import CR11_tenor from '../../audio/11_Chalice_Song_Tenor.mp3'
 import CR11_bass from '../../audio/11_Chalice_Song_Bass.mp3'
 import CR11_satb from '../../audio/11_Chalice_Song_SATB.mp3'
+import CR5_soprano from '../../audio/5_Joy_Introit_soprano.mp3'
+import CR5_alto from '../../audio/5_Joy_Introit_alto.mp3'
+import CR5_tenor from '../../audio/5_Joy_Introit_tenor.mp3'
+import CR5_bass from '../../audio/5_Joy_Introit_bass.mp3'
+import CR5_piano from '../../audio/5_Joy_Introit_piano.mp3'
+import CR5_satb from '../../audio/5_Joy_Introit_allparts.mp3'
 // scores
+import CR5 from '../../scores/Joy_Introit_11.pdf'
 import CR11 from '../../scores/chalice_song_11.pdf'
 import STLT57 from '../../scores/all_beautiful_the_march_of_days_57.pdf'
 import STLT188 from '../../scores/come_come_whoever_you_are_188.pdf'
@@ -47,8 +54,8 @@ import makeMeAChannel from '../../scores/make_me_a_channel.pdf'
 import SingWithJoy from '../../scores/Sing_With_Joy,Sing_Noel.pdf'
 
 
-const tuneMap = {CR11_soprano, CR11_alto, CR11_tenor, CR11_bass, CR11_satb}
-const scoreMap = {makeMeAChannel, SingWithJoy, CR11, STLT57, STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
+const tuneMap = {CR5_soprano, CR5_alto, CR5_tenor, CR5_bass, CR5_satb, CR5_piano, CR11_soprano, CR11_alto, CR11_tenor, CR11_bass, CR11_satb}
+const scoreMap = {makeMeAChannel, SingWithJoy, CR5, CR11, STLT57, STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
@@ -66,10 +73,7 @@ const ShowSong = (props) => {
     useEffect(() => {
         getOneSong(id)
             .then(res => {
-                console.log('res data', res.data.song)
                 setSong(res.data.song)
-                // setAudio()
-                console.log('song', song)
             })
             .catch(err => {
 
@@ -122,7 +126,7 @@ const ShowSong = (props) => {
                 })
             })
     }
-    
+
     return (
         <>
         <Container className='m-auto fluid playFont' style={{fontSize: '1.4em'}}>
@@ -132,7 +136,23 @@ const ShowSong = (props) => {
                     <Card.Text>
                         {song.composer ?(<div><strong>composer:</strong> {song.composer}</div>) : (null)}
                         {song.lyricist ?(<div><strong>lyricist:</strong> {song.lyricist}</div>) : (null)}
-
+                        {/* {song.recordings ?( song.recordings.map(recording => (
+                        <>
+                            <div><strong>recordings:</strong> 
+                                <Card className='m-2'>
+                                <Card.Header><strong>{recording.title}</strong></Card.Header>
+                                <Card.Body className='text-center'>
+                                        <ReactAudioPlayer 
+                                            src={
+                                                tuneMap[recording.file]
+                                            }
+                                            controls
+                                    />
+                                </Card.Body>
+                                </Card>
+                                </div> 
+                        </>)))
+                            : (null)} */}
                         {song.recordings ?(<div><strong>recordings:</strong> 
                             <Card className='m-2'>
                             <Card.Header><strong>Soprano</strong></Card.Header>

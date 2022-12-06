@@ -55,6 +55,11 @@ const authenticatedOptions = (
 				</Link>
 			</Nav.Item>
 			<Nav.Item className=' playFont text-center'>
+				<Link to='choralresponses' style={dropStyle}>
+				<span className='HoverClass1'>Choral Responses</span>
+				</Link>
+			</Nav.Item>
+			<Nav.Item className=' playFont text-center'>
 				<Link to='singingthelivingtradition' style={dropStyle}>
 				<span className='HoverClass1'>Singing The Living Tradition</span>
 				</Link>

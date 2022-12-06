@@ -4,6 +4,9 @@ import axios from 'axios'
 export const getAllSongs = () => {
     return axios(`${apiUrl}/songs`)
 }
+export const getCRSongs = () => {
+    return axios(`${apiUrl}/choralresponses`)
+}
 export const getStjSongs = () => {
     return axios(`${apiUrl}/singingthejourney`)
 }
