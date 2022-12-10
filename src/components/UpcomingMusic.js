@@ -39,16 +39,16 @@ const UpcomingMusic = () => {
 			<Link to="songs/" className='pt-2'>Joy Introit</Link></div>
 			<div style={musicBorder}><strong>Opening Hymn </strong> 
 			<br></br>
-			<Link to="songs/"> #TBD</Link></div>
+			<Link to="songs/"> #298 Wake Now My Senses</Link></div>
 			<div style={musicBorder}><strong>Centering Hymn </strong> 
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5de"> TBD</Link></div>
+			<Link to="songs/63786f9608d576294cc6d5de"> #388 Dona Nobis Pacem</Link></div>
 			<div style={musicBorder}><strong>Offertory </strong> 
 			<br></br>
-			<div>piano<a href=""></a></div></div>
+			<div>#18 What Wonderous Love<a href=""></a></div></div>
 			<div style={musicBorder}><strong>Closing Hymn </strong> 
 			<br></br>
-			<Link to="songs/63786f9608d576294cc6d5e2"></Link></div>
+			<Link to="songs/">#16 Tis A Gift to Be Simple</Link></div>
 			<div style={musicBorder}><strong>Postlude </strong>
 			<br></br>
 			<>piano</></div>			
