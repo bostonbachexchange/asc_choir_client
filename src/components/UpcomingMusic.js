@@ -59,8 +59,6 @@ const UpcomingMusic = () => {
 			<br></br>
 			<Link to="songs/">#251 Silent Night</Link></div>
 		</div>
-			{/* <hr></hr> */}
-		</div>
 		</>
 	)
 }
