@@ -60,25 +60,25 @@ const UpcomingMusic = () => {
 			<>piano</></div>
 			<div style={musicBorder}><strong>Hymn </strong> 
 			<br></br>
-			<Link to="songs/"> # O Come All Ye Faithful</Link></div>
+			<Link to="songs/"> #253 O Come All Ye Faithful</Link></div>
 			<div style={musicBorder}><strong>Solstice </strong> 
 			<br></br>
-			<Link to="songs/"> # Deck the Halls</Link></div>
+			<Link to="songs/"> #235 Deck the Halls</Link></div>
 			<div style={musicBorder}><strong>Offertory </strong> 
 			<br></br>
 			<Link to='songs/6398f71d966ec532bd94ad3a'>Sing with Joy, Sing Noel!</Link></div>			
 			<div style={musicBorder}><strong>Kwanzaa </strong> 
 			<br></br>
-			<Link to="songs/"># Let There Be Peace on Earth</Link></div>
+			<Link to="songs/">Let There Be Peace on Earth</Link></div>
 			<div style={musicBorder}><strong>Christmas</strong> 
 			<br></br>
-			<Link to="songs/"># What Child is This</Link></div>
+			<Link to="songs/">#231 Angels We Have Heard on High</Link></div>
 			<div style={musicBorder}><strong>Hanukkah</strong> 
 			<br></br>
 			<Link to="songs/">#221 Light One Candle</Link></div>
 			<div style={musicBorder}><strong>UU</strong> 
 			<br></br>
-			<Link to="songs/"># We Are</Link></div>
+			<Link to="songs/">#1051 We Are</Link></div>
 			<div style={musicBorder}><strong>UU</strong> 
 			<br></br>
 			<Link to="songs/">#251 Silent Night</Link></div>
