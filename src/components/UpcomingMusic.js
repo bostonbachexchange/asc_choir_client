@@ -27,31 +27,7 @@ const UpcomingMusic = () => {
 				<Link to='songs/6398f71d966ec532bd94ad37'>Joy Inroit</Link>
 			</li>
 		</div>
-		<hr></hr>
-		<div className='text-center m-5'>
-			<h2 style={{fontSize: 40}}><em>Guest Minister</em></h2>
-			<h5 className='pt-2' style={dateHeading}><strong>December 18, 2022</strong></h5>
-			<div style={musicBorder} ><strong>Prelude </strong>
-			<br></br>
-			<>piano</></div>
-			<div style={musicBorder}><strong>Chalice Song </strong>
-			<br></br>
-			<Link to="songs/6398f71d966ec532bd94ad37" className='pt-2'>Joy Introit</Link></div>
-			<div style={musicBorder}><strong>Opening Hymn </strong> 
-			<br></br>
-			<Link to="songs/"># Love Will Guide Us</Link></div>
-			<div style={musicBorder}><strong>Centering Hymn </strong> 
-			<br></br>
-			<Link to="songs/6398f71d966ec532bd94ad44"># When Our Heart Is in a Holy Place </Link></div>
-			<div style={musicBorder}><strong>Offertory </strong> 
-			<br></br>
-			<div><a href="https://www.youtube.com/watch?v=X-_7XfaS7Mc">Loosen, Loosen</a></div></div>
-			<div style={musicBorder}><strong>Closing Hymn </strong> 
-			<br></br>
-			<a href="https://www.youtube.com/watch?v=a2vh87lWEuU">Every Time I Feel The Spirit</a></div>
-			<div style={musicBorder}><strong>Postlude </strong>
-			<br></br>
-			<div><a href="https://www.youtube.com/watch?v=88gtXTULVvY">Oh, River</a></div></div>			
+		<hr></hr>			
 		<div className='text-center pt-5'>
 			<h2 style={{fontSize: 40}}><em>Christmas Eve</em></h2>
 			<h5 className='pt-2' style={dateHeading}><strong>December 24, 2022</strong></h5>
