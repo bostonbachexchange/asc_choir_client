@@ -9,7 +9,6 @@ import ChaliceImage from '../images/ChaliceImage'
 import headphones from '../images/headphones.jpg'
 import messageboard from '../images/messageboard.jpg'
 import messageboardphoto from '../images/pexels-pixabay-206447.jpg'
-
 const docRoot = document.getElementById('root')
 docRoot.style.backgroundImage = "url(" + messageboardphoto + ")";
 docRoot.style.backgroundSize = "cover";
@@ -23,6 +22,7 @@ const Home = (props) => {
 				<ChaliceImage></ChaliceImage>
 				<h1 style={{marginTop: 15}}>All Souls Choir</h1>
 				<h3>Braintree</h3>
+				<iframe src={"https://content.123cards.com/ecards/98775/hls/christmas-classic-sweet-christmas-ecards-98775-video-master-1671136335.m3u8"}></iframe>
 				<hr></hr>
 				<UpcomingMusic/> 
 				{!user?
