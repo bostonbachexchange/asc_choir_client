@@ -9,23 +9,11 @@ import YoutubeEmbed from '../shared/YoutubeEmbed'
 import EditSongModal from './EditSongModal'
 import { Document, Page } from 'react-pdf'
 
-// import ReactAudioPlayer from 'react-audio-player'
-// // audio
-// import CR11_soprano from '../../audio/11_Chalice_Song_Soprano.mp3'
-// import CR11_alto from '../../audio/11_Chalice_Song_Alto.mp3'
-// import CR11_tenor from '../../audio/11_Chalice_Song_Tenor.mp3'
-// import CR11_bass from '../../audio/11_Chalice_Song_Bass.mp3'
-// import CR11_satb from '../../audio/11_Chalice_Song_SATB.mp3'
-// import CR5_soprano from '../../audio/5_Joy_Introit_soprano.mp3'
-// import CR5_alto from '../../audio/5_Joy_Introit_alto.mp3'
-// import CR5_tenor from '../../audio/5_Joy_Introit_tenor.mp3'
-// import CR5_bass from '../../audio/5_Joy_Introit_bass.mp3'
-// import CR5_piano from '../../audio/5_Joy_Introit_piano.mp3'
-// import CR5_satb from '../../audio/5_Joy_Introit_allparts.mp3'
-// scores
+
 import CR5 from '../../scores/Joy_Introit_11.pdf'
 import CR11 from '../../scores/chalice_song_11.pdf'
 import STLT57 from '../../scores/all_beautiful_the_march_of_days_57.pdf'
+import STLT123 from '../../scores/spirit_of_life_123.pdf'
 import STLT188 from '../../scores/come_come_whoever_you_are_188.pdf'
 import STLT121 from '../../scores/well_build_a_land_121.pdf'
 import STLT317 from '../../scores/317_We_Are_Not_Our_Own.pdf'
@@ -54,13 +42,11 @@ import SingWithJoy from '../../scores/Sing_With_Joy,Sing_Noel.pdf'
 import SongRecordings from './SongRecordings'
 
 
-// const tuneMap = {CR5_soprano, CR5_alto, CR5_tenor, CR5_bass, CR5_satb, CR5_piano, CR11_soprano, CR11_alto, CR11_tenor, CR11_bass, CR11_satb}
-const scoreMap = {makeMeAChannel, SingWithJoy, CR5, CR11, STLT57, STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
+const scoreMap = {makeMeAChannel, SingWithJoy, CR5, CR11, STLT57, STLT123,STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
     const [editModalShow, setEditModalShow] = useState(false)
-    // const [audio, setAudio] = useState(null)
     const [updated, setUpdated] = useState(false)
 
     const { id } = useParams()
