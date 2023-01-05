@@ -21,43 +21,34 @@ const UpcomingMusic = () => {
 		<div className='text-center'>
 			<h1>Music For Next rehearsal</h1>
 			<li style={rehearsalItems}>
-				<Link to='songs/6398f71d966ec532bd94ad3a'>Sing with Joy, Sing Noel!</Link>
-			</li>
-			<li style={rehearsalItems}>
-				<Link to='songs/'>Let There Be Peace on Earth</Link>
+				<a href='https://www.youtube.com/watch?v=tMmkJMMrTTE'>Like a Mighty Stream</a>
 			</li>
 		</div>
 		<hr></hr>			
 		<div className='text-center pt-5'>
-			<h2 style={{fontSize: 40}}><em>Christmas Eve</em></h2>
-			<h5 className='pt-2' style={dateHeading}><strong>December 24, 2022</strong></h5>
+			<h2 style={{fontSize: 40}}><em>Sunday Service</em></h2>
+			<h5 className='pt-2' style={dateHeading}><strong>January 8, 2023</strong></h5>
 			<div style={musicBorder} ><strong>Prelude </strong>
 			<br></br>
-			<>piano</></div>
-			<div style={musicBorder}><strong>Hymn </strong> 
+			<>Improvisation</></div>
+			<div style={musicBorder}><strong>Chalice Song: Choir</strong> 
 			<br></br>
-			<Link to="songs/"> #253 O Come All Ye Faithful</Link></div>
-			<div style={musicBorder}><strong>Solstice </strong> 
+			<Link to="songs/">Flame Welcome All</Link></div>
+			<div style={musicBorder}><strong>Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/"> #235 Deck the Halls</Link></div>
+			<Link to="songs/"> #1020 Woyaya</Link></div>
+			<div style={musicBorder}><strong>Hymn: Choir</strong> 
+			<br></br>
+			<Link to="songs/"> #123 Spirit of Life</Link></div>
 			<div style={musicBorder}><strong>Offertory </strong> 
 			<br></br>
-			<Link to='songs/6398f71d966ec532bd94ad3a'>Sing with Joy, Sing Noel!</Link></div>			
-			<div style={musicBorder}><strong>Kwanzaa </strong> 
+			<>Video</></div>			
+			<div style={musicBorder}><strong>Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/">Let There Be Peace on Earth</Link></div>
-			<div style={musicBorder}><strong>Christmas</strong> 
+			<Link to="songs/">#396 I Know This Rose Will Open</Link></div>
+			<div style={musicBorder}><strong>Postlude</strong> 
 			<br></br>
-			<Link to="songs/">#231 Angels We Have Heard on High</Link></div>
-			<div style={musicBorder}><strong>Hanukkah</strong> 
-			<br></br>
-			<Link to="songs/">#221 Light One Candle</Link></div>
-			<div style={musicBorder}><strong>UU</strong> 
-			<br></br>
-			<Link to="songs/">#1051 We Are</Link></div>
-			<div style={musicBorder}><strong>UU</strong> 
-			<br></br>
-			<Link to="songs/">#251 Silent Night</Link></div>
+			<>Improvisation</></div>
 		</div>
 		</>
 	)

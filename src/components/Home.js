@@ -22,7 +22,7 @@ const Home = (props) => {
 				<ChaliceImage></ChaliceImage>
 				<h1 style={{marginTop: 15}}>All Souls Choir</h1>
 				<h3>Braintree</h3>
-				<iframe src={"https://content.123cards.com/ecards/98775/hls/christmas-classic-sweet-christmas-ecards-98775-video-master-1671136335.m3u8"}></iframe>
+				<img className='rounded-pill' width="300" height="203" src="https://westmountchurch.org/wp-content/uploads/choir-cartoon-300x203.jpg"  alt="" decoding="async"></img>
 				<hr></hr>
 				<UpcomingMusic/> 
 				{!user?
