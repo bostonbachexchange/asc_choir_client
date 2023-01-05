@@ -13,14 +13,15 @@ import { Document, Page } from 'react-pdf'
 import CR5 from '../../scores/Joy_Introit_11.pdf'
 import CR11 from '../../scores/chalice_song_11.pdf'
 import STLT57 from '../../scores/all_beautiful_the_march_of_days_57.pdf'
+import STLT121 from '../../scores/well_build_a_land_121.pdf'
 import STLT123 from '../../scores/spirit_of_life_123.pdf'
 import STLT188 from '../../scores/come_come_whoever_you_are_188.pdf'
-import STLT121 from '../../scores/well_build_a_land_121.pdf'
 import STLT317 from '../../scores/317_We_Are_Not_Our_Own.pdf'
 import STLT318 from '../../scores/we_would_be_one_318.pdf'
 import STLT336 from '../../scores/all_my_memories_of_love_336.pdf'
 import STLT347 from '../../scores/gather_the_spirit_347.pdf'
 import STLT387 from '../../scores/the_earth_water_fire_air_387.pdf'
+import STLT396 from '../../scores/I_Know_This_Rose_396.pdf'
 import STLT216 from '../../scores/hashiveinu_216.pdf'
 import STLT354 from '../../scores/we_laugh_we_cry_354.pdf'
 import STLT389 from '../../scores/gathered_here_389.pdf'
@@ -42,7 +43,7 @@ import SingWithJoy from '../../scores/Sing_With_Joy,Sing_Noel.pdf'
 import SongRecordings from './SongRecordings'
 
 
-const scoreMap = {makeMeAChannel, SingWithJoy, CR5, CR11, STLT57, STLT123,STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
+const scoreMap = {makeMeAChannel, SingWithJoy, CR5, CR11, STLT57, STLT123,STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STLT396, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
