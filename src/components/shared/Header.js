@@ -27,13 +27,13 @@ const authenticatedOptions = (
 
 		<Nav.Item className='m-2 playFont'>
 			<Link to='/' style={linkStyle}>
-				<span className='HoverClass1'>Home</span>
+				<span className='HoverClass1'>Sunday Services</span>
 			</Link>
 		</Nav.Item>
 
 		<Nav.Item className='m-2 playFont'>
 			<Link to='messageboard' style={linkStyle}>
-				<span className='HoverClass1'>Messageboard</span>
+				<span className='HoverClass1'>Blog</span>
 			</Link>
 		</Nav.Item>
 

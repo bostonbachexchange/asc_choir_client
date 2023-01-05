@@ -33,19 +33,19 @@ const UpcomingMusic = () => {
 			<>Improvisation</></div>
 			<div style={musicBorder}><strong>Chalice Song: Choir</strong> 
 			<br></br>
-			<Link to="songs/">Flame Welcome All</Link></div>
+			<Link to="songs/63b71f9270bb4f80c8b7a41b">Flame Welcome All</Link></div>
 			<div style={musicBorder}><strong>Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/"> #1020 Woyaya</Link></div>
+			<Link to="songs/63b71f9270bb4f80c8b7a42b"> #1020 Woyaya</Link></div>
 			<div style={musicBorder}><strong>Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/"> #123 Spirit of Life</Link></div>
+			<Link to="songs/63b71f9270bb4f80c8b7a409"> #123 Spirit of Life</Link></div>
 			<div style={musicBorder}><strong>Offertory </strong> 
 			<br></br>
 			<>Video</></div>			
 			<div style={musicBorder}><strong>Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/">#396 I Know This Rose Will Open</Link></div>
+			<Link to="songs/63b71f9270bb4f80c8b7a40a">#396 I Know This Rose Will Open</Link></div>
 			<div style={musicBorder}><strong>Postlude</strong> 
 			<br></br>
 			<>Improvisation</></div>
