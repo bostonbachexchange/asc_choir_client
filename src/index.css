@@ -49,7 +49,9 @@ code {
 .HoverClass1:hover {color: wheat !important;}
 .HoverClass2:hover {color: rgb(255, 0, 0) !important;}
 
-
+.descriptionContainer {
+  display: flex,
+}
 
 .fallbackground {
   background-image: url("/src/images/fallphoto.jpg");
