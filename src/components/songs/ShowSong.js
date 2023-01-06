@@ -38,13 +38,13 @@ import STJ1037 from '../../scores/we_begin_again_in_love_1037.pdf'
 import STJ1051 from '../../scores/we_are_1051.pdf'
 import STJ1058 from '../../scores/be_ours_a_religion_1058.pdf'
 import STJ1069 from '../../scores/ancient_mother_1069.pdf'
-import LikeAMightStream from '../../scores/Like_A_Mighty_Stream.pdf'
+import likeAMightStream from '../../scores/Like_A_Mighty_Stream.pdf'
 import makeMeAChannel from '../../scores/make_me_a_channel.pdf'
 import SingWithJoy from '../../scores/Sing_With_Joy,Sing_Noel.pdf'
 import SongRecordings from './SongRecordings'
 
 
-const scoreMap = {makeMeAChannel, SingWithJoy, LikeAMightStream, CR5, CR11, STLT57, STLT123,STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STLT396, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
+const scoreMap = {makeMeAChannel, SingWithJoy, likeAMightStream, CR5, CR11, STLT57, STLT123,STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STLT396, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
