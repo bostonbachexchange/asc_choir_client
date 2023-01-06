@@ -26,7 +26,7 @@ const AboutUs = () => {
                 </div> 
             </Card> */}
             <Card style={aboutUsStyle} className='playFont'>
-                <div style={{display: 'flex'}}>
+                <div className='aboutUs'>
                     <div style={{flex: '6'}}>
                         <h2 className="mt-3 ps-4" style={{fontSize: '32px'}}><strong>All Souls Choir</strong>
                         </h2>

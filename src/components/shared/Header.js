@@ -8,7 +8,7 @@ import ChaliceLogo from '../../images/ChaliceLogo'
 const linkStyle = {
     color: 'white',
     textDecoration: 'none',
-	fontSize: '2.2em',
+	fontSize: '2em',
 	marginRight: 30,
 }
 const dropStyle = {
@@ -19,25 +19,31 @@ const dropStyle = {
 const welcomeStyle = {
     color: 'white',
 	fontSize: '1.2em',
-    textDecoration: 'none'
+    textDecoration: 'none',
+	position: 'absolute',
+	left: 0,
+	top: 0,
+	zIndex: 1,
 }
 
 const authenticatedOptions = (
 	<>
 
-		<Nav.Item className='m-2 playFont'>
+		<Nav.Item className='m-auto playFont'>
 			<Link to='/' style={linkStyle}>
 				<span className='HoverClass1'>Sunday Services</span>
 			</Link>
 		</Nav.Item>
 
-		<Nav.Item className='m-2 playFont'>
+		<Nav.Item className='m-auto playFont'>
 			<Link to='messageboard' style={linkStyle}>
 				<span className='HoverClass1'>Blog</span>
 			</Link>
 		</Nav.Item>
 
-		<NavDropdown   
+
+		<NavDropdown 
+			className='m-auto'  
 			title={
 				<span className="navTitle playFont HoverClass1">Music</span>
 				} 	
@@ -72,11 +78,17 @@ const authenticatedOptions = (
 		</NavDropdown>
 
 		
-		<NavDropdown   
+		<NavDropdown  
+			className='m-auto' 
 			title={<span className="navTitle playFont HoverClass1">My Account</span>} 
 			menuVariant="dark" 
 			style={linkStyle}
 			>
+			{/* <Nav.Item eventKey='1' className='text-center playFont'>
+				<Link to='profile' style={dropStyle}>
+				<span className='HoverClass1'>Profile</span>
+				</Link>
+			</Nav.Item > */}
 			<Nav.Item eventKey='1' className='text-center playFont'>
 				<Link to='change-password' style={dropStyle}>
 				<span className='HoverClass1'>Change Password</span>
@@ -93,12 +105,12 @@ const authenticatedOptions = (
 
 const unauthenticatedOptions = (
 	<>
-        <Nav.Item className='m-2'>
+        <Nav.Item className='m-auto'>
 		    <Link to='sign-in' style={linkStyle}>
 				<span className='HoverClass1 playFont'>Login</span>
 			</Link>
         </Nav.Item>
-        <Nav.Item className='m-2'>
+        <Nav.Item className='m-auto'>
 		    <Link to='sign-up' style={linkStyle}>
 				<span className='HoverClass1 playFont'>Create Account</span>
 			</Link>
@@ -131,7 +143,7 @@ const adminOptions = (
 
 const alwaysOptions = (
 	<>
-		<Nav.Item className='m-2 playFont'>
+		<Nav.Item className='m-auto playFont'>
 			<Link to='/about-us' style={linkStyle}>
 				<span className='HoverClass1'>About Us</span>
 			</Link>
@@ -140,29 +152,36 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-	<Navbar bg='dark' variant='dark' expand='md'>
-		<Navbar.Brand className='m-2 playFont'>
-            <Link to='/' style={linkStyle}>
-			<span><ChaliceLogo className='repsonsive-image'></ChaliceLogo></span><span className='HoverClass1'> All Souls </span>
-            </Link>
-			{user && (
-				<>
-					{/* <br></br> */}
-						<div className='navbar-text playFont pt-0 m-auto' style={welcomeStyle}>Welcome, {user.email}</div>
-				</>
-				)}
-        </Navbar.Brand>
-
-		<Navbar.Toggle aria-controls='basic-navbar-nav' />
-
-		<Navbar.Collapse id='basic-navbar-nav'>
-			<Nav className='m-2'>
-				{alwaysOptions}
-				{user && user.email === 'clapperpianist@gmail.com' ? adminOptions : null}
-				{user ? authenticatedOptions : unauthenticatedOptions}
+	<>
+		<Navbar bg='dark' variant='dark' expand='md'>
+			<span style={{}}>
+				{user && (
+					<>
+							<span className='welcomeStyle m-2 playFont' style={{}}>Welcome, {user.email}</span>
+					</>
+					)}
+			</span>
+			<Navbar.Brand className='m-auto playFont'>
+				<Link to='/' style={linkStyle}>
+				<span><ChaliceLogo className='repsonsive-image'></ChaliceLogo></span><span className='HoverClass1'> All Souls Choir</span>
+				</Link>
+			</Navbar.Brand>
+		</Navbar>
+		<Navbar bg='dark' variant='dark' expand='md'>
+			<Navbar.Toggle className='m-auto' aria-controls='basic-navbar-nav'/>
+			<Navbar.Collapse id='basic-navbar-nav'>
+				<Nav className='m-auto'>
+					{alwaysOptions}
+					{user ? authenticatedOptions : unauthenticatedOptions}
+				</Nav>
+			</Navbar.Collapse>
+		</Navbar>
+		<Navbar bg='dark' variant='dark' expand='sm'>
+			<Nav className='m-auto'>
+				{user && user.email === 'r@r.r' ? adminOptions : null}
 			</Nav>
-		</Navbar.Collapse>
-	</Navbar>
+		</Navbar>
+	</>
 )
 
 export default Header
