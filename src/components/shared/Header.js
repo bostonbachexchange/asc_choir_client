@@ -16,15 +16,9 @@ const dropStyle = {
     textDecoration: 'none',
 	fontSize: '1.4em',
 }
-const welcomeStyle = {
-    color: 'white',
-	fontSize: '1.2em',
-    textDecoration: 'none',
-	position: 'absolute',
-	left: 0,
-	top: 0,
-	zIndex: 1,
-}
+
+const allowedEmails = ['r@r.r', 'clapperpianist@gmail.com']
+
 
 const authenticatedOptions = (
 	<>
@@ -79,7 +73,7 @@ const authenticatedOptions = (
 
 		
 		<NavDropdown  
-			className='m-auto' 
+			className='m-auto myAccount' 
 			title={<span className="navTitle playFont HoverClass1">My Account</span>} 
 			menuVariant="dark" 
 			style={linkStyle}
@@ -100,6 +94,7 @@ const authenticatedOptions = (
 				</Link>
 			</Nav.Item>
 		</NavDropdown>
+
 	</>
 )
 
@@ -154,11 +149,30 @@ const alwaysOptions = (
 const Header = ({ user }) => (
 	<>
 		<Navbar bg='dark' variant='dark' expand='md'>
-			<span style={{}}>
+			<span>
 				{user && (
-					<>
-							<span className='welcomeStyle m-2 playFont' style={{}}>Welcome, {user.email}</span>
-					</>
+					<span className='accountStyle playFont text-center' >
+						<NavDropdown  
+							title={<span className="navTitle playFont HoverClass1">👤 Welcome, {user.email}</span>} 
+							menuVariant="dark" 
+							>
+							{/* <Nav.Item eventKey='1' className='text-center playFont'>
+								<Link to='profile' style={dropStyle}>
+								<span className='HoverClass1'>Profile</span>
+								</Link>
+							</Nav.Item > */}
+							<Nav.Item eventKey='1' className='text-center playFont'>
+								<Link to='change-password' style={dropStyle}>
+								<span className='HoverClass1'>Change Password</span>
+								</Link>
+							</Nav.Item >
+							<Nav.Item eventKey='2' className='text-center playFont'>
+								<Link to='sign-out' style={dropStyle}>
+								<span className='HoverClass1'>Sign Out</span>
+								</Link>
+							</Nav.Item>
+						</NavDropdown>
+					</span>
 					)}
 			</span>
 			<Navbar.Brand className='m-auto playFont'>
@@ -168,7 +182,7 @@ const Header = ({ user }) => (
 			</Navbar.Brand>
 		</Navbar>
 		<Navbar bg='dark' variant='dark' expand='md'>
-			<Navbar.Toggle className='m-auto' aria-controls='basic-navbar-nav'/>
+			<Navbar.Toggle className='ms-4' aria-controls='basic-navbar-nav'/>
 			<Navbar.Collapse id='basic-navbar-nav'>
 				<Nav className='m-auto'>
 					{alwaysOptions}
@@ -178,7 +192,7 @@ const Header = ({ user }) => (
 		</Navbar>
 		<Navbar bg='dark' variant='dark' expand='sm'>
 			<Nav className='m-auto'>
-				{user && user.email === 'r@r.r' ? adminOptions : null}
+				{user && allowedEmails.includes(user.email) ? adminOptions : null}
 			</Nav>
 		</Navbar>
 	</>

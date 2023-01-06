@@ -62,18 +62,36 @@ code {
   font-size: 1.2em;
   text-decoration: none;
   position: absolute;
-  right: 10px;
+  right: 5px;
+  top: 0;
+  z-index: 1;
+}
+.accountStyle {
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none;
+  position: absolute;
+  left: 5px;
   top: 0;
   z-index: 1;
 }
 .aboutUs {
   display: flex;
 }
+
 @media only screen and (max-width: 600px) {
   .welcomeStyle {
     display: none;
   }
+  .accountStyle {
+    display: none;
+  }
   .aboutUs {
     display: block;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .myAccount {
+    display: none;
   }
 }
