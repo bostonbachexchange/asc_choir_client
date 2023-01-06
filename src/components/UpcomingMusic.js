@@ -21,7 +21,7 @@ const UpcomingMusic = () => {
 		<div className='text-center'>
 			<h1>Music For Next rehearsal</h1>
 			<li style={rehearsalItems}>
-				<a href='https://www.youtube.com/watch?v=tMmkJMMrTTE'>Like a Mighty Stream</a>
+				<Link to='songs/63b71f9270bb4f80c8b7a41c'>Like a Mighty Stream</Link>
 			</li>
 		</div>
 		<hr></hr>			
