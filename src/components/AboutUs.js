@@ -30,7 +30,7 @@ const AboutUs = () => {
                     <div style={{flex: '6'}}>
                         <h2 className="mt-3 ps-4" style={{fontSize: '32px'}}><strong>All Souls Choir</strong>
                         </h2>
-                        <p className="m-auto p-4">The All Souls Choir is an SATB group comprising of members of All Souls Church who are amateur singers from many different backgrounds. Directed by Jacob Clapper, the Choir meets weekly on Sunday Mornings and  afternoons in the church.We are a small, but mighty, volunteer chorus. No matter what your skill level or your experience, you are welcome to sing with us. The best way to find our rehearsal schedule is to sign up for an account on our site or contact our music director.</p>
+                        <p className="m-auto p-4">The All Souls Choir is an SATB group comprising of members of All Souls Church who are amateur singers from many different backgrounds. The Choir meets weekly on Sunday Mornings and  afternoons in the church.We are a small, but mighty, volunteer chorus. No matter what your skill level or your experience, you are welcome to sing with us.</p>
                         <br></br>
                         <p className="m-auto p-4">For more information about joining the choir, contact <a href="mailto:clapperpianist@gmail.com">Jacob Clapper</a></p>
                     </div>
