@@ -27,7 +27,7 @@ const UpcomingMusic = () => {
 		<hr></hr>			
 		<div className='text-center pt-5'>
 			<h2 style={{fontSize: 40}}><em>Sunday Service</em></h2>
-			<h5 className='pt-2' style={dateHeading}><strong>January 8, 2023</strong></h5>
+			<h5 className='pt-2' style={dateHeading}><strong>January 15, 2023</strong></h5>
 			<div style={musicBorder} ><strong>Prelude: Jacob </strong>
 			<br></br>
 			<>Blue in Green</></div>
