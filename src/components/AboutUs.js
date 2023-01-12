@@ -28,11 +28,22 @@ const AboutUs = () => {
             <Card style={aboutUsStyle} className='playFont'>
                 <div className='aboutUs'>
                     <div style={{flex: '6'}}>
-                        <h2 className="mt-3 ps-4" style={{fontSize: '32px'}}><strong>All Souls Choir</strong>
+                        <h2 className="mt-3 ps-4" style={{fontSize: '32px'}}><strong>About Us</strong>
                         </h2>
-                        <p className="m-auto p-4">The All Souls Choir is an SATB group comprising of members of All Souls Church who are amateur singers from many different backgrounds. The Choir meets weekly on Sunday Mornings and  afternoons in the church.We are a small, but mighty, volunteer chorus. No matter what your skill level or your experience, you are welcome to sing with us.</p>
+                        <p className="m-auto p-4">
+                        <>Welcome to the All Souls Church Choir!
                         <br></br>
-                        <p className="m-auto p-4">For more information about joining the choir, contact <a href="mailto:clapperpianist@gmail.com">Jacob Clapper</a></p>
+                        <br></br>
+                        We are a group of dedicated volunteer singers who come together to enhance the worship experience at All Souls Church in Braintree, Massachusetts. Our choir is open to all members of the congregation, regardless of experience or skill level.
+                        <br></br>
+                        <br></br>
+                        As a Unitarian Universalist church, All Souls is a welcoming and inclusive community, and our choir reflects that diversity. We strive to create a warm and supportive environment where all voices are valued and appreciated.
+                        <br></br>
+                        <br></br>
+                        Our choir rehearses on Sunday Mornings at 9:00 AM, and occasionally Sunday afternoons around noon. We sing at the Sunday morning service each week. Whether you're an experienced singer or just starting out, we invite you to join us in making music together.
+                        <br></br>
+                        <br></br>
+                        If you're interested in joining the choir, please contact our Music Director, Jacob Clapper, at <a href="mailto:clapperpianist@gmail.com">clapperpianist@gmail.com</a>. We look forward to singing with you!</></p>
                     </div>
                     <div className='border border-3 rounded m-3 mt-auto mb-auto' style={{flex: '4'}}>
                         <img src={plaque} style={{width: '100%'}}/>
