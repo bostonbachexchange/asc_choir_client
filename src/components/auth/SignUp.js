@@ -67,8 +67,10 @@ const SignUp = (props) => {
         <>
         <div className='row pt-4 pb-4 playFont' style={{display: codeDisplay, backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
             <div className='col-sm-10 col-md-8 mx-auto'>
-            <h1 className='t-5 text-center'>Enter Code</h1>
-            <p className='text-center'>To create an account, enter the access code given to you by your music director.</p>
+            <h1 className='t-5 text-center'>Create an Account</h1>
+            <hr></hr>
+            <p className='text-center m-3 p-2 fs-5'>Welcome to the All Souls Church Choir website! We're so glad you're interested in singing with us. To ensure the safety and security of our choir members, we have a simple signup process that verifies your identity through an <strong>access code</strong>. If you haven't received an access code yet, please reach out to our Music Director, <strong>Jacob Clapper</strong>, at <a href='mailto:clapperpianist@gmail.com'>clapperpianist@gmail.com</a>. Once you have your access code, simply enter it in the space provided and follow the prompts to create your account. Once you have an account, you can log in with your email and password. If you have any problems or questions, please don't hesitate to reach out to us for help. We're here to make the experience as smooth and enjoyable as possible</p>
+            <hr></hr>
                 <Form onSubmit={onCheckAccess}>
                     <Form.Group controlId='accessCode' className='m-2' >
                         <Form.Label>Access Code</Form.Label>

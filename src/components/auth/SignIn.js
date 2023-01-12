@@ -57,8 +57,11 @@ const SignIn = (props) => {
     return (
         <div className='row pt-0 pb-2' style={{backgroundColor: 'rgba(255, 255, 255, 0.95)'}} >
             <div className='col-sm-10 col-md-8 mx-auto mt-4 playFont'>
-                <h3 className='text-center' style={{fontSize: 40}}>Sign In</h3>
+                <h1 className='text-center' style={{fontSize: 40}}>Login</h1>
                 <hr></hr>
+                <p className='m-2 p-2 text-center fs-5'>Welcome back to the All Souls Church Choir website! We're glad you're here. Please enter your <strong>email</strong> and <strong>password</strong> in the fields provided to access all the features of the site. If you've forgotten your password or experience any problems logging in, please don't hesitate to contact our <strong>Jacob Clapper</strong>, at <a href='mailto:clapperpianist@gmail.com'>clapperpianist@gmail.com</a> for assistance.</p>
+                <hr></hr>
+
                 <Form onSubmit={onSignIn}>
                     <Form.Group controlId='email' className="m-2">
                         <Form.Label><strong>Email address</strong></Form.Label>
