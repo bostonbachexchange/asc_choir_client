@@ -19,6 +19,7 @@ import STLT188 from '../../scores/come_come_whoever_you_are_188.pdf'
 import STLT317 from '../../scores/317_We_Are_Not_Our_Own.pdf'
 import STLT318 from '../../scores/we_would_be_one_318.pdf'
 import STLT336 from '../../scores/all_my_memories_of_love_336.pdf'
+import STLT346 from '../../scores/346_come_sing_a_song.pdf'
 import STLT347 from '../../scores/gather_the_spirit_347.pdf'
 import STLT387 from '../../scores/the_earth_water_fire_air_387.pdf'
 import STLT396 from '../../scores/I_Know_This_Rose_396.pdf'
@@ -36,15 +37,17 @@ import STJ1024 from '../../scores/when_the_spirit_says_do_1024.pdf'
 import STJ1028 from '../../scores/1028_The_Fire_of_Commitment.pdf'
 import STJ1037 from '../../scores/we_begin_again_in_love_1037.pdf'
 import STJ1051 from '../../scores/we_are_1051.pdf'
+import STJ1057 from '../../scores/1057_Go_Lifted_Up.pdf'
 import STJ1058 from '../../scores/be_ours_a_religion_1058.pdf'
 import STJ1069 from '../../scores/ancient_mother_1069.pdf'
 import likeAMightStream from '../../scores/Like_A_Mighty_Stream.pdf'
+import likeABridge from '../../scores/Like_A_Bridge_Over_Troubled.pdf'
 import makeMeAChannel from '../../scores/make_me_a_channel.pdf'
 import SingWithJoy from '../../scores/Sing_With_Joy,Sing_Noel.pdf'
 import SongRecordings from './SongRecordings'
 
 
-const scoreMap = {makeMeAChannel, SingWithJoy, likeAMightStream, CR5, CR11, STLT57, STLT123,STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT347, STLT354, STLT387, STLT389, STLT396, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1058, STJ1069}
+const scoreMap = {makeMeAChannel, SingWithJoy, likeAMightStream, likeABridge, CR5, CR11, STLT57, STLT123,STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT346, STLT347, STLT354, STLT387, STLT389, STLT396, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1057, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
