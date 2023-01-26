@@ -21,6 +21,9 @@ const UpcomingMusic = () => {
 		<div className='text-center'>
 			<h1>Music For Next rehearsal</h1>
 			<li style={rehearsalItems}>
+				<a href='https://www.youtube.com/watch?v=FcBdkOX1nnA'>The Gift of Love</a>
+			</li>
+			<li style={rehearsalItems}>
 				<Link to='songs/'>Like a Bridge Over Troubled Waters</Link>
 			</li>
 		</div>
@@ -33,19 +36,19 @@ const UpcomingMusic = () => {
 			<>piano</></div>
 			<div style={musicBorder}><strong>Chalice Song: Choir</strong> 
 			<br></br>
-			<Link to="songs/63b71f9270bb4f80c8b7a41b">Flame Welcome All</Link></div>
+			<Link to="songs/63d1e19ba02f8ae62453b4dd">Flame Welcome All</Link></div>
 			<div style={musicBorder}><strong>Opening Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/"> # 346  Come Sing a Song With Me</Link></div>
+			<Link to="songs/63d1e19ba02f8ae62453b4cf"> # 346 Come Sing a Song With Me</Link></div>
 			<div style={musicBorder}><strong>Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/63b71f9270bb4f80c8b7a415"> # 1058  Be Ours a Religion</Link></div>
+			<Link to="songs/63d1e19ba02f8ae62453b4d7"> # 1058  Be Ours a Religion</Link></div>
 			<div style={musicBorder}><strong>Offertory: Choir </strong> 
 			<br></br>
-			<Link to='songs/'># 1057  Go Lifted Up</Link></div>			
+			<Link to='songs/63d1e19ba02f8ae62453b4d6'># 1057  Go Lifted Up</Link></div>			
 			<div style={musicBorder}><strong>Closing Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/63b71f9270bb4f80c8b7a41f"># 121  We’ll Build a Land</Link></div>
+			<Link to="songs/63d1e19ba02f8ae62453b4e1"># 121 We’ll Build a Land</Link></div>
 			<div style={musicBorder}><strong>Postlude: Aarnav Tuladhar</strong> 
 			<br></br>
 			<>Maple Leaf Rag</></div>
