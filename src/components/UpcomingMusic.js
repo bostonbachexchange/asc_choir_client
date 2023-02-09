@@ -30,28 +30,28 @@ const UpcomingMusic = () => {
 		<hr></hr>			
 		<div className='text-center pt-5'>
 			<h2 style={{fontSize: 40}}><em>Sunday Service</em></h2>
-			<h5 className='pt-2' style={dateHeading}><strong>January 29, 2023</strong></h5>
+			<h5 className='pt-2' style={dateHeading}><strong>February 9, 2023</strong></h5>
 			<div style={musicBorder} ><strong>Prelude: Jacob </strong>
 			<br></br>
-			<>piano</></div>
+			<>The Man I Love, Gerswhin</></div>
 			<div style={musicBorder}><strong>Chalice Song: Choir</strong> 
 			<br></br>
-			<Link to="songs/63d1e19ba02f8ae62453b4dd">Flame Welcome All</Link></div>
+			<Link to="songs/">#12 May We Be Open to This Light</Link></div>
 			<div style={musicBorder}><strong>Opening Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/63d1e19ba02f8ae62453b4cf"> # 346 Come Sing a Song With Me</Link></div>
-			<div style={musicBorder}><strong>Hymn: Choir</strong> 
+			<Link to="songs/"> #21 For the Beauty of the Earth</Link></div>
+			<div style={musicBorder}><strong>Centering Music: Beau</strong> 
 			<br></br>
-			<Link to="songs/63d1e19ba02f8ae62453b4d7"> # 1058  Be Ours a Religion</Link></div>
+			<a href="https://vimeo.com/489421828"> Pipa Language || Lifted in Love by Lea Morris</a></div>
 			<div style={musicBorder}><strong>Offertory: Choir </strong> 
 			<br></br>
-			<Link to='songs/63d1e19ba02f8ae62453b4d6'># 1057  Go Lifted Up</Link></div>			
+			<Link to='songs/'>The Gift of Love, arr Hal H. Hopson</Link></div>			
 			<div style={musicBorder}><strong>Closing Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/63d1e19ba02f8ae62453b4e1"># 121 We’ll Build a Land</Link></div>
-			<div style={musicBorder}><strong>Postlude: Aarnav Tuladhar</strong> 
+			<Link to="songs/">#1067 Mother Earth, Beloved Garden</Link></div>
+			<div style={musicBorder}><strong>Postlude: Jacob</strong> 
 			<br></br>
-			<>Maple Leaf Rag</></div>
+			<>Somebody Loves Me, Gershwin</></div>
 		</div>
 		</>
 	)
