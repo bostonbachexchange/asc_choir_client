@@ -48,7 +48,7 @@ const UpcomingMusic = () => {
 			<Link to='songs/'>The Gift of Love, arr Hal H. Hopson</Link></div>			
 			<div style={musicBorder}><strong>Closing Hymn: Choir</strong> 
 			<br></br>
-			<Link to="songs/">#1067 Mother Earth, Beloved Garden</Link></div>
+			<Link to="songs/">#100 I'v got Peace Like a River</Link></div>
 			<div style={musicBorder}><strong>Postlude: Jacob</strong> 
 			<br></br>
 			<>Somebody Loves Me, Gershwin</></div>
