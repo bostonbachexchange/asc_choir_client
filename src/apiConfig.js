@@ -1,7 +1,8 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: 'https://ascchoirapi.herokuapp.com',
+	production: 'https://asc-api.fly.dev',
+	// production: 'https://ascchoirapi.herokuapp.com',
 	development: 'http://localhost:8000',
 }
 
