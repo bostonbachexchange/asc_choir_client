@@ -10,8 +10,6 @@ import axios from 'axios'
 // }
 
 export const createComment = (user, commentId, newComment) => {
-    console.log('this is user', user)
-    console.log('this is newComment', newComment)
 	return axios({
 		url: `${apiUrl}/create-comments/${commentId}`,
 		method: 'POST',

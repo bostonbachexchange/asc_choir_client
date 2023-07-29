@@ -8,6 +8,8 @@ import messages from '../shared/AutoDismissAlert/messages'
 const SingTheLivingTradition = (props) => {
     const [songs, setStltSongs] = useState(null)
     const [error, setError] = useState(false)
+    const [searchQuery, setSearchQuery] = useState('');
+
     const { msgAlert } = props
     useEffect(() => {
         console.log('Use effect ran, stlt')
@@ -38,7 +40,17 @@ const SingTheLivingTradition = (props) => {
         fontSize: '1.5em',
     };
 
-    const songCards = songs.map(song => 
+
+    const filteredSongs = searchQuery
+    ? songs.filter((song) =>
+        Object.values(song).some(
+          (value) =>
+            value && value.toString().toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      )
+    : songs;
+
+    const songCards = filteredSongs.map(song => 
         <Card key={song.id} className=' playFont' style={songCardInfo}>
             <Card.Header>
                 <h3><strong><Link to={`/songs/${song._id}`}>{song.hymnNumber} {song.title}</Link></strong></h3>
@@ -58,7 +70,22 @@ const SingTheLivingTradition = (props) => {
         </Card>
         )
     return (
-        <>{songCards}</>
+        <>
+            <div className='w-100 bg-dark mb-0'>
+            <hr style={{color: "white", marginTop: "0"}}></hr>
+                <div>
+                    <h1 style={{color: 'whitesmoke', paddingTop: "3px"}} className='justify-content-center align-items-center d-flex'>Singing the Living Tradition</h1>
+                </div>
+                <div className='w-100 bg-dark justify-content-center align-items-center d-flex mt-0 pb-3'>
+                    <img className="mt-0" style={{ height: '150px', radius: '10px'}} src="https://jruuc.org/wp-content/uploads/2020/09/hymnal1-1536x2048.jpg" alt="Hymnal" />
+                </div>
+            </div>
+            <Card style={{ display: 'block' }} className='p-2 fs-5 text-center'>
+                <label className='p-2' htmlFor='search'>Search:</label>
+                <input className='p-2 w-50' id='search' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+            </Card>
+            {songCards}
+        </>
     )
 }
 

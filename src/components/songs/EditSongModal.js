@@ -2,30 +2,43 @@ import React, { useState } from "react";
 import { Modal } from 'react-bootstrap'
 import SongForm from "../shared/SongForm";
 import { updateSongSuccess, updateSongFailure } from '../shared/AutoDismissAlert/messages'
-
+import { updateSong } from "../../api/songs";
 const EditSongModal = (props) => {
-    const { user, show, handleClose, updateSong, msgAlert, triggerRefresh } = props
-    const [song, setSong] = useState(props.song)
+    const { user, show, handleClose, msgAlert, triggerRefresh, song } = props
+    // const [song, setSong] = useState(props.song)
+    const [newSong, setSong] = useState({})
 
-    console.log(song)
+    console.log('song._id', song._id)
+    // const handleChange = (e) => {
+    //     setSong(prevSong => {
+    //         const updatedValue = e.target.value 
+    //         const updatedName = e.target.name 
+    //         const updatedSong = {
+    //             [updatedName]: updatedValue
+    //         }
+    //         return {
+    //             ...prevSong,
+    //             ...updatedSong
+    //         }
+    //     })
+    // }
     const handleChange = (e) => {
-        setSong(prevSong => {
-            const updatedValue = e.target.value 
-            const updatedName = e.target.name 
-            const updatedSong = {
-                [updatedName]: updatedValue
-            }
-            return {
-                ...prevSong,
-                ...updatedSong
-            }
-        })
-    }
-
+        const { name, value } = e.target;
+      
+        if (name === "embedId") {
+          const embedIds = value ? value.split(",").map((id) => id.trim()) : null;
+          console.log('embedIds', embedIds); // print the array of video IDs
+          setSong((prevSong) => ({ ...prevSong, [name]: embedIds }));
+        } else {
+          setSong((prevSong) => ({ ...prevSong, [name]: value }));
+        }
+      };
+      
+      
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        updateSong(user, song)
+        updateSong(user, newSong, song)
             .then(() => handleClose())
             // .then(res => console.log('this is the res from api call', res))
             .then(() => {

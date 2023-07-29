@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Modal } from 'react-bootstrap'
 import CommentForm from "../shared/CommentForm";
-import { createComment } from '../../api/comments'
+import { updateComment } from '../../api/comments'
 // import { updateMessageSuccess, updateMessageFailure } from '../shared/AutoDismissAlert/messages'
 
-const NewCommentModal = (props) => {
+const UpdateCommentModal = (props) => {
     const { user, message, show, handleClose, msgAlert, triggerRefresh } = props
     const [comment, setComment] = useState({})
+
+    console.log('comment in updatecomment', comment)
     
     const handleChange = (e) => {
         setComment(prevComment => {
@@ -26,9 +28,10 @@ const NewCommentModal = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        createComment(user, message._id, comment)
+        updateComment(user, message._id, comment)
             .then(() => comment.owner = user._id)
             .then(() => handleClose())
+            // .then(res => console.log('this is the res from api call', res))
             .then(() => {
                 msgAlert({
                     heading: 'Oh Yeah!',
@@ -54,4 +57,4 @@ const NewCommentModal = (props) => {
     )
 }
 
- export default NewCommentModal
+ export default UpdateCommentModal

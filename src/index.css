@@ -45,6 +45,8 @@ code {
 
 .HoverClass1:hover {color: wheat !important;}
 .HoverClass2:hover {color: rgb(255, 0, 0) !important;}
+.HoverClassEdit:hover {color: rgb(126, 212, 255) !important;}
+.HoverClassDelete:hover {color: rgb(255, 155, 155) !important;}
 
 .descriptionContainer {
   display: flex,
@@ -78,6 +80,13 @@ code {
 .aboutUs {
   display: flex;
 }
+.commentSize {
+  width: 50%;
+}
+
+.commentButtons {
+  margin: 3px;
+}
 
 @media only screen and (max-width: 600px) {
   .welcomeStyle {
@@ -88,6 +97,13 @@ code {
   }
   .aboutUs {
     display: block;
+  }
+  .commentSize {
+    width: 100%;
+  }
+  .commentButtons {
+    font-size: 12px;
+    margin-left: 2px;
   }
 }
 @media only screen and (min-width: 600px) {

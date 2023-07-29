@@ -18,17 +18,14 @@ const MySongList = (props) => {
     // console.log('user in MySongList', user?.myList)
 
     const setTheUser = () => {
-        // console.log('here is the repList to push into user', repList)
         setUserList(repList)
         setUserSet(true)
-        console.log('here is the userList', userList)
     }
 
     useEffect(() => {
         if(!userSet) {
             setTheUser()
             setUserList(repList)
-            console.log('useEffect ran')
         }
     }, [repList])
 

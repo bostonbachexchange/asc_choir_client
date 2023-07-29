@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-
+import apiUrl from '../../apiConfig'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getOneSong, updateSong, removeSong, addSongToUser } from '../../api/songs'
 import messages from '../shared/AutoDismissAlert/messages'
@@ -8,7 +8,9 @@ import { Button, Card, Container } from 'react-bootstrap'
 import YoutubeEmbed from '../shared/YoutubeEmbed'
 import EditSongModal from './EditSongModal'
 import { Document, Page } from 'react-pdf'
-
+import NewRecordingModal from '../recordings/NewRecordingModal';
+import EditRecordingModal from '../recordings/EditRecordingModal';
+import AudioRecordings from './AudioRecordings';
 
 import CR5 from '../../scores/Joy_Introit_11.pdf'
 import CR11 from '../../scores/chalice_song_11.pdf'
@@ -46,14 +48,16 @@ import makeMeAChannel from '../../scores/make_me_a_channel.pdf'
 import SingWithJoy from '../../scores/Sing_With_Joy,Sing_Noel.pdf'
 import SongRecordings from './SongRecordings'
 
-
 const scoreMap = {makeMeAChannel, SingWithJoy, likeAMightStream, likeABridge, CR5, CR11, STLT57, STLT123,STLT188, STLT121, STLT216, STLT317, STLT318, STLT336, STLT346, STLT347, STLT354, STLT387, STLT389, STLT396, STJ1009, STJ1011, STJ1013, STJ1020, STJ1028, STJ1011, STJ1014, STJ1019, STJ1023, STJ1037, STJ1024, STJ1051, STJ1057, STJ1058, STJ1069}
 
 const ShowSong = (props) => {
     const [song, setSong] = useState({})
     const [editModalShow, setEditModalShow] = useState(false)
     const [updated, setUpdated] = useState(false)
-
+    const [showNewRecordingModal, setShowNewRecordingModal] = useState(false);
+    const [showEditRecordingModal, setShowEditRecordingModal] = useState(false);
+    const [selectedRecording, setSelectedRecording] = useState(null);
+  
     const { id } = useParams()
     const { msgAlert, user } = props
     console.log('user in showSong', user)
@@ -67,7 +71,6 @@ const ShowSong = (props) => {
                 setSong(res.data.song)
             })
             .catch(err => {
-
                 msgAlert({
                     heading: 'Error getting song',
                     message: messages.getSongsFailure,
@@ -99,25 +102,9 @@ const ShowSong = (props) => {
                 })
             })
     }
-    const addTheSong = () => {
-        addSongToUser(user, song._id)
-            .then(() => {
-                msgAlert({
-                    heading: 'Success',
-                    message: 'added song to user prof',
-                    variant: 'success'
-                })
-            })
-            .then(() =>  setUpdated(!updated))
-            .catch(err => {
-                msgAlert({
-                    heading: 'Error adding song',
-                    message: 'failed to add song to user',
-                    variant: 'danger'
-                })
-            })
-    }
 
+
+    
     return (
         <>
         <Container className='m-auto fluid playFont' style={{fontSize: '1.4em'}}>
@@ -127,24 +114,15 @@ const ShowSong = (props) => {
                     <Card.Text>
                         {song.composer ?(<div><strong>composer:</strong> {song.composer}</div>) : (null)}
                         {song.lyricist ?(<div><strong>lyricist:</strong> {song.lyricist}</div>) : (null)}
-                        {/* {song.recordings ?( song.recordings.map(recording => (
-                        <>
-                            <div><strong>recordings:</strong> 
-                                <Card className='m-2'>
-                                <Card.Header><strong>{recording.title}</strong></Card.Header>
-                                <Card.Body className='text-center'>
-                                        <ReactAudioPlayer 
-                                            src={
-                                                tuneMap[recording.file]
-                                            }
-                                            controls
-                                    />
-                                </Card.Body>
-                                </Card>
-                                </div> 
-                        </>)))
-                            : (null)} */}
-                        <SongRecordings song={song}/>
+                        {/* <SongRecordings song={song}/> */}
+                        {song.audioRecording ? (
+        <AudioRecordings audioRecordings={song.audioRecording} />
+      ) : null}                        
+
+            <Button onClick={() => setShowNewRecordingModal(true)} className="m-2" variant="primary">
+                Add Recording
+            </Button>
+
                     <hr></hr>
                         {song.lyrics ?(<div><strong>Lyrics:</strong> {
                             song.lyrics.split("|").map(line => (
@@ -157,7 +135,6 @@ const ShowSong = (props) => {
                         {(song.embedId.length !== 0 && song.embedId) ? 
                             ( 
                                 <> 
-                                {console.log('Is song.embedId:...?', song.embedId.length)}
                                 <h2 className='text-center m-4'>Videos From Youtube</h2>
                                 {
                                     song.embedId.map(Id => (<>
@@ -170,7 +147,21 @@ const ShowSong = (props) => {
                                 </>) : (null)} </>) : (null)}
                     </Card.Text>
                 </Card.Body>
-                {song.scorePDF ?(
+
+                {song.scorePDF ?
+            
+                    song.scorePDF.includes('uploads')?
+                    <div className='text-center mt-4 mb-4 p-1' >
+                        <embed className='border-radius border-radius-5n' 
+                                src={`${apiUrl}/${song.scorePDF}`} 
+                                type="application/pdf"
+                                frameBorder="2"
+                                scrolling="auto"
+                                height="800"
+                                width="100%"
+                                />
+                    </div>
+                : (
                 <>
                     <embed
                         src={
@@ -210,9 +201,6 @@ const ShowSong = (props) => {
                     :
                     <p>Only an Admin can edit this song</p>
                     }
-                    {/* <Button onClick={() => addTheSong()} className="m-2" variant="info">
-                    Add to my repertoire list
-                    </Button> */}
                 </Card.Footer>
             </Card>
         </Container>
@@ -225,6 +213,28 @@ const ShowSong = (props) => {
             triggerRefresh={() => setUpdated(!updated)}
             handleClose={() => setEditModalShow(false)}
             />
+        {showNewRecordingModal && (
+            <NewRecordingModal
+                user={user}
+                song={song}
+                show={showNewRecordingModal}
+                handleClose={() => setShowNewRecordingModal(false)}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated(!updated)}
+            />
+            )}
+        {showEditRecordingModal && selectedRecording && (
+        <EditRecordingModal
+          user={user}
+          song={song}
+          recording={selectedRecording}
+          show={showEditRecordingModal}
+          handleClose={() => setShowEditRecordingModal(false)}
+          msgAlert={msgAlert}
+          updated={updated}
+          setUpdated={setUpdated}
+        />
+      )}
         </>
     )
 }

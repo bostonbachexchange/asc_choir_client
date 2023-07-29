@@ -5,11 +5,18 @@ import LoadingScreen from '../shared/LoadingScreen'
 import messages from '../shared/AutoDismissAlert/messages'
 import dateFormat, { masks } from "dateformat";
 import { getUserAccounts } from "../../api/admin"
+import Container from 'react-bootstrap/Container';
+import { Fragment } from 'react'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import profPicture from '../../images/profile-default.png'
+import apiUrl from '../../apiConfig';
 
 const linkStyle = {
     color: 'white',
     textDecoration: 'none',
 }
+
 
 const Contacts = (props) => {
     const [accounts, setAccounts] = useState(null)
@@ -42,34 +49,69 @@ const Contacts = (props) => {
                     </Card>
                 </>
     }
+    const emailList = accounts.map((contact, index) => (
+        <Fragment key={contact._id}>
+          {contact.email}
+          {index !== accounts.length - 1 ? ', ' : ''}
+        </Fragment>
+      ));
+      
+    console.log("Email List??? ", emailList)
 
     const useraccounts = accounts.map(account =>
         <>
-        {console.log('account', account)}
-
-            <Card key={account._id} className='text-center m-auto playFont' style={{width: "75%", backgroundColor: "rgba(255, 255, 255, 0.95)"}}>
-                {/* <Card.Header style={{fontSize: '1.5em'}}><strong>{useraccounts.title}</strong></Card.Header> */}
-                {/* <Card.Footer> 
-                    from <em>{messagepost.owner.email}</em>
-                </Card.Footer> */}
-
-                <Card.Body className='p-1'>
-                    <Card.Text>
-                        <div className='text-center'><span> {account.email}</span></div>
-                    </Card.Text>
-                </Card.Body>
-            </Card> 
+{/* {const profilePictureSrc =
+account.profilePicture === '/path/to/default/profile-image.png'
+? profPicture
+: `${apiUrl}/${account.profilePicture}`;    
+} */}
+        <Card>
+                <img className='text-center d-flex m-auto' style={{width: '150px', height: '150px',}} src={account.profilePicture === 'default'
+? profPicture
+: `${apiUrl}/${account.profilePicture}`}></img>
+                <h1 className='text-center d-flex m-auto'>{account.firstName} {account.lastName}</h1>
+                <Container className='mt-3 p-0 rounded mb-3' style={{width: '100%', boxShadow: '3px 3px 3px grey', border: '3px solid black'}}>
+                    {/* <Row className='m-auto p-3 rounded-top' style={{border: '2px solid black'}}>
+                        <Col md={6} className="text-start" style={{fontSize: '1.5em'}}>Name</Col>
+                        <Col md={6}  style={{fontSize: '1.4em'}}>{account.firstName} {account.lastName}</Col>
+                    </Row> */}
+                    <Row className='m-auto p-3 rounded-top' style={{border: '2px solid black'}}>
+                        <Col md={6} className="text-start" style={{fontSize: '1.5em'}}>Email</Col>
+                        <Col md={6} style={{fontSize: '1.4em'}}>{account.email}</Col>
+                    </Row>
+                    <Row className='m-auto p-3 rounded-top' style={{border: '2px solid black'}}>
+                        <Col md={6} className="text-start" style={{fontSize: '1.5em'}}>Phone</Col>
+                        <Col md={6} style={{fontSize: '1.4em'}}>{account.phoneNumber}</Col>
+                    </Row>
+                    <Row className='m-auto p-3 rounded-top' style={{border: '2px solid black'}}>
+                        <Col md={6} className="text-start" style={{fontSize: '1.5em'}}>Vocal Range</Col>
+                        <Col md={6} style={{fontSize: '1.4em'}}>{account.vocalRange}</Col>
+                    </Row>
+                    <Row className='m-auto p-3 rounded-top' style={{border: '2px solid black'}}>
+                        <Col md={6} className="text-start" style={{fontSize: '1.5em'}}>Prefered Contact</Col>
+                        <Col md={6} style={{fontSize: '1.4em'}}>{account.preferredContact}</Col>
+                    </Row>
+                    <Row className='m-auto p-3 rounded-top' style={{border: '2px solid black'}}>
+                        <Col md={6} className="text-start" style={{fontSize: '1.5em'}}>Prefered Pronouns</Col>
+                        <Col md={6} style={{fontSize: '1.4em'}}>{account.pronouns}</Col>
+                    </Row>
+                </Container>
+                </Card>
         </>
     )
     
     return (
         <>
-            <Card className='bg-light'>
-
-                <h1 className='playFont text-center mb-0 pt-0' style={{padding: 15}}>Email</h1>  
+            <Card className='bg-light playFont text-center'>
+                <h1 className=' mb-0 pt-1' style={{padding: 15}}>Member Database</h1>
+                <p>Account information for active members of the application</p>
+                <div className='p-1'>
+                    <b className='p-2'>Email list: </b>{emailList}
+                </div>
             </Card>
-            <div className='m-3 playFont'>{useraccounts}</div>
-            <br></br>
+            <div className=' playFont'>
+                {useraccounts}
+            </div>
         </>
     )
 }

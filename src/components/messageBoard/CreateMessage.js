@@ -3,17 +3,23 @@ import { createMessage } from '../../api/messageboard'
 import { useNavigate } from 'react-router-dom'
 import { createMessageSuccess, createMessageFailure } from '../shared/AutoDismissAlert/messages'
 import { useState } from 'react'
-// import { createBootstrapComponent } from 'react-bootstrap/esm/ThemeProvider'
+import { Modal } from 'react-bootstrap'
 
 const CreateMessage = (props) => {
-    const { user, msgAlert } = props
+    const { user, msgAlert, show, handleClose, triggerRefresh } = props
     const navigate = useNavigate()
     const [message, setMessageBoard] = useState({
-        title: '',
-		content: '',
-        name: ''
+        // hopefully dont need
+        // title: '',
+		// content: '',
+        // name: ''
     })
-    console.log('this is message in createMessage', message)
+    const [fileName, setFileName] = useState({})
+
+    const onChangeFile = (e) => {
+        setFileName(e.target.files[0])
+    };
+
     const handleChange = (e) => {
         setMessageBoard(prevMessage => {
             const updatedValue = e.target.value 
@@ -31,9 +37,8 @@ const CreateMessage = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        createMessage(user, message)
+        createMessage(user, message, fileName)
             .then(res => { navigate(`/messageboard/${res.data.message._id}`)})
-            // .then(res => console.log('this is the res from api call', res))
             .then(() => {
                 msgAlert({
                     heading: 'Oh Yeah!',
@@ -49,7 +54,18 @@ const CreateMessage = (props) => {
                 }))
     }
 
-    return <MessageBoardForm message={message} handleSubmit={handleSubmit} handleChange={handleChange} />
+    return (
+        <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton />
+            <Modal.Body >
+                <MessageBoardForm 
+                            message={message} 
+                            handleSubmit={handleSubmit} 
+                            handleChange={handleChange} 
+                            onChangeFile={onChangeFile}/>
+                </Modal.Body>
+        </Modal>
+                )
 }
 
 export default CreateMessage

@@ -6,36 +6,44 @@ import Row from 'react-bootstrap/Row';
 
 const MessageBoardForm = (props) => {
 
-    const { message, handleChange, handleSubmit } = props
-    console.log('message in form', message)
+    const { message, handleChange, handleSubmit, fileName, onChangeFile } = props
     return <>
             <Container className='text-center playFont messageForm'  >
                 <Card className='text-center'>
-                    <Card.Header><h3 className='text-center'>Add a new Messageboard Post</h3></Card.Header>
-                <Form  onSubmit={handleSubmit} className="m-3">
-                        <Form.Group as={Row} className="mb-3">
-                        <Form.Label column sm={2} htmlFor="title">Post Title</Form.Label>
-                        <Col sm={10}>
-                            <Form.Control className="m-2" placeholder="Title of the message" name="title" value={message.title} id="title" onChange={ handleChange }/>
-                        </Col>
-                    </Form.Group> 
+                    <Card.Header><h3 className='text-center'>Create a Blog</h3></Card.Header>
+                    <Form  onSubmit={handleSubmit} className="m-3">
+                            <h4>Title</h4>
+                            <Form.Group as={Row} className="mb-3">
+                            <Form.Label column sm={2} htmlFor="title">Blog Title or Theme</Form.Label>
+                            <Col sm={10}>
+                                <Form.Control className="m-2" placeholder="Title of the Blog" name="title" value={message.title} id="title" onChange={ handleChange }/>
+                            </Col>
+                        </Form.Group> 
+                        <h4>Contents</h4>
+                        <Form.Group as={Row} className="mb-2">
+                            <Form.Label  column sm={2} htmlFor="content">Blog Contents</Form.Label>
+                            <Col sm={10}>
+                                <Form.Control className="m-2" as='textarea' rows={4}placeholder="Blog contents" value={message.content} name="content" id="content" onChange={ handleChange }/>
+                            </Col>
+                        </Form.Group>
 
-                    <Form.Group as={Row} className="mb-2">
-                        <Form.Label  column sm={2} htmlFor="content">Message Contents</Form.Label>
-                        <Col sm={10}>
-                            <Form.Control className="m-2" as='textarea' rows={4}placeholder="message contents" value={message.content} name="content" id="content" onChange={ handleChange }/>
-                        </Col>
-                    </Form.Group>
-
-                    {/* <Form.Group className="mb-3">
-                        <Form.Label htmlFor="content">name</Form.Label>
-                        <Form.Control className="w-50" placeholder="message contents" value={message.content} name="composer" id="content" onChange={ handleChange }/>
-                    </Form.Group> */}
-                    
-                    <Button variant="primary" type="submit">
-                    Submit
-                    </Button>
-                </Form>
+                        <Form.Group className="mb-3">
+                            <Form.Label htmlFor="image"><h4>Blog Image</h4></Form.Label>
+                            <Form.Control 
+                            type="file" 
+                            encType="form-data"
+                            value={fileName} 
+                            name="image" 
+                            id="image" 
+                            onChange={ onChangeFile }/>
+                            <p>Add a nice picture to set the tone!</p>
+                        </Form.Group> 
+                        {/* lets add videos and recordings */}
+                        
+                        <Button variant="primary" type="submit">
+                        Submit
+                        </Button>
+                    </Form>
                 </Card>
             </Container>
         </>

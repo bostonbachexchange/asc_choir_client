@@ -9,30 +9,31 @@ export const getOneMessage = (id) => {
     return axios(`${apiUrl}/messageboard/${id}`)
 }
 
-export const createMessage = (user, newMessage) => {
-    console.log('this is user', user)
-    console.log('this is newMessage', newMessage)
+export const createMessage = (user, newMessage, fileName) => {
+	const formData = new FormData();
+    formData.append('message', JSON.stringify(newMessage));
+    formData.append('file', fileName);
 	return axios({
 		url: apiUrl + '/messageboard',
 		method: 'POST',
 		headers: {
 			Authorization: `Token token=${user.token}`,
 		},
-		data: { message: newMessage},
+		data: formData,
 	})
 }
 
-
-export const updateMessage = (user, updatedMessage) => {
-    // console.log('this is user', user)
-    console.log('this is updatedMessage', updatedMessage)
+export const updateMessage = (user, updatedMessage, fileName) => {
+	const formData = new FormData();
+    formData.append('message', JSON.stringify(updatedMessage));
+    formData.append('file', fileName);
 	return axios({
 		url: `${apiUrl}/messageboard/${updatedMessage._id}`,
 		method: 'PATCH',
 		headers: {
 			Authorization: `Token token=${user.token}`,
 		},
-		data: { message: updatedMessage},
+		data: formData,
 	})
 }
 

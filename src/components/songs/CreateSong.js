@@ -9,38 +9,60 @@ const CreateSong = (props) => {
     const navigate = useNavigate()
     // const [ selected, setSelected ] = useState(null)
     const [song, setSong] = useState({
-        title: '',
-        composer:  '',
-        lyricist: '',
-        type: '',
-        lyrics:'',
-        scorePDF:'',
-        recordings:'',
-        embedId: ''
+        embedIds: null,
+        // title: '',
+        // hymnNumber:'',
+        // composer:  '',
+        // lyricist: '',
+        // type: '',
+        // source: '',
+        // lyrics:'',
+        // // scorePDF:'',
+        // recordings:'',
+        // embedId: ''
     })
-    console.log('this is song in createSong', song)
-    const handleChange = (e) => {
-        setSong(prevSong => {
-            const updatedValue = e.target.value 
-            const updatedName = e.target.name 
-            const updatedSong = {
-                [updatedName]: updatedValue
-            }
-            return {
-                ...prevSong,
-                ...updatedSong
-            }
+    const [fileName, setFileName] = useState({})
 
-        })
-        // setSelected(e.target.files[0])
-    }
+    const onChangeFile = (e) => {
+        console.log('e.target.files[0]', e.target.files[0]) 
+        setFileName(e.target.files[0])
+        console.log('e.target.files[0].name', e.target.files[0].name)
+
+    };
+    console.log('this is song in createSong', song)
+    // const handleChange = (e) => {
+    //     setSong(prevSong => {
+    //         const updatedValue = e.target.value 
+    //         const updatedName = e.target.name 
+    //         const updatedSong = {
+    //             [updatedName]: updatedValue
+    //         }
+    //         return {
+    //             ...prevSong,
+    //             ...updatedSong
+    //         }
+
+    //     })
+    // }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+      
+        if (name === "embedId") {
+          const embedIds = value ? value.split(",").map((id) => id.trim()) : null;
+          setSong((prevSong) => ({ ...prevSong, [name]: embedIds }));
+        //   console.log('set song', song)
+        } else {
+          setSong((prevSong) => ({ ...prevSong, [name]: value }));
+        }
+      };
+      
 
     const handleSubmit = (e) => {
         e.preventDefault()
         // added this janke
         // const data = new FormData()
         // data.append('upload', selected)
-        createSong(user, song)
+        createSong(user, song, fileName)
             .then(res => { navigate(`/songs/${res.data.song._id}`)})
             // .then(res => console.log('this is the res from api call', res))
             .then(() => {
@@ -58,7 +80,7 @@ const CreateSong = (props) => {
                 }))
     }
 
-    return <SongForm song={song} handleSubmit={handleSubmit} handleChange={handleChange} />
+    return <SongForm song={song} handleSubmit={handleSubmit} handleChange={handleChange} onChangeFile={onChangeFile}/>
 }
 
 export default CreateSong

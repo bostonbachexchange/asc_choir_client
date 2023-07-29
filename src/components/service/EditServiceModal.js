@@ -1,41 +1,40 @@
 import React, { useState } from "react";
 import { Modal } from 'react-bootstrap'
-import MessageBoardForm from "../shared/MessageBoardForm";
-import { updateMessageSuccess, updateMessageFailure } from '../shared/AutoDismissAlert/messages'
+import ServiceForm from "../shared/ServiceForm";
 
-const EditMessageModal = (props) => {
-    const { user, show, handleClose, updateMessage, msgAlert, triggerRefresh } = props
-    const [message, setMessage] = useState(props.message)
+import { updateService } from "../../api/sundayservice";
+
+const EditServiceModal = (props) => {
+    const { user, show, handleClose, msgAlert, triggerRefresh, service } = props
+    const [newService, setService] = useState( service );
     const [fileName, setFileName] = useState({})
 
     const onChangeFile = (e) => {
         setFileName(e.target.files[0])
     };
-
+    
     const handleChange = (e) => {
-        setMessage(prevMessage => {
+        setService(prevService => {
             const updatedValue = e.target.value 
             const updatedName = e.target.name 
-            const updatedMessage = {
+            const updatedService = {
                 [updatedName]: updatedValue
             }
             return {
-                ...prevMessage,
-                ...updatedMessage
+                ...prevService,
+                ...updatedService
             }
         })
-    }
-
+    }   
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        updateMessage(user, message, fileName)
+        updateService(user, newService, service, fileName)
             .then(() => handleClose())
-            // .then(res => console.log('this is the res from api call', res))
             .then(() => {
                 msgAlert({
                     heading: 'Oh Yeah!',
-                    message: updateMessageSuccess,
+                    message: "update Service Success",
                     variant: 'success'
                 })
             })
@@ -43,7 +42,7 @@ const EditMessageModal = (props) => {
             .catch((error) => 
                 msgAlert({
                     heading: 'Oh No!',
-                    message: updateMessageFailure,
+                    message: "update Service Failure",
                     variant: 'danger'
                 }))
     }    
@@ -51,15 +50,15 @@ const EditMessageModal = (props) => {
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton />
             <Modal.Body>
-                <MessageBoardForm 
-                    message={message} 
+                <ServiceForm 
+                    newService={newService} 
                     handleChange={handleChange} 
                     handleSubmit={handleSubmit} 
                     onChangeFile={onChangeFile} 
-                    heading="Update Post" />
+                    heading="Update Service" />
             </Modal.Body>
         </Modal>
     )
 }
 
- export default EditMessageModal
+ export default EditServiceModal

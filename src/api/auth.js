@@ -53,3 +53,22 @@ export const changePassword = (passwords, user) => {
 		},
 	})
 }
+
+export const updateProfile = (user, newProfile, fileName) => {
+	const formData = new FormData();
+	console.log("newProfile????: ", newProfile)
+    formData.append('user', JSON.stringify(newProfile));
+    formData.append('file', fileName);
+	console.log('formData in api', formData)
+	// console.log("user formData: ", formData)
+	// console.log('user before request: ', user)
+	return axios({
+		url: `${apiUrl}/profile-update`,
+		method: 'PATCH',
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+		data: formData,
+	})
+	.then((res) => res.data.user)
+}

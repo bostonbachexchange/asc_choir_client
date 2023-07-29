@@ -1,29 +1,28 @@
 import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
+import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getMessageBoard } from '../../api/messageboard'
 import messages from '../shared/AutoDismissAlert/messages'
-import CommentForm from '../shared/CommentForm'
 import messageboardphoto from '../../images/pexels-pixabay-206447.jpg'
 import dateFormat, { masks } from "dateformat";
-import ChaliceLogo from '../../images/ChaliceLogo'
-
-const linkStyle = {
-    color: 'white',
-    textDecoration: 'none',
-}
+import apiUrl from '../../apiConfig';
+import profPicture from '../../images/profile-default.png'
+import blogImage from '../../images/fallphoto.jpg'
+import CreateMessage from '../messageBoard/CreateMessage'
+import { Button } from 'react-bootstrap'
 
 const MessageBoardIndex = (props) => {
     const [messageboard, setMessageBoard] = useState(null)
     const [error, setError] = useState(false)
-    const { msgAlert } = props
+    const [editModalShow, setEditModalShow] = useState(false)
+
+    const { msgAlert, user } = props
     useEffect(() => {
         getMessageBoard()
-            // .then(res => console.log('res.data.messageboard', res.data.messageboard))
             .then(res => setMessageBoard(res.data.messageboard))
             .catch(err => {
-                // console.log(err)
                 msgAlert({
                     heading: 'Error Getting Messages',
                     message: messages.getMessageFailure,
@@ -39,44 +38,99 @@ const MessageBoardIndex = (props) => {
         return <LoadingScreen />
     } else if (messageboard.length === 0) {
         return  <>  
-                    {/* <img style={{width: 130}} className="m-auto" src={messageboardphoto}></img> */}
                     <Card className='text-center m-4 w-2'>
-                        <p className='m-0'><em>No Message Board Posts Yet</em></p>
+                        <p className='m-0'><em>No Blog Posts Yet</em></p>
                         <p className='m-0'>Say Hello!</p>
                     </Card>
                 </>
     }
+
+
     const docRoot = document.getElementById('root')
     docRoot.style.backgroundImage = "url(" + messageboardphoto + ")";
     docRoot.style.backgroundSize = "cover";
 
     const messageboardCards = messageboard.map(messagepost =>
+
+{        const profilePictureSrc =
+        messagepost.owner.profilePicture === '/path/to/default/profile-image.png'
+        ? profPicture
+        : `${apiUrl}/${messagepost.owner.profilePicture}`; 
+
+        const messagePictureSrc =
+          messagepost.image == undefined
+            ? blogImage
+            : `${apiUrl}/${messagepost.image}`;
+
+        return (
         
-            <Card key={messagepost._id} className='text-center m-auto playFont mb-2' style={{width: "75%", backgroundColor: "rgba(255, 255, 255, 0.97)", fontSize: '1.5em'}}>
-                <Card.Header style={{fontSize: '1.5em'}}><strong>{messagepost.title}</strong></Card.Header>
-                <Card.Footer> 
-                    from <em>{messagepost.owner.email}</em>
-                </Card.Footer>
-                <Card.Body className='p-1'>
+            <Card.Body key={messagepost._id} className='m-4 playFont text-center d-inline-block border border-3' style={{width: '100%', maxWidth: '300px'}}>
+                <Link to={`/messageboard/${messagepost._id}`} style={{textDecoration: 'none', color: 'black'}}>
+                        {/* Picture */}
+                    <Card.Text style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', textDecorationLine: 'none' }}>
+                        {/* First Span */}
+                        <span style={{ display: 'flex', alignItems: 'center', padding: '5px', fontFamily: 'arial'}}>
+                            <img 
+                            style={{ width: "38px", height: "38px", borderRadius: '100%' }}
+                            src={profilePictureSrc}
+                            alt="Profile"
+                            />
+                            <div style={{ marginLeft: '10px' }}>
+                            <div>
+                                <small style={{fontSize : '12px', textDecoration: 'none'}} className='d-flex'>
+                                    <span className='p-1'>
+                                        <b> {messagepost.owner.firstName ? messagepost.owner.firstName + " " + messagepost.owner.lastName : messagepost.owner.email + " " } </b> 
+                                    </span>
+                                    <span className='p-1'>
+                                    • {dateFormat(messagepost.date, " mmmm d")}
+                                    </span>
+                                </small>
+                            </div>
+                            </div>
+                        </span>
+                    </Card.Text>
                     <div>
-                        <p className='text-center'><span> {messagepost.content}</span></p>
-                        <hr className='mb-1'></hr>
-                        <small className='mt-5'>{dateFormat(messagepost.date, "dddd, mmmm dS, yyyy, h:MM TT")}</small>
-                        <br></br>
-                        <small className='m-1'>{messagepost.comments.length} <em>comments</em></small><Link to={`/messageboard/${messagepost._id}`}>View/Post Comments</Link>
+                    <div>
+                        <h1>{messagepost.title}</h1>
+                        <img 
+                            style={{width: "250px", height: "215px", borderRadius: '15px', marginTop: "5px"}}
+                            src={messagePictureSrc} />
                     </div>
+                    <br></br>
+                    <hr></hr>
+                    <small className='m-1' >
+                        {messagepost.comments.length}<em> comments</em></small>
+                    </div>
+                    </Link>
                 </Card.Body>
-            </Card>
-        
-    )
+            )
+    })
     
     return (
         <>
-            <Card.Title className= 'bg-light p-3 playFont text-center' style={{fontSize: '2.5em'}}>
-                Community Message Board
+            <Card.Title className= 'bg-dark p-3 playFont text-center mb-0' style={{fontSize: '2.5em'}}>
+                <img className='rounded-pill' width="200" height="150" src="https://westmountchurch.org/wp-content/uploads/choir-cartoon-300x203.jpg"  alt="a singing choir" decoding="async"></img>
+               <Card.Header style={{color: 'white'}}> Choir Blog</Card.Header> 
             </Card.Title>
-            <div className='m-3 playFont'>{messageboardCards}</div>
+            <Container className='playFont p-3' style={{ backgroundColor: "rgba(255, 255, 255, 0.97)", width: '100%', maxWidth: 'none'}}>
+            <Button onClick={() => setEditModalShow(true)} 
+                    className="m-auto border border-2 border-radius-5 border-dark" 
+                    variant="info">
+                    Create Blog
+                </Button>
+            </Container>
+            <Container className='text-center playFont p-0' style={{ backgroundColor: "rgba(255, 255, 255, 0.97)", width: '100%', maxWidth: 'none'}}>
+                {messageboardCards}
             <br></br>
+            </Container>
+
+            <CreateMessage
+                msgAlert={msgAlert} 
+                user={user}
+                show={editModalShow}
+                handleClose={() => setEditModalShow(false)}
+                >     
+                </CreateMessage>
         </>
     )
 }

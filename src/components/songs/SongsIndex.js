@@ -2,15 +2,17 @@ import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
-import { getAllSongs } from '../../api/songs'
+import { getSongs } from '../../api/songs'
 import messages from '../shared/AutoDismissAlert/messages'
 
 const SongsIndex = (props) => {
     const [songs, setSongs] = useState(null)
     const [error, setError] = useState(false)
+    const [searchQuery, setSearchQuery] = useState('');
     const { msgAlert } = props
+
     useEffect(() => {
-        getAllSongs()
+        getSongs()
             .then(res => setSongs(res.data.songs))
             .catch(err => {
                 msgAlert({
@@ -37,7 +39,16 @@ const SongsIndex = (props) => {
         fontSize: '1.5em',
     };
 
-    const songCards = songs.map(song => 
+    const filteredSongs = searchQuery
+    ? songs.filter((song) =>
+        Object.values(song).some(
+          (value) =>
+            value && value.toString().toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      )
+    : songs;
+
+    const songCards = filteredSongs.map(song => 
         
         <Card className=' playFont' style={songCardInfo}>
             <Card.Header>
@@ -58,7 +69,22 @@ const SongsIndex = (props) => {
         </Card>
         )
     return (
-        <>{songCards}</>
+        <>
+            <div className='w-100 bg-dark mb-0'>
+                <hr style={{color: "white", scale: '2em', marginTop: "0"}}></hr>
+                <div>
+                    <h1 style={{color: 'whitesmoke', paddingTop: "10px"}} className='justify-content-center align-items-center d-flex'>Music Database</h1>
+                </div>
+                <div className='w-100 bg-dark justify-content-center align-items-center d-flex mt-0 pb-3'>
+                    <p style={{color: "white"}}>Use the search to find a specific piece of music.</p>
+                </div>
+            </div>
+            <Card style={{ display: 'block' }} className='p-2 fs-5 text-center'>
+                <label className='p-2' htmlFor='search'>Search:</label>
+                <input className='p-2 w-50' id='search' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+            </Card>
+        {songCards}
+        </>
     )
 }
 

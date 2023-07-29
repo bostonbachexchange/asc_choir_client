@@ -9,6 +9,9 @@ import { Button, Card, Container } from 'react-bootstrap'
 import EditMessageModal from './EditMessageModal'
 import NewCommentModal from '../comments/NewCommentModal'
 import EditCommentModal from '../comments/EditCommentModal'
+import dateFormat from 'dateformat'
+import apiUrl from '../../apiConfig'
+import profPicture from '../../images/profile-default.png'
 
 const ShowMessage = (props) => {
     const [message, setMessage] = useState(null)
@@ -19,9 +22,7 @@ const ShowMessage = (props) => {
     const [commentID, setCommentID] = useState(null)
 
     const { id } = useParams()
-    const { msgAlert, user, comment, triggerRefresh } = props
-    console.log('user in showMessage', user)
-    // console.log('message in showMessage', message)
+    const { msgAlert, user, comment, triggerRefresh, heading } = props
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -61,7 +62,6 @@ const ShowMessage = (props) => {
     }
 
     const removeTheComment = (cmt) => {
-        console.log("!!!!", cmt)
         removeComment(user, message._id, cmt._id)
             .then(() => {
                 msgAlert({
@@ -79,75 +79,178 @@ const ShowMessage = (props) => {
                 })
             })
     }
-// const handleClick = () => ({
-//     setCommentID()
-// })
 
-    const commentList = message.comments.map(cmt => 
-        <Card className='m-2 p-0'>
+
+
+// Comments Lists
+    const commentList = message.comments.map(cmt => {
+        /* CSS File (add this to your CSS file or inline in the head section) */
+/* Add hover styles for buttons */
+
+  
+        const commentPictureSrc =
+          cmt.owner.profilePicture === '/path/to/default/profile-image.png'
+            ? profPicture
+            : `${apiUrl}/${cmt.owner.profilePicture}`;
+        
+        return (
+          <Card key={cmt._id} className='m-2 p-0 commentSize'>
             <Card.Body className='p-0'>
-                <p className='m-2 p-0'><strong>{cmt.content}</strong></p>
+                {/* Picture */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    {/* First Span */}
+                    <span style={{ display: 'flex', alignItems: 'center', padding: '5px', fontFamily: 'arial' }}>
+                        <img 
+                        style={{ width: "38px", height: "38px", borderRadius: '100%' }}
+                        src={commentPictureSrc}
+                        alt="Profile"
+                        />
+                        <div style={{ marginLeft: '10px' }}>
+                        <div>
+                            <small>
+                            <b>{cmt.owner.firstName ? cmt.owner.firstName + " " + cmt.owner.lastName : cmt.owner.email }</b>
+                            </small>
+                        </div>
+                        <div>
+                            <small className='' style={{color: '#8a8d91', fontSize: '12px'}}>
+                                {dateFormat(message.date, "mmmm d")}
+                            </small>
+                        </div>
+                        </div>
+                    </span>
+
+                {/* Second Span */}
+                {cmt.owner && user && cmt.owner._id === user._id ? (
+                    <span className='p-0 m-0'>
+                    <Button
+                        commentId={cmt._id}
+                        onClick={() => (setCommentID(cmt._id), setEditCommentModalShow(true))} 
+                        className="mt-0 pr-2 HoverClassEdit" 
+                        style={{background: 'transparent', border: 'none', color: 'blue' }}
+                    >
+                        Edit
+                    </Button>                
+                    <Button
+                        onClick={() => removeTheComment(cmt)} 
+                        className="mt-0 pr-3 HoverClassDelete" 
+                        style={{
+                            background: 'transparent',
+                            border: 'none',
+                            color: 'red',
+                            ':hover': {
+                              color: 'yellow',
+                            }
+                          }}
+                    >
+                        Delete
+                    </Button>                     
+                    </span>
+                ) : null}
+                </div>
+
+                {/* Content */}
                 <hr></hr>
-                <p className='m-2 p-0'>from <em>{cmt.owner.email}</em></p>
-                <hr></hr>
+                <div className='p-2 m-2' style={{fontSize: '18px'}}>{cmt.content}</div>
             </Card.Body>
-            {cmt.owner && user && cmt.owner._id === user._id 
-                ?
-                <>
-                    <div className='text-center p-0 m-0'>
-                        <Button commentId={cmt._id} onClick={() => (setCommentID(cmt._id), setEditCommentModalShow(true))} className="m-2 p-0" variant="info" > Edit📝 </Button>                
-                        {/* <Button commentId={cmt._id} onClick={handleClick} className="m-2 p-0" variant="info" > Edit📝 </Button>                 */}
-                        <Button onClick={() => removeTheComment(cmt)} className="m-2 p-0" variant="danger" > Delete🗑 </Button>                     
-                    </div>
-                </>
-                :
-                null
-            }  
-        </Card>
-        ) 
+          </Card>
+        );
+      });
+      
+
+    const profilePictureSrc =
+        message.owner.profilePicture === '/path/to/default/profile-image.png'
+        ? profPicture
+        : `${apiUrl}/${message.owner.profilePicture}`;
 
     return (
         <>
-        <Container className='fluid playFont'>
-            <Card className="m-2">
-                <Card.Header  className='text-center'>
-                    <h1><strong>{ message.title}</strong></h1>
-                    <span><small>from <em>{message.owner.email}</em></small></span>
-                </Card.Header>
-                <Card.Body>
-                    <Card.Text className='text-center m-2'>
-                        <>{message.content}</>
-                    </Card.Text>
-                </Card.Body>
-                <Card.Footer className='p-4'>
-                    <div><small>{commentList}</small></div>
-                </Card.Footer>
-                <Card.Footer className='p-0 text-center'>
-                    <Button 
-                        onClick={()=> setCommentModalShow(true)} 
-                        className='m-2' 
-                        variant='info'
-                    >
-                            Post a comment
-                    </Button>
+            <Container className='fluid playFont' >
+                <Card>
+                    <Card.Body>
+                        <Card.Text >
+                            <div style={{ display: 'flex', justifyContent: "space-between", padding: '5px', fontFamily: 'arial'}}>
+                                {/* Picture */}
+                                <div style={{ display: 'inline-flex', alignItems: 'center' }}>
+                                    <img 
+                                        style={{ width: "40px", height: "40px", borderRadius: '100%' }}
+                                        src={profilePictureSrc}
+                                        alt="Profile"
+                                    />
+                                    {/* Name */}
+                                    <div style={{ marginLeft: '10px' }}>
+                                        <small > 
+                                            <b>{message.owner.firstName ? message.owner.firstName + " " + message.owner.lastName : message.owner.email }
+                                            </b>
+                                        </small>
+                                        <div style={{ fontSize: '10px' }}>{dateFormat(message.date, "mmmm d, yyyy")}</div>
+                                    </div>
+                                </div>
+                                {
+                                message.owner && user && message.owner._id === user._id 
+                                ?
+                                    <div className=''>
+                                        <Button onClick={() => setEditModalShow(true)}  
+                                        style={{padding: '2px'}}
+                                        variant="warning"
+                                        >
+                                            <span className="commentButtons">Edit Blog</span>
+                                        </Button>
+                                        <Button onClick={() => removeTheMessage()} className="commentButtons" 
+                                        variant="danger"
+                                        style={{padding: '2px'}}
+                                        >
+                                            <span className="commentButtons"> Delete Blog</span>
+                                        </Button>
+                                    </div>
+                                :
+                                null
+                                }
+                            </div>
+                            <Container  className='text-center p-2'>
+                                <h1 style={{fontFamily: 'Roboto' }}>
+                                    <strong>{ message.title}</strong>
+                                </h1>                        
+                                <div>
+                                    <small className='mt-2'><em className='m-1'>posted </em> {dateFormat(message.date, "dddd, h:MM TT")}</small>
+                                </div>
+                            </Container>
 
-                    {
-                    message.owner && user && message.owner._id === user._id 
-                    ?
-                        <>
-                            <Button onClick={() => setEditModalShow(true)} className="m-2" variant="warning">
-                                Edit Post
-                            </Button>
-                            <Button onClick={() => removeTheMessage()} className="m-2" variant="danger">
-                                Delete Post
-                            </Button>
-                        </>
-                    :
-                    <p>you cannot edit this message</p>
-                    }
-                </Card.Footer>
-            </Card>
-        </Container>
+                            {/* Blog Image */}
+                            {message.image ? 
+                                <div className='text-center m-1'>
+                                    <img 
+                                        style={{width: "300px", height: "320px", borderRadius: '15px', marginTop: "5px"}}
+                                        src={`${apiUrl}/${message.image}`} />
+                                </div>
+                            : null
+                            }
+
+                            {/* Blog Content */}
+                            <div className='m-2 p-4 mt-4' style={{fontSize: '18px', fontFamily: "Roboto"}}>{message.content}</div>
+                        </Card.Text>
+
+                    </Card.Body>
+                    
+             
+                    <Container className='p-3'>
+                        <hr></hr>
+                        <Button 
+                            onClick={()=> setCommentModalShow(true)} 
+                            variant='info'
+                        >
+                                Post a comment
+                        </Button>
+                    </Container>
+                    {commentList.length > 0 ? 
+                        <Card.Footer className='p-4'>
+                            <div>
+                                <small>{commentList}</small>
+                            </div>
+                        </Card.Footer>
+                    : null}
+                </Card>
+            </Container>
+
         <EditMessageModal 
             user={user}
             message={message}
@@ -176,8 +279,7 @@ const ShowMessage = (props) => {
             triggerRefresh={() => setUpdated(updated => !updated)}
             handleClose={() => setCommentModalShow(false)}
         />
-        </>
-    )
-}
+    </>
+)}
 
 export default ShowMessage

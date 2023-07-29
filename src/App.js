@@ -8,7 +8,6 @@ import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAl
 import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
-import HomeTwo from './components/HomeTwo'
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
@@ -17,25 +16,24 @@ import SongsIndex from './components/songs/SongsIndex'
 import ShowSong from './components/songs/ShowSong'
 import ShowMessage from './components/messageBoard/ShowMessage'
 import CreateSong from './components/songs/CreateSong'
+import CreateService from './components/service/CreateService'
 import MessageBoardIndex from './components/messageBoard/MessageBoardIndex'
 import CreateMessage from './components/messageBoard/CreateMessage'
-import MessageBoardForm from './components/shared/MessageBoardForm'
 import MySongList from './components/user/MySongList'
+import Profile from './components/user/Profile'
 import Contacts from './components/admin/Contacts'
 import AboutUs from './components/AboutUs'
 import SingTheJourneyIndex from './components/songs/SingingTheJourney'
 import SingTheLivingTradition from './components/songs/SingingTheLivingTradition'
 import ChoralResponsesIndex from './components/songs/ChoralResponses'
+import ShowService from './components/service/ShowService'
 
 const App = () => {
 
   const [user, setUser] = useState(null)
   const [msgAlerts, setMsgAlerts] = useState([])
 
-  console.log('user in app', user)
-  console.log('message alerts', msgAlerts)
   const clearUser = () => {
-    console.log('clear user ran')
     setUser(null)
   }
 
@@ -85,6 +83,14 @@ const App = () => {
 					element={
 					<RequireAuth user={user}>
 						<SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
+					</RequireAuth>
+					}
+				/>
+				<Route
+					path='/profile'
+					element={
+					<RequireAuth user={user}>
+						<Profile msgAlert={msgAlert} user={user} setUser={setUser}/>
 					</RequireAuth>
 					}
 				/>
@@ -140,7 +146,7 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<MessageBoardIndex msgAlert={msgAlert} user={user} />
-							<CreateMessage msgAlert={msgAlert} user={user} />
+							{/* <CreateMessage msgAlert={msgAlert} user={user} /> */}
 						</RequireAuth>
 					}
 				/> 
@@ -149,6 +155,14 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<ShowMessage msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path='/sundayservice/:id'
+					element={
+						<RequireAuth user={user}>
+							<ShowService msgAlert={msgAlert} user={user} />
 						</RequireAuth>
 					}
 				/>
@@ -165,6 +179,14 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<CreateSong msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path='/create-service'
+					element={
+						<RequireAuth user={user}>
+							<CreateService msgAlert={msgAlert} user={user} />
 						</RequireAuth>
 					}
 				/>

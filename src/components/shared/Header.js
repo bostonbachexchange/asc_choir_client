@@ -115,24 +115,21 @@ const unauthenticatedOptions = (
 
 const adminOptions = (
 	<>
-		<NavDropdown
-				title={
-					<span className="navTitle playFont HoverClass1">Admin</span>
-					} 	
-					menuVariant="dark" 
-					style={linkStyle}
-		>
-			<Nav.Item className='text-center playFont'>
-				<Link to='user-contacts' style={dropStyle}>
-					<span className='HoverClass1'>Users</span>
+			<Nav.Item className='m-auto'>
+				<Link to='user-contacts' style={linkStyle}>
+					<span className='HoverClass1 playFont'>Member Database</span>
 				</Link>
 			</Nav.Item>
-			<Nav.Item className='text-center playFont'>
-				<Link to='create-song' style={dropStyle}>
-					<span className='HoverClass1'>Add a Song</span>
+			<Nav.Item className='m-auto'>
+				<Link to='create-song' style={linkStyle}>
+					<span className='HoverClass1 playFont'>Add Song</span>
 				</Link>
 			</Nav.Item>
-		</NavDropdown>
+			<Nav.Item className='m-auto'>
+				<Link to='create-service' style={linkStyle}>
+					<span className='HoverClass1 playFont'>Add Service</span>
+				</Link>
+			</Nav.Item>
 	</>
 )
 
@@ -156,11 +153,11 @@ const Header = ({ user }) => (
 							title={<span className="navTitle playFont HoverClass1">👤 Welcome, {user.email}</span>} 
 							menuVariant="dark" 
 							>
-							{/* <Nav.Item eventKey='1' className='text-center playFont'>
+							<Nav.Item eventKey='1' className='text-center playFont'>
 								<Link to='profile' style={dropStyle}>
 								<span className='HoverClass1'>Profile</span>
 								</Link>
-							</Nav.Item > */}
+							</Nav.Item >
 							<Nav.Item eventKey='1' className='text-center playFont'>
 								<Link to='change-password' style={dropStyle}>
 								<span className='HoverClass1'>Change Password</span>
