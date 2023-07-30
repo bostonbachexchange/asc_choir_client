@@ -12,8 +12,8 @@ const UserForm = (props) => {
       marginBottom: '10px'
     }
     return (
-      <Card className="">
-        <Form onSubmit={handleSubmit} className=" text-center border border-3">
+      <Card>
+        <Form onSubmit={handleSubmit} className="p-1 text-center border border-3">
           <h3>{heading}</h3>
           <Form.Group as={Row} style={customSpacing}>
             <Form.Label column sm={3} htmlFor="firstName">
@@ -47,6 +47,41 @@ const UserForm = (props) => {
             </Col>
           </Form.Group>
 
+          <Form.Group as={Row} style={customSpacing}>
+            <Form.Label column sm={3} htmlFor="pronouns">
+              Preferred Pronouns
+            </Form.Label>
+            <Col sm={9}>
+              <Form.Control
+                className="w-50"
+                placeholder="She/Her/Hers"
+                name="pronouns"
+                value={newProfile.pronouns}
+                id="pronouns"
+                onChange={handleChange}
+              />
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row} style={customSpacing}>
+            <Form.Label column sm={3} htmlFor="vocalRange">
+              Vocal Range
+            </Form.Label>
+            <Col sm={9}>
+            <Form.Select
+            className="w-50"
+            name="vocalRange"
+            value={newProfile.vocalRange}
+            onChange={handleChange}
+          >
+            <option value="soprano">soprano</option>
+            <option value="alto">alto</option>
+            <option value="tenor">tenor</option>
+            <option value="bass">bass</option>
+          </Form.Select>
+            </Col>
+          </Form.Group>
+
           <Form.Group as={Row} className="">
             <Form.Label column sm={3} htmlFor="phoneNumber">
               Phone Number
@@ -62,7 +97,7 @@ const UserForm = (props) => {
               />
             </Col>
           </Form.Group>
-
+          
           <Form.Group as={Row} style={customSpacing}>
             <Form.Label column sm={3} >
               Preferred Contact
@@ -95,39 +130,7 @@ const UserForm = (props) => {
           </Form.Group>
 
           <Form.Group as={Row} style={customSpacing}>
-            <Form.Label column sm={3} htmlFor="vocalRange">
-              Vocal Range
-            </Form.Label>
-            <Col sm={9}>
-              <Form.Control
-                className="w-50"
-                placeholder="Vocal Range"
-                name="vocalRange"
-                value={newProfile.vocalRange}
-                id="vocalRange"
-                onChange={handleChange}
-              />
-            </Col>
-          </Form.Group>
-
-          <Form.Group as={Row} style={customSpacing}>
-            <Form.Label column sm={3} htmlFor="pronouns">
-              Preferred Pronouns
-            </Form.Label>
-            <Col sm={9}>
-              <Form.Control
-                className="w-50"
-                placeholder="She/Her/Hers"
-                name="pronouns"
-                value={newProfile.pronouns}
-                id="pronouns"
-                onChange={handleChange}
-              />
-            </Col>
-          </Form.Group>
-
-          <Form.Group as={Row} style={customSpacing}>
-            <Form.Label column sm={6} htmlFor="image">
+            <Form.Label column sm={3} htmlFor="image">
               Profile Image
             </Form.Label>
             <Col sm={9}>
@@ -143,10 +146,10 @@ const UserForm = (props) => {
           </Form.Group>
 
           <Form.Group as={Row} style={customSpacing}>
-          <Form.Label column sm={3}>
+          <Form.Label column sm={4}>
             Receive Blog Notifications
           </Form.Label>
-          <Col sm={9} className="mr-3">
+          <Col sm={8} className="mr-3">
             <Form.Check
               style={customRadio}
               type="radio"
@@ -171,10 +174,10 @@ const UserForm = (props) => {
         </Form.Group>
 
         <Form.Group as={Row} style={customSpacing}>
-          <Form.Label column sm={3}>
+          <Form.Label column sm={4}>
             Receive Service Notifications
           </Form.Label>
-          <Col sm={9} className="mr-3">
+          <Col sm={8} className="mr-3">
             <Form.Check
               style={customRadio}
               type="radio"

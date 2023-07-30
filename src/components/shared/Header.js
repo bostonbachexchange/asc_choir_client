@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { NavDropdown } from 'react-bootstrap'
-
+import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ChaliceLogo from '../../images/ChaliceLogo'
 const linkStyle = {
@@ -17,12 +17,11 @@ const dropStyle = {
 	fontSize: '1.4em',
 }
 
-const allowedEmails = ['r@r.r', 'clapperpianist@gmail.com']
+const allowedEmails = ['r@r.r', 'clapperpianist@gmail.com', "1beau.rivers@gmail.com", "donsixalex@gmail.com"]
 
 
 const authenticatedOptions = (
 	<>
-
 		<Nav.Item className='m-auto playFont'>
 			<Link to='/' style={linkStyle}>
 				<span className='HoverClass1'>Sunday Services</span>
@@ -34,7 +33,6 @@ const authenticatedOptions = (
 				<span className='HoverClass1'>Blog</span>
 			</Link>
 		</Nav.Item>
-
 
 		<NavDropdown 
 			className='m-auto'  
@@ -70,7 +68,6 @@ const authenticatedOptions = (
 				</Link>
 			</Nav.Item>
 		</NavDropdown>
-
 		
 		<NavDropdown  
 			className='m-auto myAccount' 
@@ -94,7 +91,6 @@ const authenticatedOptions = (
 				</Link>
 			</Nav.Item>
 		</NavDropdown>
-
 	</>
 )
 
@@ -145,7 +141,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
 	<>
-		<Navbar className='p-0' bg='dark' variant='dark' expand='md'>
+		<Navbar className='p-0 ' bg='dark' variant='dark' expand='md'>
 			<span>
 				{user && (
 					<span className='accountStyle playFont text-center' >
@@ -178,16 +174,16 @@ const Header = ({ user }) => (
 				</Link>
 			</Navbar.Brand>
 		</Navbar>
-		<Navbar bg='dark' variant='dark' expand='md'>
-			<Navbar.Toggle className='ms-4' aria-controls='basic-navbar-nav'/>
+		<Navbar bg='dark' variant='dark' expand='md' className='p-0 mb-0'>
+			<Navbar.Toggle className='ms-4 mb-2' aria-controls='basic-navbar-nav'/>
 			<Navbar.Collapse id='basic-navbar-nav'>
-				<Nav className='m-auto'>
+				<Nav className='d-flex mt-0 p-0 pb-1 m-auto' >
 					{alwaysOptions}
 					{user ? authenticatedOptions : unauthenticatedOptions}
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
-		<Navbar bg='dark' variant='dark' expand='sm'>
+		<Navbar bg='dark' variant='dark' expand='sm' className='p-0 mt-0 w-100' >
 			<Nav className='m-auto'>
 				{user && allowedEmails.includes(user.email) ? adminOptions : null}
 			</Nav>

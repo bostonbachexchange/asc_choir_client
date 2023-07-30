@@ -23,14 +23,14 @@ const Profile = (props) => {
         return <div>Loading...</div>;}
 
     const profilePictureSrc =
-        user.profilePicture === '/path/to/default/profile-image.png'
+        user.profilePicture === 'default'
         ? profPicture
         : `${apiUrl}/${user.profilePicture}`;    
     
     return (
         <>
             <Card>
-                <h2 className='mt-4 text-center'>Profile</h2>
+                <h2 className='mt-4 mb-4 text-center' style={{fontFamily: 'Arial'}}>Profile</h2>
                 <img className='text-center d-flex m-auto' style={{width: '150px', height: '150px',}} src={profilePictureSrc}></img>
                 <Container className='mt-3 p-0 rounded' style={{width: '100%', boxShadow: '3px 3px 3px grey', border: '3px solid black'}}>
                     <Row className='m-auto p-3 rounded-top' style={{border: '2px solid black'}}>
@@ -73,13 +73,16 @@ const Profile = (props) => {
         
          
                 </Container>
-                <Container className='p-4 w-100 border text-center'>
+                <Container className='p-4 mt-2 w-100 border text-center'>
                     {
                         user._id 
                         ?
-                                <Button onClick={() => setEditModalShow(true)} className="w-25 m-auto border border-5 border-radius-5 border-dark" variant="warning">
-                                Edit Profile
-                                </Button>
+                                <>
+                                    <Button onClick={() => setEditModalShow(true)} className="w-25 m-auto border border-5 border-radius-5 border-dark shadow" variant="warning">
+                                    Edit Profile
+                                    </Button>
+                                    <p>You will need so sign-in again after updating profile</p>
+                                </>
                         :
                             <p>Null</p>
                     }
