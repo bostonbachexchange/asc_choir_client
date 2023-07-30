@@ -41,9 +41,10 @@ const ServicesIndex = (props) => {
     
     const upcomingServiceCards = services.filter(event => Date.parse(event.date) > currentDate.getTime()).map(service => 
         <Card.Body className='mb-2 playFont text-center d-inline-block m-2' style={{ fontSize: '1.5em', width: '100%', maxWidth: '300px'}}>
-                <Link to={`/sundayservice/${service._id}`} className='link'>
-                    <Card.Text className='text-center' style={{textDecorationLine: 'none'}}>
-                        <h2>{service.theme} with {service.minister}</h2>
+                <Link to={`/sundayservice/${service._id}`} className='link' style={{textDecoration: 'none'}}>
+                    <Card.Text className='text-center' style={{textDecoration: 'none'}}>
+                        <h2>{service.theme} </h2>
+                        <small>{createDate(service.date)}</small>
                     </Card.Text>
                     <div >
                         <img 
@@ -51,7 +52,7 @@ const ServicesIndex = (props) => {
                             src={`${apiUrl}/${service.image}`} />
                     </div>
                     <Card.Text>
-                        {createDate(service.date)}
+                        <small>with {service.minister}</small>
                     </Card.Text>
                 </Link>
             </Card.Body>
@@ -59,9 +60,10 @@ const ServicesIndex = (props) => {
         
         const pastServiceCards = services.filter(event => Date.parse(event.date) < currentDate.getTime()).map(service => 
             <Card.Body className='mb-2 playFont text-center d-inline-block m-2' style={{ fontSize: '1.5em', width: '100%', maxWidth: '300px'}}>
-        <Link to={`/sundayservice/${service._id}`} className='link'>
-            <Card.Text className='text-center' style={{textDecorationLine: 'none'}}>
-                <h2>{service.theme} with {service.minister}</h2>
+        <Link to={`/sundayservice/${service._id}`} className='link' style={{textDecoration: 'none'}}>
+            <Card.Text className='text-center mb-0' style={{color: '#e7a713'}}>
+                <h2 className='m-0'>{service.theme} </h2>
+                <small style={{color: 'grey'}}>{createDate(service.date)}</small>
             </Card.Text>
             <div >
                 <img 
@@ -69,7 +71,8 @@ const ServicesIndex = (props) => {
                     src={`${apiUrl}/${service.image}`} />
             </div>
             <Card.Text>
-                {createDate(service.date)}
+                
+                <small style={{color: 'grey'}}>with {service.minister}</small>
             </Card.Text>
         </Link>
     </Card.Body>
