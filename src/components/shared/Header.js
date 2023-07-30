@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { NavDropdown } from 'react-bootstrap'
-import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ChaliceLogo from '../../images/ChaliceLogo'
 const linkStyle = {
@@ -17,7 +16,7 @@ const dropStyle = {
 	fontSize: '1.4em',
 }
 
-const allowedEmails = ['r@r.r', 'clapperpianist@gmail.com', "1beau.rivers@gmail.com", "donsixalex@gmail.com"]
+const allowedEmails = ['r@r.r', 'clapperpianist@gmail.com', "1beau.rivers@gmail.com", "donsixalex@gmail.com", "maryalthea52@gmail.com"]
 
 
 const authenticatedOptions = (

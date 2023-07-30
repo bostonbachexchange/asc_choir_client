@@ -146,7 +146,6 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<MessageBoardIndex msgAlert={msgAlert} user={user} />
-							{/* <CreateMessage msgAlert={msgAlert} user={user} /> */}
 						</RequireAuth>
 					}
 				/> 
