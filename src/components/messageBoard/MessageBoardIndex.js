@@ -12,7 +12,6 @@ import profPicture from '../../images/profile-default.png'
 import blogImage from '../../images/fallphoto.jpg'
 import CreateMessage from '../messageBoard/CreateMessage'
 import { Button } from 'react-bootstrap'
-import profPicture from '../../images/profile-default.png'
 
 const MessageBoardIndex = (props) => {
     const [messageboard, setMessageBoard] = useState(null)
@@ -50,11 +49,10 @@ const MessageBoardIndex = (props) => {
     const docRoot = document.getElementById('root')
     docRoot.style.backgroundImage = "url(" + messageboardphoto + ")";
     docRoot.style.backgroundSize = "cover";
-
     const messageboardCards = messageboard.map(messagepost =>
 
 {        const profilePictureSrc =
-        messagepost.owner.profilePicture === '/path/to/default/profile-image.png'
+        messagepost.owner.profilePicture === 'default'
         ? profPicture
         : `${apiUrl}/${messagepost.owner.profilePicture}`; 
 
@@ -80,7 +78,7 @@ const MessageBoardIndex = (props) => {
                             <div>
                                 <small style={{fontSize : '12px', textDecoration: 'none'}} className='d-flex'>
                                     <span className='p-1'>
-                                        <b> {messagepost.owner.firstName ? messagepost.owner.firstName + " " + messagepost.owner.lastName : messagepost.owner.email + " " } </b> 
+                                        <b> {messagepost.owner.firstName === 'First' ? messagepost.owner.email + " " : messagepost.owner.firstName + " " + messagepost.owner.lastName } </b> 
                                     </span>
                                     <span className='p-1'>
                                     • {dateFormat(messagepost.date, " mmmm d")}

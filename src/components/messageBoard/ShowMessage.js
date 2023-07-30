@@ -89,7 +89,7 @@ const ShowMessage = (props) => {
 
   
         const commentPictureSrc =
-          cmt.owner.profilePicture === '/path/to/default/profile-image.png'
+          cmt.owner.profilePicture === 'default'
             ? profPicture
             : `${apiUrl}/${cmt.owner.profilePicture}`;
         
@@ -108,7 +108,7 @@ const ShowMessage = (props) => {
                         <div style={{ marginLeft: '10px' }}>
                         <div>
                             <small>
-                            <b>{cmt.owner.firstName ? cmt.owner.firstName + " " + cmt.owner.lastName : cmt.owner.email }</b>
+                            <b>{cmt.owner.firstName === 'First' ? cmt.owner.email : cmt.owner.firstName + " " + cmt.owner.lastName }</b>
                             </small>
                         </div>
                         <div>
@@ -158,7 +158,7 @@ const ShowMessage = (props) => {
       
 
     const profilePictureSrc =
-        message.owner.profilePicture === '/path/to/default/profile-image.png'
+        message.owner.profilePicture === 'default'
         ? profPicture
         : `${apiUrl}/${message.owner.profilePicture}`;
 
@@ -179,7 +179,7 @@ const ShowMessage = (props) => {
                                     {/* Name */}
                                     <div style={{ marginLeft: '10px' }}>
                                         <small > 
-                                            <b>{message.owner.firstName ? message.owner.firstName + " " + message.owner.lastName : message.owner.email }
+                                            <b>{message.owner.firstName === 'First' ? message.owner.email : message.owner.firstName + " " + message.owner.lastName  }
                                             </b>
                                         </small>
                                         <div style={{ fontSize: '10px' }}>{dateFormat(message.date, "mmmm d, yyyy")}</div>
