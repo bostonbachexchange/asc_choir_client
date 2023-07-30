@@ -1,5 +1,6 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
+import NewsApp from '../components/tesla'
 
 export const getSundayService= () => {
     return axios(`${apiUrl}/sundayservice`)
@@ -25,12 +26,13 @@ export const createService = (user, newService, fileName) => {
 	})
 }
 
-export const updateService = (user, newService, fileName) => {
+export const updateService = (user, newService, service, fileName) => {
+	console.log("!!!!!  newService: ", service._id)
 	const formData = new FormData();
     formData.append('service', JSON.stringify(newService));
     formData.append('file', fileName);
 	return axios({
-		url: `${apiUrl}/sundayservice/${newService._id}`,
+		url: `${apiUrl}/sundayservice/${service._id}`,
 		method: 'PATCH',
 		headers: {
 			Authorization: `Token token=${user.token}`,
