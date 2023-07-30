@@ -99,55 +99,57 @@ const ShowService = (props) => {
         <Container className='m-auto fluid playFont' style={{fontSize: '1.4em'}}>
             <Card>
                 <Card.Header className='text-center'>
-                    <h2>{createDate(service.date)}</h2>
+                    <h1 className="p-1" style={{fontFamily: 'Arial'}}>{service.theme}</h1>
+                    <p>{createDate(service.date)}</p>
                 </Card.Header>
-				<h1 className='pt-2 text-center' style={dateHeading}>
-					Minister <strong>{service.minister}</strong>
-				</h1>
+				<h3 className='pb-0' style={dateHeading}>
+					<b>Minister </b><em> {service.minister}</em>
+				</h3>
                 <Card.Body>
                     <div style={musicBorder} >
                         <strong>Prelude: </strong> 
-                        {createSongLink(service.prelude)}
+                        <span className='p-1 fs-3'></span>{createSongLink(service.prelude)}
                         <br></br>
-                        <>{service.preludePerformer}</>
+                        <span style={{color : 'grey'}}>{service.preludePerformer}</span>
                     </div>
                     <div style={musicBorder}>
                         <strong>Chalice Song: </strong> 
-                        {createSongLink(service.chaliceSong)}
+                        <span className='p-1 fs-3'>{createSongLink(service.chaliceSong)}</span>
                         <br></br>
-                        {service.chaliceSongPerformer}
+                        <span style={{color : 'grey'}}>{service.chaliceSongPerformer}</span>
                     </div>
                     <div style={musicBorder}>
                         <strong>Opening Hymn: </strong> 
-                        {service.openingHymnNumber} 
-                        {createSongLink(service.openingHymn)}
+                        <span className='p-1 fs-3' style={{color: 'grey'}}> {service.openingHymnNumber ? "# " + service.openingHymnNumber : null }  </span>
+                        <span className='fs-3'>{createSongLink(service.openingHymn)} </span>
                         <br></br>
-                        {service.openingHymnPerformer}
+                        <span style={{color : 'grey'}}>{service.openingHymnPerformer}</span>
                     </div>
                     <div style={musicBorder}>
-                        <strong>Centering Music: </strong> {service.centeringHymnNumber} 
-                        {createSongLink(service.centeringHymn)}
+                        <strong>Centering Music: </strong> 
+                        <span className='p-1 fs-3' style={{color: 'grey'}}> {service.centeringHymnNumber ? "# " + service.centeringHymnNumber : null}  </span>
+                        <span className='fs-3'>{createSongLink(service.centeringHymn)} </span>
                         <br></br>
                         {service.centeringHymnPerformer} 
                     </div>
                     <div style={musicBorder}>
                         <strong>Offertory: </strong> 
-                        {createSongLink(service.offertory)}
+                        <span className='p-1 fs-3' style={{color: 'grey'}}> {createSongLink(service.offertory)}</span>
                         <br></br>
-                        {service.offertoryPerformer} 
+                        <span style={{color : 'grey'}}>{service.offertoryPerformer}</span>
                     </div>			
                     <div style={musicBorder}>
                         <strong>Closing Hymn: </strong> 
-                        {service.closingHymnNumber} 
+                        <span className='p-1 fs-3' style={{color: 'grey'}}> {service.closingHymnNumber ? "# " + service.closingHymnNumber : null} </span>
                         {createSongLink(service.closingHymn)}
                         <br></br>
-                        {service.closingHymnPerformer}
+                        <span style={{color : 'grey'}}>{service.closingHymnPerformer}</span>
                     </div>
                     <div style={musicBorder}>
                         <strong>Postlude: </strong> 
-                        {createSongLink(service.postlude)}
+                        <span className='p-1 fs-3' style={{color: 'grey'}}> {createSongLink(service.postlude)}</span>
                         <br></br>
-                        {service.postludePerformer}
+                        <span style={{color : 'grey'}}>{service.postludePerformer}</span>
                     </div>
                 </Card.Body>
 

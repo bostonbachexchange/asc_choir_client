@@ -63,42 +63,42 @@ const MessageBoardIndex = (props) => {
 
         return (
         
-            <Card.Body key={messagepost._id} className='m-4 playFont text-center d-inline-block border border-3' style={{width: '100%', maxWidth: '300px'}}>
+            <Card.Body key={messagepost._id} className='m-4 playFont d-inline-block border border-3 shadow' style={{width: '100%', maxWidth: '300px'}}>
                 <Link to={`/messageboard/${messagepost._id}`} style={{textDecoration: 'none', color: 'black'}}>
                         {/* Picture */}
-                    <Card.Text style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', textDecorationLine: 'none' }}>
+                    <Card.Text style={{ display: 'flex', textDecorationLine: 'none', }}>
                         {/* First Span */}
-                        <span style={{ display: 'flex', alignItems: 'center', padding: '5px', fontFamily: 'arial'}}>
+                        <span style={{ display: 'flex', alignItems: 'center', padding: '5px', fontFamily: 'arial', border: '2px'}}>
                             <img 
                             style={{ width: "38px", height: "38px", borderRadius: '100%' }}
                             src={profilePictureSrc}
                             alt="Profile"
                             />
-                            <div style={{ marginLeft: '10px' }}>
-                            <div>
-                                <small style={{fontSize : '12px', textDecoration: 'none'}} className='d-flex'>
-                                    <span className='p-1'>
+                            <div style={{marginLeft : '7px', display: 'flex', position: 'relative', fontSize : '12px', textDecoration: 'none'}}>
+                                <small>
+                                    <span style={{ display: 'flex', alignItems: 'center'}}>
                                         <b> {messagepost.owner.firstName === 'First' ? messagepost.owner.email + " " : messagepost.owner.firstName + " " + messagepost.owner.lastName } </b> 
                                     </span>
-                                    <span className='p-1'>
-                                    • {dateFormat(messagepost.date, " mmmm d")}
+                                    <span style={{ position: 'absolute', left: '0%',whiteSpace: 'nowrap' }}>
+                                        {dateFormat(messagepost.date, " mmmm d")}
                                     </span>
                                 </small>
-                            </div>
                             </div>
                         </span>
                     </Card.Text>
                     <div>
-                    <div>
-                        <h1>{messagepost.title}</h1>
-                        <img 
-                            style={{width: "250px", height: "215px", borderRadius: '15px', marginTop: "5px"}}
-                            src={messagePictureSrc} />
-                    </div>
-                    <br></br>
-                    <hr></hr>
-                    <small className='m-1' >
-                        {messagepost.comments.length}<em> comments</em></small>
+                        <div>
+                            <h3>{messagepost.title}</h3>
+                            <img 
+                                style={{width: "240px", height: "240px", borderRadius: '15px', marginTop: "5px"}}
+                                className='shadow'
+                                src={messagePictureSrc} />
+                        </div>
+                        <br></br>
+                        <hr></hr>
+                        <small>
+                            {messagepost.comments.length == 1 ? messagepost.comments.length  + " comment" : messagepost.comments.length + " comments"}
+                        </small>
                     </div>
                     </Link>
                 </Card.Body>
@@ -116,7 +116,8 @@ const MessageBoardIndex = (props) => {
                     className="m-auto border border-2 border-radius-5 border-dark" 
                     variant="info">
                     Create Blog
-                </Button>
+            </Button>
+            <span className='p-2' style={{fontFamily: 'Arial'}}>Create your own Blog!</span>
             </Container>
             <Container className='text-center playFont p-0' style={{ backgroundColor: "rgba(255, 255, 255, 0.97)", width: '100%', maxWidth: 'none'}}>
                 {messageboardCards}
