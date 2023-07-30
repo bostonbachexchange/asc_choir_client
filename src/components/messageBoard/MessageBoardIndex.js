@@ -12,6 +12,7 @@ import profPicture from '../../images/profile-default.png'
 import blogImage from '../../images/fallphoto.jpg'
 import CreateMessage from '../messageBoard/CreateMessage'
 import { Button } from 'react-bootstrap'
+import profPicture from '../../images/profile-default.png'
 
 const MessageBoardIndex = (props) => {
     const [messageboard, setMessageBoard] = useState(null)
