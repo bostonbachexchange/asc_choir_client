@@ -108,7 +108,7 @@ const ShowService = (props) => {
                 <Card.Body>
                     <div style={musicBorder} >
                         <strong>Prelude: </strong> 
-                        <span className='p-1 fs-3'></span>{createSongLink(service.prelude)}
+                        <span className='p-1 fs-3'>{createSongLink(service.prelude)}</span>
                         <br></br>
                         <span style={{color : 'grey'}}>{service.preludePerformer}</span>
                     </div>
@@ -141,7 +141,7 @@ const ShowService = (props) => {
                     <div style={musicBorder}>
                         <strong>Closing Hymn: </strong> 
                         <span className='p-1 fs-3' style={{color: 'grey'}}> {service.closingHymnNumber ? "# " + service.closingHymnNumber : null} </span>
-                        {createSongLink(service.closingHymn)}
+                        <span className='p-1 fs-3'>{createSongLink(service.closingHymn)}</span>
                         <br></br>
                         <span style={{color : 'grey'}}>{service.closingHymnPerformer}</span>
                     </div>
@@ -149,7 +149,7 @@ const ShowService = (props) => {
                         <strong>Postlude: </strong> 
                         <span className='p-1 fs-3' style={{color: 'grey'}}> {createSongLink(service.postlude)}</span>
                         <br></br>
-                        <span style={{color : 'grey'}}>{service.postludePerformer}</span>
+                        <span >{service.postludePerformer}</span>
                     </div>
                 </Card.Body>
 
