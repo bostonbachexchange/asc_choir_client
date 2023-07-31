@@ -147,9 +147,9 @@ const ShowService = (props) => {
                     </div>
                     <div style={musicBorder}>
                         <strong>Postlude: </strong> 
-                        <span className='p-1 fs-3' style={{color: 'grey'}}> {createSongLink(service.postlude)}</span>
+                        <span className='p-1 fs-3'> {createSongLink(service.postlude)}</span>
                         <br></br>
-                        <span >{service.postludePerformer}</span>
+                        <span style={{color: 'grey'}}>{service.postludePerformer}</span>
                     </div>
                 </Card.Body>
 
