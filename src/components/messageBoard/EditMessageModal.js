@@ -56,7 +56,7 @@ const EditMessageModal = (props) => {
                     handleChange={handleChange} 
                     handleSubmit={handleSubmit} 
                     onChangeFile={onChangeFile} 
-                    heading="Update Post" />
+                    heading="Update Blog" />
             </Modal.Body>
         </Modal>
     )

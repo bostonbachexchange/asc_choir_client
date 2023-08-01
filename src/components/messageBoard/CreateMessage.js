@@ -25,8 +25,9 @@ const CreateMessage = (props) => {
     useEffect(() => {
         getUserAccounts()
             .then(res => {
-                setAccounts(res.data.accounts.filter(account => account.settings.receiveBlogNotifications == true));
-                setMessageBoard({emailList: [accounts]})
+                setAccounts(res.data.accounts
+                    .filter(account => account.settings.receiveBlogNotifications == true).map(account => account.email)
+                    )
                 // console.log('Email accounts, State: ', res.data.accounts);
                 // console.log('message ', message);
             })
@@ -39,7 +40,8 @@ const CreateMessage = (props) => {
                 });
             });
     }, []);
-    
+    console.log('!!!acounts ', accounts)
+    console.log('message.emailList', message.emailList)
 
     // const recieveBlogsTrue = accounts.filter(account => account.settings.receiveBlogNotifications === true)
 
@@ -65,6 +67,7 @@ const CreateMessage = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setMessageBoard({emailList: [accounts]})
         const data = {title: message.title, emailList: message.emailList.join(", "), content: message.content}
         console.log('data', data)
         emailjs
@@ -92,6 +95,7 @@ const CreateMessage = (props) => {
             <Modal.Body >
                 <MessageBoardForm 
                             message={message} 
+                            heading="Create a Blog"
                             handleSubmit={handleSubmit} 
                             handleChange={handleChange} 
                             onChangeFile={onChangeFile}/>

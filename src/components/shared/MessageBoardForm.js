@@ -6,11 +6,11 @@ import Row from 'react-bootstrap/Row';
 
 const MessageBoardForm = (props) => {
 
-    const { message, handleChange, handleSubmit, fileName, onChangeFile } = props
+    const { message, handleChange, handleSubmit, fileName, onChangeFile, heading} = props
     return <>
             <Container className='text-center playFont messageForm'  >
                 <Card className='text-center'>
-                    <Card.Header><h3 className='text-center'>Create a Blog</h3></Card.Header>
+                    <Card.Header><h3 className='text-center'>{heading}</h3></Card.Header>
                     <Form  onSubmit={handleSubmit} className="m-3">
                             <h4>Title</h4>
                             <Form.Group as={Row} className="mb-3">
