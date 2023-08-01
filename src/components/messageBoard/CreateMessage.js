@@ -14,7 +14,7 @@ const CreateMessage = (props) => {
     const navigate = useNavigate()
     const [accounts, setAccounts] = useState(null)
     const [message, setMessageBoard] = useState({
-        emailList: ['clapperdev@gmail.com']
+        // emailList: ['clapperdev@gmail.com']
         // hopefully dont need
         // title: '',
 		// content: '',
@@ -68,7 +68,7 @@ const CreateMessage = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setMessageBoard({emailList: [accounts]})
-        const data = {title: message.title, emailList: message.emailList.join(", "), content: message.content}
+        const data = {title: message.title, emailList: accounts.join(", "), content: message.content}
         console.log('data', data)
         emailjs
             .send('service_6ua4q8w', 'template_vkey9oh', data, '38n3G7bbp-a_O5PNa')
