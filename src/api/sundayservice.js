@@ -1,6 +1,5 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
-import NewsApp from '../components/tesla'
 
 export const getSundayService= () => {
     return axios(`${apiUrl}/sundayservice`)
@@ -20,14 +19,12 @@ export const createService = (user, newService, fileName) => {
 		headers: {
 			Authorization: `Token token=${user.token}`,
 			'Content-Type': 'multipart/form-data;boundary="boundary"',
-
 		},
 		data: formData,
 	})
 }
 
 export const updateService = (user, newService, service, fileName) => {
-	console.log("!!!!!  newService: ", service._id)
 	const formData = new FormData();
     formData.append('service', JSON.stringify(newService));
     formData.append('file', fileName);

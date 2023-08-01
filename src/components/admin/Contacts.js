@@ -25,10 +25,9 @@ const Contacts = (props) => {
     
     useEffect(() => {
         getUserAccounts()
-            // .then(res => console.log('res.data.accounts', res.data.accounts))
             .then(res => setAccounts(res.data.accounts))
             .catch(err => {
-                console.log('there wass an error', err)
+                console.log('there was an error', err)
                 msgAlert({
                     heading: 'Error Getting Accounts',
                     message: messages.getMessageFailure,

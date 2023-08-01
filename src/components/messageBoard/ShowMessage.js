@@ -226,7 +226,19 @@ const ShowMessage = (props) => {
                             }
 
                             {/* Blog Content */}
-                            <div className='m-2 p-4 mt-4' style={{fontSize: '18px', fontFamily: "Roboto"}}>{message.content}</div>
+                            <div className='m-2 p-4 mt-4' style={{fontSize: '18px', fontFamily: "Roboto"}}>
+                                {message.content ?(
+                                <div> {
+                                    message.content.split("|").map((line, index) => (
+                                    <div className={`text-center ${index === 0 ? "first-line" : ""}`} 
+                                    style={line === "``" ? {color: "white"} : {}}>
+                                    {index === 0 ? <b><span style={{color: '#A78B41', fontSize: '2em', verticalAlign: 'middle'}}>{line.substring(0, 1)}</span></b> : ""}
+                                    {line.substring(1)}
+                                    </div>)
+                                    ) 
+                                    }
+                                </div>) : (null)}
+                                </div>
                         </Card.Text>
 
                     </Card.Body>
