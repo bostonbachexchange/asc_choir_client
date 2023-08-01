@@ -13,13 +13,7 @@ const CreateMessage = (props) => {
 
     const navigate = useNavigate()
     const [accounts, setAccounts] = useState(null)
-    const [message, setMessageBoard] = useState({
-        // emailList: ['clapperdev@gmail.com']
-        // hopefully dont need
-        // title: '',
-		// content: '',
-        // name: ''
-    })
+    const [message, setMessageBoard] = useState({})
     const [fileName, setFileName] = useState({})
 
     useEffect(() => {
@@ -27,9 +21,7 @@ const CreateMessage = (props) => {
             .then(res => {
                 setAccounts(res.data.accounts
                     .filter(account => account.settings.receiveBlogNotifications == true).map(account => account.email)
-                    )
-                // console.log('Email accounts, State: ', res.data.accounts);
-                // console.log('message ', message);
+                )
             })
             .catch(err => {
                 console.log('there was an error', err);
@@ -40,12 +32,6 @@ const CreateMessage = (props) => {
                 });
             });
     }, []);
-    console.log('!!!acounts ', accounts)
-    console.log('message.emailList', message.emailList)
-
-    // const recieveBlogsTrue = accounts.filter(account => account.settings.receiveBlogNotifications === true)
-
-    // console.log('recieveBlogsTrue', recieveBlogsTrue)
 
     const onChangeFile = (e) => {
         setFileName(e.target.files[0])
@@ -69,7 +55,6 @@ const CreateMessage = (props) => {
         e.preventDefault()
         setMessageBoard({emailList: [accounts]})
         const data = {title: message.title, emailList: accounts.join(", "), content: message.content}
-        console.log('data', data)
         emailjs
             .send('service_6ua4q8w', 'template_vkey9oh', data, '38n3G7bbp-a_O5PNa')
         createMessage(user, message, fileName)
