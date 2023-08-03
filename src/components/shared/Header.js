@@ -117,7 +117,7 @@ const adminOptions = (
 			</Nav.Item>
 			<Nav.Item className='m-auto'>
 				<Link to='create-song' style={linkStyle}>
-					<span className='HoverClass1 playFont'>Add Song</span>
+					<span className='HoverClass1 playFont'>Add Music</span>
 				</Link>
 			</Nav.Item>
 			<Nav.Item className='m-auto'>
