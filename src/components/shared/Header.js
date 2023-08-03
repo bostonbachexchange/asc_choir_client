@@ -74,11 +74,11 @@ const authenticatedOptions = (
 			menuVariant="dark" 
 			style={linkStyle}
 			>
-			{/* <Nav.Item eventKey='1' className='text-center playFont'>
+			<Nav.Item eventKey='1' className='text-center playFont'>
 				<Link to='profile' style={dropStyle}>
 				<span className='HoverClass1'>Profile</span>
 				</Link>
-			</Nav.Item > */}
+			</Nav.Item >
 			<Nav.Item eventKey='1' className='text-center playFont'>
 				<Link to='change-password' style={dropStyle}>
 				<span className='HoverClass1'>Change Password</span>
