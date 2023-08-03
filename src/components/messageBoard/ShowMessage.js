@@ -228,7 +228,7 @@ const ShowMessage = (props) => {
                             {/* Blog Content */}
                             <div className='m-2 p-4 mt-4' style={{fontSize: '18px', fontFamily: "Roboto"}}>
                                 {message.content ?(
-                                <div> 
+                                <div style={{ whiteSpace: 'pre' }}> 
                                     {message.content.split("|").map((line, index) => (
                                         <div 
                                             className={`text-center ${index === 0 ? "first-line" : ""}`} 

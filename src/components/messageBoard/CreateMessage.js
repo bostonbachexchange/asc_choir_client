@@ -3,13 +3,13 @@ import { createMessage } from '../../api/messageboard'
 import { useNavigate } from 'react-router-dom'
 import { createMessageSuccess, createMessageFailure } from '../shared/AutoDismissAlert/messages'
 import { useState } from 'react'
-import emailjs from 'emailjs-com'
 import { Modal } from 'react-bootstrap'
-import { getUserAccounts } from "../../api/admin"
 import { useEffect } from 'react'
+import { getUserAccounts } from "../../api/admin"
+import emailjs from 'emailjs-com'
 
 const CreateMessage = (props) => {
-    const { user, msgAlert, show, handleClose, triggerRefresh } = props
+    const { user, msgAlert, show, handleClose } = props
 
     const navigate = useNavigate()
     const [accounts, setAccounts] = useState(null)
@@ -20,7 +20,7 @@ const CreateMessage = (props) => {
         getUserAccounts()
             .then(res => {
                 setAccounts(res.data.accounts
-                    .filter(account => account.settings.receiveBlogNotifications == true).map(account => account.email)
+                    .filter(account => account.settings.receiveBlogNotifications === true).map(account => account.email)
                 )
             })
             .catch(err => {
@@ -31,7 +31,7 @@ const CreateMessage = (props) => {
                     variant: 'danger',
                 });
             });
-    }, []);
+    });
 
     const onChangeFile = (e) => {
         setFileName(e.target.files[0])
