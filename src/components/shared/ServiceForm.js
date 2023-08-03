@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import { Container } from 'react-bootstrap';
+// import { Container } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -7,51 +7,54 @@ import Row from 'react-bootstrap/Row';
 const ServiceForm = (props) => {
     const { newService, fileName, handleChange, handleSubmit, onChangeFile } = props
     return <>
-        <Form className='m playFont bg-light p-1' onSubmit={handleSubmit} name="uploaded_file">
-            <Form.Label as='h1' className='text-center'>Sunday Service</Form.Label>
+        <Form className='playFont bg-light p-1' onSubmit={handleSubmit} name="uploaded_file">
+            <Form.Label as='h1' className='text-center'>New Sunday Service</Form.Label>
             <hr></hr>
             <Row className="justify-content-center">
                 <Col sm={6}>
-            <Form.Group className="mb-3" >
-                <Form.Label htmlFor="date">Date</Form.Label>
-                    <Form.Control
-                        type="date"
-                        value={newService.date ? new Date(newService.date).toISOString().split("T")[0] : ""}
-                        name="date"
-                        id="date"
-                        onChange={handleChange}
-                        />
-            </Form.Group>
-            <Form.Group className="mb-3" >
-                <Form.Label htmlFor="prelude">Minister</Form.Label>
-                    <Form.Control placeholder="Minister's Name" value={newService.minister} name="minister" id="minister" onChange={ handleChange }/>
-            </Form.Group>
-            <Form.Group className="mb-3" >
-                <Form.Label htmlFor="theme">Theme/Topic</Form.Label>
-                    <Form.Control placeholder="TBA" value={newService.theme} name="theme" id="theme" onChange={ handleChange }/>
-            </Form.Group>
-            <br></br>
-            <h3 className='text-center'>Prelude</h3>
-            <Form.Group className="mb-3" >
-                <Form.Label htmlFor="prelude">Prelude</Form.Label>
-                    <Form.Control placeholder="Prelude" value={newService.prelude} name="prelude" id="prelude" onChange={ handleChange }/>
-            </Form.Group>
+                    <Form.Group className="mb-3" >
+                        <Form.Label htmlFor="date">Date</Form.Label>
+                            <Form.Control
+                                type="date"
+                                value={newService.date ? new Date(newService.date).toISOString().split("T")[0] : ""}
+                                name="date"
+                                id="date"
+                                onChange={handleChange}
+                                />
+                    </Form.Group>
 
-            <Form.Group className="mb-3" >
-                <Form.Label  htmlFor="preludePerformer">Prelude Performer</Form.Label>
-                    <Form.Control placeholder="Prelude Performer" value={newService.preludePerformer} name="preludePerformer" id="preludePerformer" onChange={ handleChange }/>
-            </Form.Group>
-            <br></br>
-            <h3 className='text-center'>Opening Hymn Title/Name</h3>
-            <Form.Group className="mb-3" >
-                <Form.Label htmlFor="openingHymn">Opening Hymn</Form.Label>
-                    <Form.Control  placeholder="Opening Hymn" value={newService.openingHymn} name="openingHymn" id="openingHymn" onChange={ handleChange }/>
-            </Form.Group>  
+                    <Form.Group className="mb-3" >
+                        <Form.Label htmlFor="prelude">Minister</Form.Label>
+                            <Form.Control placeholder="Minister's Name" value={newService.minister} name="minister" id="minister" onChange={ handleChange }/>
+                    </Form.Group>
 
-            <Form.Group className="mb-3" >
-                <Form.Label htmlFor="offertoryPerformer">Opening Hymn Performer</Form.Label>
-                    <Form.Control placeholder="Opening Hymn Performer" value={newService.openingHymnPerformer} name="openingHymnPerformer" id="openingHymnPerformer" onChange={ handleChange }/>
-            </Form.Group>
+                    <Form.Group className="mb-3" >
+                        <Form.Label htmlFor="theme">Theme/Topic</Form.Label>
+                            <Form.Control placeholder="TBA" value={newService.theme} name="theme" id="theme" onChange={ handleChange }/>
+                    </Form.Group>
+
+                    <br></br>
+                    <h3 className='text-center'>Prelude</h3>
+                    <Form.Group className="mb-3" >
+                        <Form.Label htmlFor="prelude">Prelude</Form.Label>
+                            <Form.Control placeholder="Prelude" value={newService.prelude} name="prelude" id="prelude" onChange={ handleChange }/>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" >
+                        <Form.Label  htmlFor="preludePerformer">Prelude Performer</Form.Label>
+                            <Form.Control placeholder="Prelude Performer" value={newService.preludePerformer} name="preludePerformer" id="preludePerformer" onChange={ handleChange }/>
+                    </Form.Group>
+                    <br></br>
+                    <h3 className='text-center'>Opening Hymn Title/Name</h3>
+                    <Form.Group className="mb-3" >
+                        <Form.Label htmlFor="openingHymn">Opening Hymn</Form.Label>
+                            <Form.Control  placeholder="Opening Hymn" value={newService.openingHymn} name="openingHymn" id="openingHymn" onChange={ handleChange }/>
+                    </Form.Group>  
+
+                    <Form.Group className="mb-3" >
+                        <Form.Label htmlFor="offertoryPerformer">Opening Hymn Performer</Form.Label>
+                            <Form.Control placeholder="Opening Hymn Performer" value={newService.openingHymnPerformer} name="openingHymnPerformer" id="openingHymnPerformer" onChange={ handleChange }/>
+                    </Form.Group>
 
             <Form.Group className="mb-3">
                 <Form.Label htmlFor="closingHymnNumber">Opening Hymn Number #</Form.Label>
@@ -142,13 +145,12 @@ const ServiceForm = (props) => {
             <Form.Group className="mb-3">
                 <Form.Label htmlFor="image">Service Image</Form.Label>
                 <Form.Control 
-                className="w-50" 
-                type="file" 
-                encType="form-data"
-                value={fileName} 
-                name="image" 
-                id="image" 
-                onChange={ onChangeFile }/>
+                    type="file" 
+                    encType="form-data"
+                    value={fileName} 
+                    name="image" 
+                    id="image" 
+                    onChange={ onChangeFile }/>
             </Form.Group> 
 
             <div className='text-center'>

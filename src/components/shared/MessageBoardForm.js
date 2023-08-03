@@ -23,7 +23,16 @@ const MessageBoardForm = (props) => {
                         <Form.Group as={Row} className="mb-2">
                             <Form.Label  column sm={2} htmlFor="content">Blog Contents</Form.Label>
                             <Col sm={10}>
-                                <Form.Control className="m-2" as='textarea' rows={4}placeholder="Blog contents" value={message.content} name="content" id="content" onChange={ handleChange }/>
+                                <Form.Control 
+                                    className="m-2" 
+                                    style={{ whiteSpace: 'pre' }}
+                                    as='textarea' 
+                                    rows={4}
+                                    placeholder="Blog contents" 
+                                    value={message.content} 
+                                    name="content" 
+                                    id="content" 
+                                    onChange={ handleChange }/>
                             </Col>
                         </Form.Group>
 
