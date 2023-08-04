@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import { NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ChaliceLogo from '../../images/ChaliceLogo'
+
 const linkStyle = {
     color: 'white',
     textDecoration: 'none',
@@ -33,20 +34,25 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Item>
 
-		<NavDropdown 
+		<Nav.Item className='playFont m-auto'>
+				<Link to='songs' style={linkStyle}>
+				<span className='HoverClass1'>Music</span>
+				</Link>
+			</Nav.Item>
+		{/* <NavDropdown 
 			className='m-auto'  
 			title={
 				<span className="navTitle playFont HoverClass1">Music</span>
 				} 	
 				menuVariant="dark" 
 				style={linkStyle}
-		>
+		> */}
 			{/* <Nav.Item className='m-2 playFont'>
 				<Link to='mysongs' style={linkStyle}>
 				<span className='HoverClass1'>My Song List</span>
 				</Link>
 			</Nav.Item> */}
-			<Nav.Item className=' playFont text-center'>
+			{/* <Nav.Item className=' playFont text-center'>
 				<Link to='songs' style={dropStyle}>
 				<span className='HoverClass1'>Choral Music</span>
 				</Link>
@@ -66,7 +72,7 @@ const authenticatedOptions = (
 				<span className='HoverClass1'>Singing The Journey</span>
 				</Link>
 			</Nav.Item>
-		</NavDropdown>
+		</NavDropdown> */}
 		
 		<NavDropdown  
 			className='m-auto myAccount' 

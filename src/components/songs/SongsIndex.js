@@ -4,6 +4,17 @@ import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getSongs } from '../../api/songs'
 import messages from '../shared/AutoDismissAlert/messages'
+import { Navbar } from 'react-bootstrap'
+import Nav from 'react-bootstrap/Nav'
+
+const linkStyle = {
+    display: 'flex',
+    color: 'teal',
+    textDecoration: 'none',
+	fontSize: '1.5em',
+	marginRight: 30,
+    minWidth: "100px",
+}
 
 const SongsIndex = (props) => {
     const [songs, setSongs] = useState(null)
@@ -73,12 +84,29 @@ const SongsIndex = (props) => {
             <div className='w-100 bg-dark mb-0'>
                 <hr style={{color: "white", scale: '2em', marginTop: "0"}}></hr>
                 <div>
-                    <h1 style={{color: 'whitesmoke', paddingTop: "10px"}} className='justify-content-center align-items-center d-flex'>Music Database</h1>
+                    <h1 style={{color: 'whitesmoke'}} className='justify-content-center align-items-center d-flex'>Music Database</h1>
                 </div>
                 <div className='w-100 bg-dark justify-content-center align-items-center d-flex mt-0 pb-3'>
                     <p style={{color: "white"}}>Use the search to find a specific piece of music.</p>
                 </div>
             </div>
+            <Navbar className='bg-light d-flex flex-wrap justify-content-center'>
+                <Nav.Item className=' playFont m-auto'>
+                    <Link to='/choralresponses' style={linkStyle}>
+                    <span className=''>Choral Responses</span>
+                    </Link>
+                </Nav.Item>
+                <Nav.Item className=' playFont m-auto'>
+                    <Link to='/singingthelivingtradition' style={linkStyle}>
+                    <span className=''>Singing The Living Tradition</span>
+                    </Link>
+                </Nav.Item>
+                <Nav.Item className=' playFont m-auto'>
+                    <Link to='/singingthejourney' style={linkStyle}>
+                    <span className=''>Singing The Journey</span>
+                    </Link>
+                </Nav.Item>
+            </Navbar>
             <Card style={{ display: 'block' }} className='p-2 fs-5 text-center'>
                 <label className='p-2' htmlFor='search'>Search:</label>
                 <input className='p-2 w-50' id='search' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
