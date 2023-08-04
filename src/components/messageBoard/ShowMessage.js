@@ -232,7 +232,7 @@ const ShowMessage = (props) => {
                             {/* Blog Content */}
                             <div className='m-2 p-4 mt-4' style={{fontSize: '18px', fontFamily: "Roboto"}}>
                                 {message.content ?(
-                                <div style={{ whiteSpace: 'pre' }}> 
+                                <div style={{ whiteSpace: 'pre-line' }}> 
                                     {message.content.split("|").map((line, index) => (
                                         <div 
                                             className={`text-center ${index === 0 ? "first-line" : ""}`} 
@@ -243,7 +243,7 @@ const ShowMessage = (props) => {
                                         </div>)
                                     )}
                                 </div>) : (null)}
-                                </div>
+                            </div>
                         </Card.Text>
                     </Card.Body>     
              
