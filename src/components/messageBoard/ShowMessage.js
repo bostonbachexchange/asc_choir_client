@@ -110,6 +110,9 @@ const ShowMessage = (props) => {
                             <small>
                             <b>{cmt.owner.firstName === 'First' ? cmt.owner.email : cmt.owner.firstName + " " + cmt.owner.lastName }</b>
                             </small>
+                            <small className='p-1' style={{color: 'grey'}}>{cmt.owner.pronouns}</small>
+                        </div>
+                        <div>
                         </div>
                         <div>
                             <small className='' style={{color: '#8a8d91', fontSize: '12px'}}>
@@ -125,14 +128,14 @@ const ShowMessage = (props) => {
                     <Button
                         commentId={cmt._id}
                         onClick={() => (setCommentID(cmt._id), setEditCommentModalShow(true))} 
-                        className="mt-0 pr-2 HoverClassEdit" 
+                        className="mt-0 pr-1 HoverClassEdit" 
                         style={{background: 'transparent', border: 'none', color: 'blue' }}
                     >
                         Edit
                     </Button>                
                     <Button
                         onClick={() => removeTheComment(cmt)} 
-                        className="mt-0 pr-3 HoverClassDelete" 
+                        className="mt-0 pr-1 HoverClassDelete" 
                         style={{
                             background: 'transparent',
                             border: 'none',
@@ -164,7 +167,7 @@ const ShowMessage = (props) => {
 
     return (
         <>
-            <Container className='fluid playFont' >
+            <Container className='fluid playFont'>
                 <Card>
                     <Card.Body>
                         <Card.Text >
@@ -181,6 +184,7 @@ const ShowMessage = (props) => {
                                         <small > 
                                             <b>{message.owner.firstName === 'First' ? message.owner.email : message.owner.firstName + " " + message.owner.lastName  }
                                             </b>
+                                            <small className='p-1' style={{color: 'grey'}}>{message.owner.pronouns}</small>
                                         </small>
                                         <div style={{ fontSize: '10px' }}>{dateFormat(message.date, "mmmm d, yyyy")}</div>
                                     </div>
@@ -251,8 +255,9 @@ const ShowMessage = (props) => {
                                 Post a comment
                         </Button>
                     </Container>
+
                     {commentList.length > 0 ? 
-                        <Card.Footer className='p-4'>
+                        <Card.Footer className='p-0'>
                             <div>
                                 <small>{commentList}</small>
                             </div>
