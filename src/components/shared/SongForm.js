@@ -26,17 +26,12 @@ const SongForm = (props) => {
 
                         <Form.Group className="mb-3">
                             <Form.Label htmlFor="composer">Composer</Form.Label>
-                            <Form.Control placeholder="Composer Name" value={song.composer} name="composer" id="composer" onChange={ handleChange }/>
+                            <Form.Control placeholder="Composer's name" value={song.composer} name="composer" id="composer" onChange={ handleChange }/>
                         </Form.Group>
 
                         <Form.Group className="mb-3">
                             <Form.Label htmlFor="lyricist">Lyricist</Form.Label>
-                            {/* <br></br>
-                            <Form.Text>Insert a vericle bar "|" </Form.Text>
-                            <br></br>
-                            <Form.Text>| to move lyrics to a new line </Form.Text> */}
-                            <Form.Control placeholder="Song Lyrics" value={song.lyricist} name="lyricist" id="lyricist" onChange={ handleChange } style={{ whiteSpace: 'pre' }}/>
-
+                            <Form.Control placeholder="Writer of lyrics" value={song.lyricist} name="lyricist" id="lyricist" onChange={ handleChange } style={{ whiteSpace: 'pre' }}/>
                         </Form.Group>
 
                     {/* <Form.Group className="mb-3">
@@ -44,14 +39,51 @@ const SongForm = (props) => {
                         <Form.Control className="w-50" placeholder="Type of Song" value={song.type} name="type" id="type" onChange={ handleChange }/>
                     </Form.Group> */}
 
-                        <Form.Group className="mb-3">
+                        {/* <Form.Group className="mb-3">
                             <Form.Label htmlFor="source">Source</Form.Label>
                             <Form.Control placeholder="Type of Song" value={song.source} name="source" id="source" onChange={ handleChange }/>
-                        </Form.Group>
+                        </Form.Group> */}
+                    <Form.Group className="mb-3">
+                        <Form.Label htmlFor="source">Source</Form.Label>
+                        <Form.Control
+                        as="select"
+                        value={song.source}
+                        name="source"
+                        id="source"
+                        onChange={handleChange}
+                        >
+                        <option value="Singing The Living Tradition">Singing the Living Tradition</option>
+                        <option value="Singing The Journey">Singing the Journey</option>
+                        <option value="Choral Responses">Choral Responses</option>
+                        <option value="Other">Other</option>
+                        </Form.Control>
+                    </Form.Group>
+
+                    {song.source === 'Other' && (
+                        <Form.Group className="mb-3">
+                        <Form.Label htmlFor="otherSource">Other Source Name</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Type of Song"
+                            value={song.otherSource}
+                            name="otherSource"
+                            id="otherSource"
+                            onChange={handleChange}
+                        />
+                        </Form.Group>)}
 
                         <Form.Group className="mb-3">
                             <Form.Label htmlFor="lyrics">Lyrics</Form.Label>
-                            <Form.Control value={song.lyrics} className="m-2" as="textarea" rows={5} placeholder="song lyrics"  name="lyrics" id="lyrics" onChange={ handleChange }/>
+                            <Form.Control 
+                                value={song.lyrics} 
+                                className="m-2" 
+                                as="textarea" 
+                                rows={5} 
+                                placeholder="Lyrics line one&#10;Lyrics line two&#10;Lyrics line three etc"  
+                                name="lyrics" 
+                                id="lyrics" 
+                                style={{ whiteSpace: 'pre'}}
+                                onChange={ handleChange }/>
                         </Form.Group>
 
                         <Form.Group className="mb-3">
@@ -65,14 +97,15 @@ const SongForm = (props) => {
                                 onChange={ onChangeFile }/>
                         </Form.Group>
 
-                        <Form.Group className="mb-3">
+                        {/* <Form.Group className="mb-3">
                             <Form.Label htmlFor="recordings">recordings</Form.Label>
                             <Form.Control multiple placeholder="recordings" value={song.recordings} type='text' name="recordings" id="recordings" onChange={ handleChange }/>
-                        </Form.Group>
+                        </Form.Group> */}
 
                         <Form.Group className="mb-3">
-                            <Form.Label htmlFor="embedId">Embed Id from Youtube video</Form.Label>
-                            <Form.Control placeholder="Embed an Id of video from youtube, seperated by , comma" value={song.embedId} name="embedId" id="embedId" onChange={ handleChange }/>
+                            <Form.Label htmlFor="embedId">Embed Id from Youtube video </Form.Label>
+                            <Form.Text> Embed an Id of one or more videos from youtube, seperated by , comma</Form.Text>
+                            <Form.Control placeholder="0HCBH336_n.w,   qb8XlLx7qp0,    jKMKzaiB2Yw" value={song.embedId} name="embedId" id="embedId" onChange={ handleChange }/>
                         </Form.Group>
                     
                         <Button variant="primary" type="submit">
