@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getSongs } from '../../api/songs'
 import messages from '../shared/AutoDismissAlert/messages'
+import MusicHeader from '../shared/MusicHeader'
 
 const SingTheJourneyIndex = (props) => {
     const [songs, setStjSongs] = useState(null)
@@ -79,6 +80,7 @@ const SingTheJourneyIndex = (props) => {
                     <img className="mt-0" style={{ height: '150px', radius: '15px'}} src="https://m.media-amazon.com/images/I/41AE1iOaYRL._SL350_.jpg" alt="Hymnal" />
                 </div>
             </div>
+            <MusicHeader/>
             <Card style={{ display: 'block' }} className='p-2 fs-5 text-center'>
                 <label className='p-2' htmlFor='search'>Search:</label>
                 <input className='p-2 w-50' id='search' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
