@@ -41,8 +41,6 @@ const ServicesIndex = (props) => {
     }
 
     const currentDate = new Date();
-    
-
 
     const upcomingServiceCards = services.filter(event => Date.parse(event.date) > currentDate.getTime()).map(service => {
       
@@ -71,7 +69,10 @@ const ServicesIndex = (props) => {
             </Card.Body>)
     })
         
-    const pastServiceCards = services.filter(event => Date.parse(event.date) < currentDate.getTime()).map(service => {
+    const pastServiceCards = services
+        .filter(event => Date.parse(event.date) < currentDate.getTime())
+        .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+        .map(service => {
 
         const servicePictureSrc =
             service.image === 'default'

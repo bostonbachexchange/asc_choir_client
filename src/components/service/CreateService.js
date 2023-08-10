@@ -30,7 +30,7 @@ const CreateService = (props) => {
                 });
             });
     }, []);
-    
+
     const onChangeFile = (e) => {
         setFileName(e.target.files[0])
     };
@@ -71,6 +71,8 @@ function getDaySuffix(day) {
   // Function to format the date in the desired format
   function formatDate(dateString) {
     const date = new Date(dateString);
+    date.setDate(date.getDate() + 1);
+    
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
