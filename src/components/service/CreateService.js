@@ -72,7 +72,7 @@ function getDaySuffix(day) {
   function formatDate(dateString) {
     const date = new Date(dateString);
     date.setDate(date.getDate() + 1);
-    
+
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
@@ -109,8 +109,8 @@ function getDaySuffix(day) {
             postlude: service.postlude, 
             postludePerformer: service.postludePerformer, 
             postludeNumber: service.postludeNumber, 
-            // emailList: accounts.join(", ")
-            emailList: 'clapperdev@gmail.com'
+            emailList: accounts.join(", ")
+            // emailList: 'clapperdev@gmail.com'
         }
         console.log("data in CreateService: ", data)
         console.log('accounts...: ', accounts)
