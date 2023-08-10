@@ -29,7 +29,8 @@ const CreateService = (props) => {
                     variant: 'danger',
                 });
             });
-    });
+    }, []);
+    
     const onChangeFile = (e) => {
         setFileName(e.target.files[0])
     };

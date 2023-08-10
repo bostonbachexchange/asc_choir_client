@@ -12,10 +12,10 @@ import Col from 'react-bootstrap/Col';
 import profPicture from '../../images/profile-default.png'
 import apiUrl from '../../apiConfig';
 
-const linkStyle = {
-    color: 'white',
-    textDecoration: 'none',
-}
+// const linkStyle = {
+//     color: 'white',
+//     textDecoration: 'none',
+// }
 
 const Contacts = (props) => {
     const [accounts, setAccounts] = useState(null)
@@ -34,7 +34,7 @@ const Contacts = (props) => {
                 })
                 setError(true)
             })
-    })
+    }, [])
 
     if (error) {
         return <p>Error!</p>
