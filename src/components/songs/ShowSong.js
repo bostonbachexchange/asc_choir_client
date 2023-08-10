@@ -60,8 +60,8 @@ const ShowSong = (props) => {
   
     const { id } = useParams()
     const { msgAlert, user } = props
-    console.log('user in showSong', user)
-    console.log('song in showSong', song)
+    // console.log('user in showSong', user)
+    // console.log('song in showSong', song)
     const navigate = useNavigate()
 
 
@@ -107,17 +107,17 @@ const ShowSong = (props) => {
     
     return (
         <>
-        <Container className='m-auto fluid playFont' style={{fontSize: '1.4em'}}>
-            <Card>
-                <Card.Header className='text-center'><h2>#{song.hymnNumber} { song.title}</h2></Card.Header>
-                <Card.Body>
-                    <Card.Text>
-                        {song.composer ?(<div><strong>composer:</strong> {song.composer}</div>) : (null)}
-                        {song.lyricist ?(<div><strong>lyricist:</strong> {song.lyricist}</div>) : (null)}
-                        {/* <SongRecordings song={song}/> */}
-                        {song.audioRecording ? (
-        <AudioRecordings audioRecordings={song.audioRecording} />
-      ) : null}                        
+            <Container className='m-auto fluid playFont' style={{fontSize: '1.4em'}}>
+                <Card>
+                    <Card.Header className='text-center'><h2>#{song.hymnNumber} { song.title}</h2></Card.Header>
+                    <Card.Body>
+                        <Card.Text>
+                            {song.composer ?(<div><strong>composer:</strong> {song.composer}</div>) : (null)}
+                            {song.lyricist ?(<div><strong>lyricist:</strong> {song.lyricist}</div>) : (null)}
+                            {/* <SongRecordings song={song}/> */}
+                            {song.audioRecording ? (
+            <AudioRecordings audioRecordings={song.audioRecording} />
+        ) : null}                        
 
             <Button onClick={() => setShowNewRecordingModal(true)} className="m-2" variant="primary">
                 Add Recording
@@ -136,8 +136,7 @@ const ShowSong = (props) => {
                             ( 
                                 <> 
                                 <h2 className='text-center m-4'>Videos From Youtube</h2>
-                                {
-                                    song.embedId.map(Id => (<>
+                                    {song.embedId.map(Id => (<>
                                         <div className='m-2'>
                                             <YoutubeEmbed embedId={Id} />
                                         </div>
@@ -212,7 +211,7 @@ const ShowSong = (props) => {
             msgAlert={msgAlert}
             triggerRefresh={() => setUpdated(!updated)}
             handleClose={() => setEditModalShow(false)}
-            />
+        />
         {showNewRecordingModal && (
             <NewRecordingModal
                 user={user}
@@ -222,19 +221,19 @@ const ShowSong = (props) => {
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(!updated)}
             />
-            )}
+        )}
         {showEditRecordingModal && selectedRecording && (
-        <EditRecordingModal
-          user={user}
-          song={song}
-          recording={selectedRecording}
-          show={showEditRecordingModal}
-          handleClose={() => setShowEditRecordingModal(false)}
-          msgAlert={msgAlert}
-          updated={updated}
-          setUpdated={setUpdated}
-        />
-      )}
+            <EditRecordingModal
+                user={user}
+                song={song}
+                recording={selectedRecording}
+                show={showEditRecordingModal}
+                handleClose={() => setShowEditRecordingModal(false)}
+                msgAlert={msgAlert}
+                updated={updated}
+                setUpdated={setUpdated}
+            />
+        )}
         </>
     )
 }

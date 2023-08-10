@@ -17,7 +17,6 @@ const linkStyle = {
     textDecoration: 'none',
 }
 
-
 const Contacts = (props) => {
     const [accounts, setAccounts] = useState(null)
     const [error, setError] = useState(false)
@@ -35,7 +34,8 @@ const Contacts = (props) => {
                 })
                 setError(true)
             })
-    }, [])
+    })
+
     if (error) {
         return <p>Error!</p>
     }
@@ -55,25 +55,17 @@ const Contacts = (props) => {
         </Fragment>
       ));
       
-    console.log("Email List??? ", emailList)
 
     const useraccounts = accounts.map(account =>
         <>
-{/* {const profilePictureSrc =
-account.profilePicture === '/path/to/default/profile-image.png'
-? profPicture
-: `${apiUrl}/${account.profilePicture}`;    
-} */}
-        <Card>
+            <Card>
                 <img className='text-center d-flex m-auto' style={{width: '150px', height: '150px',}} src={account.profilePicture === 'default'
-? profPicture
-: `${apiUrl}/${account.profilePicture}`}></img>
+                ? profPicture
+                : `${apiUrl}/${account.profilePicture}`}>
+                    
+                </img>
                 <h1 className='text-center d-flex m-auto'>{account.firstName} {account.lastName}</h1>
                 <Container className='mt-3 p-0 rounded mb-3' style={{width: '100%', boxShadow: '3px 3px 3px grey', border: '3px solid black'}}>
-                    {/* <Row className='m-auto p-3 rounded-top' style={{border: '2px solid black'}}>
-                        <Col md={6} className="text-start" style={{fontSize: '1.5em'}}>Name</Col>
-                        <Col md={6}  style={{fontSize: '1.4em'}}>{account.firstName} {account.lastName}</Col>
-                    </Row> */}
                     <Row className='m-auto p-3 rounded-top' style={{border: '2px solid black'}}>
                         <Col md={6} className="text-start" style={{fontSize: '1.5em'}}>Email</Col>
                         <Col md={6} style={{fontSize: '1.4em'}}>{account.email}</Col>
@@ -95,7 +87,7 @@ account.profilePicture === '/path/to/default/profile-image.png'
                         <Col md={6} style={{fontSize: '1.4em'}}>{account.pronouns}</Col>
                     </Row>
                 </Container>
-                </Card>
+            </Card>
         </>
     )
     

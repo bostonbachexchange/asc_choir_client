@@ -3,44 +3,28 @@ import { Modal } from 'react-bootstrap'
 import SongForm from "../shared/SongForm";
 import { updateSongSuccess, updateSongFailure } from '../shared/AutoDismissAlert/messages'
 import { updateSong } from "../../api/songs";
+
 const EditSongModal = (props) => {
     const { user, show, handleClose, msgAlert, triggerRefresh, song } = props
-    // const [song, setSong] = useState(props.song)
     const [newSong, setSong] = useState({})
 
-    console.log('song._id', song._id)
-    // const handleChange = (e) => {
-    //     setSong(prevSong => {
-    //         const updatedValue = e.target.value 
-    //         const updatedName = e.target.name 
-    //         const updatedSong = {
-    //             [updatedName]: updatedValue
-    //         }
-    //         return {
-    //             ...prevSong,
-    //             ...updatedSong
-    //         }
-    //     })
-    // }
     const handleChange = (e) => {
         const { name, value } = e.target;
       
         if (name === "embedId") {
           const embedIds = value ? value.split(",").map((id) => id.trim()) : null;
-          console.log('embedIds', embedIds); // print the array of video IDs
+        //   console.log('embedIds', embedIds); // print the array of video IDs
           setSong((prevSong) => ({ ...prevSong, [name]: embedIds }));
         } else {
           setSong((prevSong) => ({ ...prevSong, [name]: value }));
         }
       };
       
-      
     const handleSubmit = (e) => {
         e.preventDefault()
 
         updateSong(user, newSong, song)
             .then(() => handleClose())
-            // .then(res => console.log('this is the res from api call', res))
             .then(() => {
                 msgAlert({
                     heading: 'Oh Yeah!',
@@ -60,7 +44,11 @@ const EditSongModal = (props) => {
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton />
             <Modal.Body>
-                <SongForm song={song} handleChange={handleChange} handleSubmit={handleSubmit} heading="Update Song" />
+                <SongForm 
+                    song={song} 
+                    handleChange={handleChange} 
+                    handleSubmit={handleSubmit} 
+                    heading="Update Song" />
             </Modal.Body>
         </Modal>
     )

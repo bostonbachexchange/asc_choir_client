@@ -6,7 +6,7 @@ import ChaliceImage from '../images/ChaliceImage'
 import headphones from '../images/headphones.jpg'
 import messageboard from '../images/messageboard.jpg'
 import messageboardphoto from '../images/pexels-pixabay-206447.jpg'
-import NewsApp from './tesla'
+// import NewsApp from './tesla'
 const docRoot = document.getElementById('root')
 docRoot.style.backgroundImage = "url(" + messageboardphoto + ")";
 docRoot.style.backgroundSize = "cover";
