@@ -1,4 +1,3 @@
-// import logo from '../assets/load.gif'
 import ServicesIndex from './service/ServicesIndex'
 import { Card, Container } from "react-bootstrap"
 import { Link } from "react-router-dom"
@@ -6,7 +5,6 @@ import ChaliceImage from '../images/ChaliceImage'
 import headphones from '../images/headphones.jpg'
 import messageboard from '../images/messageboard.jpg'
 import messageboardphoto from '../images/pexels-pixabay-206447.jpg'
-// import NewsApp from './tesla'
 const docRoot = document.getElementById('root')
 docRoot.style.backgroundImage = "url(" + messageboardphoto + ")";
 docRoot.style.backgroundSize = "cover";
@@ -16,7 +14,6 @@ const Home = (props) => {
 	return (
 		<>
 			<Container  className="playFont text-center" style={{backgroundColor: 'rgba(255, 255, 255, 0.95)'}} >
-				{/* <NewsApp></NewsApp> */}
 				<ChaliceImage></ChaliceImage>
 				<h1 style={{marginTop: 15}}>Music for Sunday Services</h1>
 				<p className='fs-4'>Take a look at the music for our upcoming and past services</p>

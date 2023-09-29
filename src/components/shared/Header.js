@@ -19,7 +19,6 @@ const dropStyle = {
 
 const allowedEmails = ['r@r.r', 'clapperpianist@gmail.com', "1beau.rivers@gmail.com", "donsixalex@gmail.com", "maryalthea52@gmail.com"]
 
-
 const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-auto playFont'>

@@ -109,7 +109,8 @@ const ShowSong = (props) => {
         <>
             <Container className='m-auto fluid playFont' style={{fontSize: '1.4em'}}>
                 <Card>
-                    <Card.Header className='text-center'><h2>#{song.hymnNumber} { song.title}</h2></Card.Header>
+                {/* whiteSpace : 'pre-line' */}
+                    <Card.Header className='text-center'><h2>{song.hymnNumber && "# "}{song.hymnNumber} { song.title}</h2></Card.Header>
                     <Card.Body>
                         <Card.Text>
                             {song.composer ?(<div><strong>composer:</strong> {song.composer}</div>) : (null)}
@@ -124,7 +125,7 @@ const ShowSong = (props) => {
             </Button>
 
                     <hr></hr>
-                        {song.lyrics ?(<div><strong>Lyrics:</strong> {
+                        {song.lyrics ?(<div style={{whiteSpace : 'pre-line'}}><strong>Lyrics:</strong> {
                             song.lyrics.split("|").map(line => (
                                 <div className='text-center'>{line}</div>)
                             ) 

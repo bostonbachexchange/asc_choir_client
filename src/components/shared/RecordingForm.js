@@ -3,8 +3,6 @@ import { Form, Button } from 'react-bootstrap'
 
 const RecordingForm = (props) => {
     const { song, recording, handleChange, handleFileChange, handleSubmit, heading } = props;
-    // console.log('this is the song in RecordingForm', song);
-    // console.log('this is the recording in RecordingForm', recording);
     
     return (
         <>
