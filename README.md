@@ -1,13 +1,10 @@
 #  All Souls Choir README
 
 ## Deployed Link
-Deployed on Heroku (Client) 
+Deployed on Netlify (Client) [Client](https://www.uubraintreemusic.org/)
 
 ## Link to backend api
-GitHub API Repo 
-
-## Pitch
-HARMONY HAVEN is an app that will take your choir to the next level. 
+GitHub [API Repo](https://github.com/bostonbachexchange/asc_choir_API)
 
 ## Premise
 This platform allows choir members to connect to other members in their chorus. Users find choral works to practice and add to their repertoire list. Create an opportunity to connect and share ideas and build community. Users create profiles and add music to their available repertoire list. Users will be able to create profiles, log in, and view all available repertoire, and sign up for themselves. Excellence and artistry is right around the corner.
@@ -21,10 +18,7 @@ This platform allows choir members to connect to other members in their chorus. 
 * As a user, I want to be able to view my user information
 * As a user, I want to see all songs/hymns
 * As a user, I want to be able to select ONE hymn/repertoire piece and view it by itself
-* As a user, I want to add/delete my song list
 * As a user, I want to be see message board post and to select ONE post and view it by itself
-
-## STRETCH GOALS…
 * As a user, I want to be able to search ALL music/repertoire through a search bar
 * As a user, I want to add images to my profile
 * As a user, I want to be able to leave comments on the message board (subdocument)
@@ -59,14 +53,14 @@ MY Songs Index
 <img src="./assets/wireframes/MyHymnslist.png" width="600px" alt="Songs Index" />
 
 Message Board Index
-<img src="./assets/wireframes/MessageBoardIndex.png" width="600px" alt="Message Board Index
+<img src="./assets/wireframes/MessageBoardIndex.png" width="500px" alt="Message Board Index
 " />
 
 Message Board Show
-<img src="./assets/wireframes/MessageboardShow.png" width="600px" alt="Message Board Show Page" />
+<img src="./assets/wireframes/MessageboardShow.png" width="500px" alt="Message Board Show Page" />
 
 Message Board Edit 
-<img src="./assets/wireframes/MessageBoardEdit.png" width="600px" alt="Message Board Edit Page" />
+<img src="./assets/wireframes/MessageBoardEdit.png" width="500px" alt="Message Board Edit Page" />
 
 ERD
 <img src="./assets/wireframes/ERD/erd.png" width="600px" alt="ERD" />

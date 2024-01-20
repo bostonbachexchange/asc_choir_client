@@ -22,9 +22,7 @@ export const createComment = (user, commentId, newComment) => {
 
 
 export const updateComment = (user, messageId, commentID, comment) => {
-    // console.log('this is user', user)
-    console.log('this is comment', comment)
-    console.log('this is updatedComment', commentID)
+
 	return axios({
 		url: `${apiUrl}/comments/${messageId}/${commentID}`,
 		method: 'PATCH',

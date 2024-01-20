@@ -8,13 +8,18 @@ import { useEffect } from 'react'
 import { getUserAccounts } from "../../api/admin"
 import emailjs from 'emailjs-com'
 
+
 const CreateMessage = (props) => {
     const { user, msgAlert, show, handleClose } = props
-
+    
     const navigate = useNavigate()
     const [accounts, setAccounts] = useState(null)
     const [message, setMessageBoard] = useState({})
     const [fileName, setFileName] = useState({})
+    
+    const emailjsServiceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const emailjsTemplateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const emailjsUserId = process.env.REACT_APP_EMAILJS_USER_ID;
 
     useEffect(() => {
         getUserAccounts()
@@ -56,7 +61,7 @@ const CreateMessage = (props) => {
         setMessageBoard({emailList: [accounts]})
         const data = {title: message.title, emailList: accounts.join(", "), content: message.content}
         emailjs
-            .send('service_6ua4q8w', 'template_vkey9oh', data, '38n3G7bbp-a_O5PNa')
+            .send(emailjsServiceId, emailjsTemplateId, data, emailjsUserId)
         createMessage(user, message, fileName)
             .then(res => { navigate(`/messageboard/${res.data.message._id}`)})
             .then(() => {

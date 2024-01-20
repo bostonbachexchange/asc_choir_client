@@ -1,5 +1,6 @@
 {
   "name": "asc_choir_app",
+  "author": "Jacob Clapper",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

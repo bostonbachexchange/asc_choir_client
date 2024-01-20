@@ -38,7 +38,6 @@ export const updateMessage = (user, updatedMessage, fileName) => {
 }
 
 export const removeMessage = (user, messageId) => {
-    console.log('here is the messageId in delete', messageId)
     return axios({
         url: `${apiUrl}/messageboard/${messageId}`,
         method: 'DELETE',

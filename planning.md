@@ -1,7 +1,4 @@
-# Harmony Haven
-
-# Pitch
-Harmony Haven is an app that will take your choir to the next level. 
+# All Souls Cboir
 
 # Pitch
 This platform allows choir members to connect to other members in their chorus. Users find choral works to practice and add to their repertoire list. Create an opportunity to connect and share ideas and build community.
@@ -85,8 +82,6 @@ React. Some of these routes should not be available unless a user is signed in,
 so they will use the `AuthenticatedRoute` component instead of the regular
 `Route`. This custom component is provided as part of the template, and is not
 a part of the React library (see more below).
-
-## Features
 
 ### `<RequireAuth />`
 

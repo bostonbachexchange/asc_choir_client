@@ -17,6 +17,8 @@ const SignUp = (props) => {
     const [codeDisplay, setCodeDisplay] = useState('block')
     const [access, setAccess] = useState('none')
 
+    const SIGN_UP_ACCESS = process.env.REACT_APP_SIGN_UP_ACCESS_CODE;
+
     const navigate = useNavigate()
 
     const onCheckAccess = (event) => {
@@ -24,7 +26,7 @@ const SignUp = (props) => {
 
         const checkAccess = (access) => {
             console.log('checkAccess ran. access:', access)
-            if (access === 'BeethovenIsAwesome') {
+            if (access === SIGN_UP_ACCESS) {
                 setAccess('block')
                 setCodeDisplay('none')
             }

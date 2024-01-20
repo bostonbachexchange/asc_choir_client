@@ -14,6 +14,10 @@ const CreateService = (props) => {
     const [fileName, setFileName] = useState({})
     const [accounts, setAccounts] = useState(null)
 
+    const emailjsServiceId = process.env.CREATE_SERVICE_EMAILJS_SERVICE_ID;
+    const emailjsTemplateId = process.env.CREATE_SERVICE_EMAILJS_TEMPLATE_ID;
+    const emailjsUserId = process.env.CREATE_SERVICE_EMAILJS_USER_ID;
+
     useEffect(() => {
         getUserAccounts()
             .then(res => {
@@ -110,12 +114,11 @@ function getDaySuffix(day) {
             postludePerformer: service.postludePerformer, 
             postludeNumber: service.postludeNumber, 
             emailList: accounts.join(", ")
-            // emailList: 'clapperdev@gmail.com'
         }
         console.log("data in CreateService: ", data)
         console.log('accounts...: ', accounts)
         emailjs
-            .send('service_9kl4vne', 'template_rujez38', data, 'HbHIm15JTusAN4bt6')
+            .send(emailjsServiceId, emailjsTemplateId, data, emailjsUserId)
             // update to navigate to new service in show service rather than index
             .then(res => { navigate(`/`)})
             .then(() => {
