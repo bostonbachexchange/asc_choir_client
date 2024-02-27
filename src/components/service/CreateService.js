@@ -5,6 +5,8 @@ import { useEffect } from 'react'
 import { getUserAccounts } from "../../api/admin"
 import ServiceForm from '../shared/ServiceForm'
 import emailjs from 'emailjs-com'
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 const CreateService = (props) => {
